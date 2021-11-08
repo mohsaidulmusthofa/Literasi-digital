@@ -1,4 +1,5 @@
 <!-- Header -->
+
 <?php $this->load->view('admin/partials/header'); ?>
 
 <body id="page-top">
@@ -23,23 +24,23 @@
                     <h1 class="h3 mb-3 text-gray-800">Edit Akun</h1>
 
                     <!-- DataTales Example -->
-                    <form method="post" action="" enctype="multipart/form-data">
-                    <?php foreach ($option as $row) {?>
+                    <form method="post" action="<?= site_url('admin/UserController/update/' . $bagian[0]->ID_USER) ?>" enctype="multipart/form-data">
+                    
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <div class="row">
-                                <input name="id" id="id" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan nama lengkap ..." aria-describedby="basic-addon2" value="<?= $row->ID_USER ?>" hidden>
                                     <div class="col-sm-6">
+                                        <input name="id" id="id" type="text" class="form-control border-dark small mb-3" value="<?= $bagian[0]->ID_USER ?>" hidden>
                                         <p>Nama Lengkap</p>
                                         <div class="input-group">
-                                            <input name="nama" id="nama" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan nama lengkap ..." aria-describedby="basic-addon2" value="<?= $row->NAMA ?>">
+                                            <input name="nama" id="nama" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan nama lengkap ..." aria-describedby="basic-addon2" value="<?= $bagian[0]->NAMA ?>">
                                         </div>
                                         <?= form_error('nama', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
                                         <p>Username</p>
                                         <div class="input-group">
-                                            <input name="username" id="username" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan username ..." aria-describedby="basic-addon2" value="<?= $row->USERNAME ?>">
+                                            <input name="username" id="username" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan username ..." aria-describedby="basic-addon2" value="<?= $bagian[0]->USERNAME ?>">
                                         </div>
                                         <?= form_error('username', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
@@ -49,14 +50,14 @@
                                     <div class="col-sm-6">
                                         <p>Email</p>
                                         <div class="input-group">
-                                            <input name="email" id="email" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Email ..." aria-describedby="basic-addon2" maxlength="100" value="<?= $row->EMAIL ?>">
+                                            <input name="email" id="email" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Email ..." aria-describedby="basic-addon2" maxlength="100" value="<?= $bagian[0]->EMAIL ?>">
                                         </div>
                                         <?= form_error('email', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
                                         <p>Telepon/Whatsapp</p>
                                         <div class="input-group">
-                                            <input name="no_telpon" id="no_telpon" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan No Telepon/Whatsapp ..." aria-describedby="basic-addon2" value="<?= $row->NO_HP ?>">
+                                            <input name="no_telpon" id="no_telpon" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan No Telepon/Whatsapp ..." aria-describedby="basic-addon2" value="<?= $bagian[0]->NO_HP ?>">
                                         </div>
                                         <?= form_error('no_telpon', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
@@ -64,7 +65,7 @@
 
                                 <p>Alamat</p>
                                 <div class="input-group">
-                                    <textarea name="alamat" id="alamat" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Alamat ..." aria-describedby="basic-addon2"><?= $row->ALAMAT ?></textarea>
+                                    <textarea name="alamat" id="alamat" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Alamat ..." aria-describedby="basic-addon2"><?= $bagian[0]->ALAMAT ?></textarea>
                                 </div>
                                 <?= form_error('alamat', '<small class="text-danger pl-2">', '</small>'); ?>
 
@@ -78,9 +79,10 @@
                                     <div class="col-sm-6">
                                         <p>Jabatan</p>
                                         <div class="input-group">
-                                            <Select class="form-control border-dark small mb-3" id="jabatan" name="jabatan" aria-describedby="basic-addon2" value="<?= $row->JABATAN ?>">
-                                                <?php foreach ($tes as $data) { ?>
-                                                    <option value="<?= $data['ID_JABATAN'] ?>" <?=($row->ID_JABATAN == $data['ID_JABATAN'] ? 'selected' : '') ?>><?= $data['JABATAN'] ?></option>
+                                            <Select class="form-control border-dark small mb-3" id="jabatan" name="jabatan" aria-describedby="basic-addon2">
+                                                <option value="<?= set_value('row') ?>">--- Pilih ---</option>
+                                                <?php foreach ($row as $aaa) { ?>
+                                                    <option value="<?= $aaa['ID_JABATAN']; ?>" <?=($data[0]->ID_JABATAN == $aaa['ID_JABATAN'] ? 'selected' : '') ?>><?= $aaa['JABATAN'] ?></option>
                                                 <?php } ?>
                                             </Select>
                                         </div>
@@ -104,20 +106,20 @@
                                     <div class="col-sm-6">
                                         <p>Facebook</p>
                                         <div class="input-group">
-                                            <input name="fb" id="fb" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan link/tautan facebook ..." aria-describedby="basic-addon2" maxlength="100" value="<?= $row->FB ?>">
+                                            <input name="fb" id="fb" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan link/tautan facebook ..." aria-describedby="basic-addon2" maxlength="100" value="<?= $bagian[0]->FB ?>">
                                         </div>
                                         <?= form_error('fb', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
                                         <p>Instagram</p>
                                         <div class="input-group">
-                                            <input name="ig" id="ig" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan link/tautan instagram ..." aria-describedby="basic-addon2" value="<?= $row->IG ?>">
+                                            <input name="ig" id="ig" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan link/tautan instagram ..." aria-describedby="basic-addon2" value="<?= $bagian[0]->FB ?>">
                                         </div>
                                         <?= form_error('ig', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <!-- <div class="row">
                                     <div class="col-sm-6">
                                         <p>Password</p>
                                         <div class="input-group">
@@ -132,7 +134,7 @@
                                         </div>
                                         <?= form_error('password2', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
-                                </div>
+                                </div> -->
 
                                 <a href="<?= site_url('admin/UserController') ?>" class="btn btn-danger btn-icon-split">
                                     <span class="icon text-white-50">
@@ -150,7 +152,6 @@
                             <!-- Card Body -->
                         </div>
                         <!-- Card -->
-                        <?php } ?>
                     </form>
 
                 </div>

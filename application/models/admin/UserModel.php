@@ -24,7 +24,7 @@ class UserModel extends CI_Model
         return $this->db->insert('tb_user', $data);
     }
 
-    public function update($data = array(), $id)
+    public function update($data, $id)
     {
         $this->db->where('ID_USER', $id);
         return $this->db->update('tb_user', $data);
@@ -44,22 +44,21 @@ class UserModel extends CI_Model
     public function detail($id)
     {
         $this->db->where('ID_USER', $id);
-        return $this->db->get('tb_user')->result();
+        return $this->db->get("tb_user")->result();
     }
 
     public function getJab()
     {
-        return $this->db->get('tb_jabatan')->result_array();
+        $query = $this->db->get('tb_jabatan');
+        return $query->result_array();
     }
 
-    public function relasi($id)
+    public function getDetail($id)
     {
-        $this->db->select('*');
-        $this->db->from('tb_user');
-        $this->db->join('tb_jabatan', 'tb_user.ID_JABATAN = tb_jabatan.ID_JABATAN', 'left');
-        $this->db->where(['tb_user.ID_JABATAN' => $id]);
-        return $this->db->get()->result();
+        $query = $this->db->query("SELECT * FROM tb_user, tb_jabatan WHERE tb_user.ID_JABATAN = tb_jabatan.ID_JABATAN AND tb_user.ID_USER = '$id'")->result();
+        return $query;
     }
+
 }
 
 ?>

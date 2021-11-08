@@ -143,26 +143,22 @@ class UserController extends CI_Controller
 		$this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
 		$this->form_validation->set_rules('fb', 'Facebook', 'required|valid_url');
 		$this->form_validation->set_rules('ig', 'Instagram', 'required|valid_url');
-		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|max_length[100]');
-		$this->form_validation->set_rules('password2', 'Konfirmasi Password', 'required|matches[password1]');
 
 		if ($this->form_validation->run() == false) {
-			// $data['jabatan'] = $this->UserModel->getJabatan($id);
-			$data['option']	 = $this->UserModel->relasi($id);
-			$data['tes']	 = $this->UserModel->getJab($id);
-			$data['detail']	 = $this->UserModel->detail($id);
+			$data["bagian"]	 = $this->UserModel->detail($id);
+			$data["row"]	 = $this->UserModel->getJab($id);
+			$data["data"]	 = $this->UserModel->getDetail($id);
 			$data['user']	 = $this->db->get_where('tb_user', ['EMAIL' => $this->session->userdata('EMAIL')])->row_array();
 			$this->load->view('admin/user/edit', $data);
 		} else {
 			$update = $this->UserModel->update(array(
-				// 'ID_USER'		=> $this->input->post('id'),
+				'ID_USER'		=> $this->input->post('id'),
 				'NAMA'			=> $this->input->post('nama'),
 				'USERNAME'		=> $this->input->post('username'),
 				'EMAIL'			=> $this->input->post('email'),
 				'NO_HP'			=> $this->input->post('no_telpon'),
 				'ALAMAT'		=> $this->input->post('alamat'),
 				'ID_JABATAN'	=> $this->input->post('jabatan'),
-				'PASSWORD'		=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
 				'FB'			=> $this->input->post('fb'),
 				'IG'			=> $this->input->post('ig'),
 				'CREATED_AT'	=> $this->input->post('created_at'),
