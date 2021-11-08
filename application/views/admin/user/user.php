@@ -20,12 +20,12 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Data Pekerja</h1>
+                    <h1 class="h3 mb-2 text-gray-800 mb-3">Data Pekerja</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="<?php echo site_url('admin/administrator/tambah/') ?>" class="btn btn-sm btn-info btn-icon-split shadow-sm">
+                            <a href="<?= site_url('admin/UserController/create') ?>" class="btn btn-sm btn-primary btn-icon-split shadow-sm">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-plus"></i>
                                 </span>
@@ -33,7 +33,7 @@
                             </a>
                         </div>
                         <div class="card-body">
-                            <?php echo $this->session->userdata('Pesan'); ?>
+                            <?php echo $this->session->userdata('pesan'); ?>
                             <div class="table-responsive">
                                 <!-- <div id="dataTable_wrapper" class="dataTables_rapper dt-bootstrap4">
                                     <div class="row">
@@ -53,28 +53,38 @@
                                         </div>
                                     </div>
                                 </div> -->
+
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Nama</th>
-                                            <th>Email</th>
-                                            <th>Alamat</th>
-                                            <th>Level</th>
-                                            <th style="width: 96px">Aksi</th>
+                                            <th style="width: 10px;">No</th>
+                                            <th style="text-align: center;">Nama</th>
+                                            <th style="text-align: center;">Email</th>
+                                            <th style="text-align: center;">Foto</th>
+                                            <th style="text-align: center;">Jabatan</th>
+                                            <th style="width: 96px; text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>asdasd</td>
-                                            <td>asdasd</td>
-                                            <td>asdasd</td>
-                                            <td>asdasd</td>
-                                            <td>
-                                                <a href="#" onclick="confirm_modal('')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal">
-                                                    <i class="fa fa-trash"></i>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                        <?php $no = 1;
+                                        foreach ($users as $row) : ?>
+                                            <tr>
+                                                <td style="text-align: center;"><?= $no ?></td>
+                                                <td><?= $row->NAMA ?></td>
+                                                <td><?= $row->EMAIL ?></td>
+                                                <td style="text-align: center;"><img src="<?= base_url('./uploads/user/' . $row->FOTO) ?>" alt="Img" width="100px"></td>
+                                                <td style="text-align: center;"><?= $row->JABATAN ?></td>
+                                                <td style="text-align: center;">
+                                                    <a href="<?= site_url('admin/UserController/update/' . $row->ID_USER) ?>" class="btn btn-sm btn-info btn-circle">
+                                                        <i class="fa fa-pencil-alt"></i>
+                                                    </a>
+                                                    <a href="<?= site_url('admin/UserController/delete/' . $row->ID_USER) ?>" onclick="confirm_modal('<?= 'UserController/delete' . $row->ID_USER ?>')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal" data-target="#hapusModal">
+                                                        <i class="fa fa-trash"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        <?php $no++;
+                                        endforeach ?>
                                     </tbody>
                                 </table>
                                 <div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -90,8 +100,8 @@
                                             <div class="modal-body">Pilih "Hapus" untuk menghapus, pilih "Batal"
                                                 untuk kembali ke Panel Admin.</div>
                                             <div class="modal-footer">
-                                                <button class="btn btn-info" type="button" data-dismiss="modal">Batal</button>
-                                                <a id="delete_link" class="btn btn-danger" href="">Hapus</a>
+                                                <button class="btn btn-danger" type="button" data-dismiss="modal">Batal</button>
+                                                <a id="delete_link" class="btn btn-info" href="<?= site_url('admin/UserController/delete/' . $row->ID_USER) ?>">Hapus</a>
                                             </div>
                                         </div>
                                     </div>
