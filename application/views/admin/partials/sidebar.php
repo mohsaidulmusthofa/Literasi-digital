@@ -79,7 +79,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="#">
             <i class="far fa-fw fa-comments"></i>
             <span>Pesan</span></a>
     </li>
