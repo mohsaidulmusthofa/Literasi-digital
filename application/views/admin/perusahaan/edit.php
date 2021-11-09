@@ -20,26 +20,28 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Tambah Akun</h1>
+                    <h1 class="h3 mb-3 text-gray-800">Tambah Data Perusahaan</h1>
 
                     <!-- DataTales Example -->
-                    <form method="post" action="" enctype="multipart/form-data">
+                    <form method="post" action="<?= site_url('admin/pERUSAHAANController/update/' . $bisnis[0]->ID_BISNIS) ?>" enctype="multipart/form-data">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <p>Nama Lengkap</p>
+                                        <p>Nama Perusahaan</p>
+                                        <input name="id" id="id" type="text" value="<?= $bisnis[0]->ID_BISNIS ?>" hidden>
                                         <div class="input-group">
-                                            <input name="nama" id="nama" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan nama lengkap ..." aria-describedby="basic-addon2" value="<?= set_value('nama'); ?>">
+                                            <input name="nama_bisnis" id="nama_bisnis" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan nama perusahaan ..." aria-describedby="basic-addon2" value="<?= $bisnis[0]->NAMA_BISNIS ?>">
+                                            
                                         </div>
-                                        <?= form_error('nama', '<small class="text-danger pl-2">', '</small>'); ?>
+                                        <?= form_error('nama_bisnis', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
-                                        <p>Username</p>
+                                        <p>Slogan</p>
                                         <div class="input-group">
-                                            <input name="username" id="username" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan username ..." aria-describedby="basic-addon2" value="<?= set_value('username'); ?>">
+                                            <input name="slogan" id="slogan" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan slogan perusahaan ..." aria-describedby="basic-addon2" value="<?= $bisnis[0]->SLOGAN ?>">
                                         </div>
-                                        <?= form_error('username', '<small class="text-danger pl-2">', '</small>'); ?>
+                                        <?= form_error('slogan', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                 </div>
 
@@ -47,14 +49,14 @@
                                     <div class="col-sm-6">
                                         <p>Email</p>
                                         <div class="input-group">
-                                            <input name="email" id="email" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Email ..." aria-describedby="basic-addon2" maxlength="100" value="<?= set_value('email'); ?>">
+                                            <input name="email" id="email" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan email perusahaan ..." aria-describedby="basic-addon2" maxlength="100" value="<?= $bisnis[0]->EMAIL ?>">
                                         </div>
                                         <?= form_error('email', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
-                                        <p>Telepon/Whatsapp</p>
+                                        <p>Contact Person</p>
                                         <div class="input-group">
-                                            <input name="no_telpon" id="no_telpon" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan No Telepon/Whatsapp ..." aria-describedby="basic-addon2" value="<?= set_value('no_telpon'); ?>">
+                                            <input name="no_telpon" id="no_telpon" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan No Telepon/Whatsapp perusahaan ..." aria-describedby="basic-addon2" value="<?= $bisnis[0]->CONTACT_PERSON ?>">
                                         </div>
                                         <?= form_error('no_telpon', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
@@ -62,28 +64,39 @@
 
                                 <p>Alamat</p>
                                 <div class="input-group">
-                                    <textarea name="alamat" id="alamat" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Alamat ..." aria-describedby="basic-addon2"><?= set_value('alamat'); ?></textarea>
+                                    <textarea name="alamat" id="alamat" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan alamat lengkap perusahaan ..." aria-describedby="basic-addon2"><?= $bisnis[0]->ALAMAT ?></textarea>
                                 </div>
-                                <?= form_error('alamat', '<small class="text-danger pl-2">', '</small>'); ?>
+                                <?= form_error('alamat', '<small class="text-danger pl-2">', '</small>'); ?>                                
 
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <p>Upload Foto Profil</p>
+                                        <p>Facebook</p>
                                         <div class="input-group">
-                                            <input name="foto" id="foto" type="file" accept="image/*" onchange="tampilkanPreview(this,'preview')" class="form-control border-dark small mb-3" placeholder="" aria-describedby="basic-addon2" required>
+                                            <input name="fb" id="fb" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan link/tautan facebook perusahaan ..." aria-describedby="basic-addon2" maxlength="100" value="<?= $bisnis[0]->FB ?>">
                                         </div>
+                                        <?= form_error('fb', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
-                                        <p>Jabatan</p>
+                                        <p>Instagram</p>
                                         <div class="input-group">
-                                            <Select class="form-control border-dark small mb-3" id="jabatan" name="jabatan" aria-describedby="basic-addon2">
-                                                <option value="<?= set_value('jabatan') ?>">--- Pilih ---</option>
-                                                <?php foreach ($jabatan as $row) { ?>
-                                                    <option value="<?= $row->ID_JABATAN; ?>"><?= $row->JABATAN ?></option>
-                                                <?php } ?>
-                                            </Select>
+                                            <input name="ig" id="ig" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan link/tautan instagram perusahaan ..." aria-describedby="basic-addon2" value="<?= $bisnis[0]->IG ?>">
                                         </div>
-                                        <?= form_error('jabatan', '<small class="text-danger pl-2">', '</small>'); ?>
+                                        <?= form_error('ig', '<small class="text-danger pl-2">', '</small>'); ?>
+                                    </div>
+                                </div>
+
+                                <p>Deskripsi Perusahaan</p>
+                                <div class="input-group">
+                                    <textarea name="deskripsi" id="deskripsi" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan deskripsi singkat perusahaan ..." aria-describedby="basic-addon2"><?= $bisnis[0]->ABOUT_US ?></textarea>
+                                </div>
+                                <?= form_error('deskripsi', '<small class="text-danger pl-2">', '</small>'); ?>
+
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p>Upload Foto Perusahaan</p>
+                                        <div class="input-group">
+                                            <input name="foto" id="foto" type="file" accept="image/*" onchange="tampilkanPreview(this,'preview')" class="form-control border-dark small mb-3" placeholder="" aria-describedby="basic-addon2">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -99,47 +112,13 @@
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <p>Facebook</p>
-                                        <div class="input-group">
-                                            <input name="fb" id="fb" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan link/tautan facebook ..." aria-describedby="basic-addon2" maxlength="100" value="<?= set_value('fb'); ?>">
-                                        </div>
-                                        <?= form_error('fb', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <p>Instagram</p>
-                                        <div class="input-group">
-                                            <input name="ig" id="ig" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan link/tautan instagram ..." aria-describedby="basic-addon2" value="<?= set_value('ig'); ?>">
-                                        </div>
-                                        <?= form_error('ig', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <p>Password</p>
-                                        <div class="input-group">
-                                            <input name="password1" id="password" type="password" class="form-control border-dark small mb-3" placeholder="Masukkan Password" aria-describedby="basic-addon2">
-                                        </div>
-                                        <?= form_error('password1', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <p>Konfirmasi Password</p>
-                                        <div class="input-group">
-                                            <input name="password2" id="password2" type="password" class="form-control border-dark small mb-3" placeholder="Konfirmasi Password" aria-describedby="basic-addon2">
-                                        </div>
-                                        <?= form_error('password2', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
-                                </div>
-
-                                <button type="submit" href="<?= site_url('admin/UserController') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
+                                <button type="submit" href="<?= site_url('admin/PerusahaanController') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>
                                     </span>
                                     <span class="text">Tambah Data</span>
                                 </button>
-                                <a href="<?= site_url('admin/UserController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
+                                <a href="<?= site_url('admin/PerusahaanController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-reply"></i>
                                     </span>

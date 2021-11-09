@@ -136,18 +136,18 @@
                                     </div>
                                 </div> -->
 
-                                <a href="<?= site_url('admin/UserController') ?>" class="btn btn-danger btn-icon-split">
+                                <button type="submit" href="<?= site_url('admin/UserController') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;"> 
+                                    <span class="icon text-white-50">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                    <span class="text">Edit Data</span>
+                                </button>
+                                <a href="<?= site_url('admin/UserController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-reply"></i>
                                     </span>
                                     <span class="text">Kembali</span>
                                 </a>
-                                <button type="submit" href="<?= site_url('admin/UserController') ?>" class="btn btn-primary btn-icon-split">
-                                    <span class="icon text-white-50">
-                                        <i class="fas fa-plus"></i>
-                                    </span>
-                                    <span class="text">Edit Akun</span>
-                                </button>
                             </div>
                             <!-- Card Body -->
                         </div>

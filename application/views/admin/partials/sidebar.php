@@ -44,14 +44,14 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?= base_url("admin/PerusahaanController") ?>">
         <i class="fas fa-fw fa-solid fa-building"></i>
             <span>Perusahaan</span>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?= base_url("admin/JabatanController") ?>">
         <i class="fas fa-fw fa-briefcase"></i>
             <span>Jabatan</span>
         </a>

@@ -35,14 +35,41 @@ class AuthController extends CI_Controller
                     'USERNAME'  => $user['USERNAME']
                 ];
                 $this->session->set_userdata($data);
-                $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Selamat datang, <strong>' . $this->session->userdata('USERNAME') . '!</strong></div>');
-                redirect('admin/DashboardController');
+                $this->session->set_flashdata(
+					'pesan',
+					'<div class="alert alert-success alert-dismissible fade show" role="alert">
+						<span class="alert-icon"><i class="ni ni-check-bold"></i></span>
+						<span class="alert-text"><strong>Selamat datang, </strong>' . $this->session->userdata('USERNAME') . ' !</span>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>'
+				);
+				redirect('admin/DashboardController');
             } else {
-                $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Password salah!</div>');
-                redirect('admin/AuthController');
+                $this->session->set_flashdata(
+					'pesan',
+					'<div class="alert alert-danger alert-dismissible fade show" role="alert">
+						<span class="alert-icon"><i class="ni ni-check-bold"></i></span>
+						<span class="alert-text"><strong>Login gagal, </strong>harap cek kembali password anda !</span>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>'
+				);
+				redirect('admin/AuthController');
             }
         } else {
-            $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Akun tidak terdaftar!</div>');
+            $this->session->set_flashdata(
+                'pesan',
+                '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <span class="alert-icon"><i class="ni ni-check-bold"></i></span>
+                    <span class="alert-text"><strong>Mohon maaf, </strong>anda tidak memiliki akses !</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>'
+            );
             redirect('admin/AuthController');
         }
     }
@@ -53,7 +80,16 @@ class AuthController extends CI_Controller
         $this->session->unset_userdata('EMAIL');
         $this->session->unset_userdata('FOTO');
         $this->session->unset_userdata('USERNAME');
-        $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Anda berhasil Logout!</div>');
+        $this->session->set_flashdata(
+            'pesan',
+            '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <span class="alert-icon"><i class="ni ni-check-bold"></i></span>
+                <span class="alert-text"><strong>Selamat, </strong>anda berhasil logout. Harap login untuk melanjutkan !</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>'
+        );
         redirect('admin/AuthController');
     }
 }
