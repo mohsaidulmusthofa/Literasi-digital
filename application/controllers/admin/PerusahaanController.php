@@ -7,6 +7,7 @@ class PerusahaanController extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('admin/PerusahaanModel');
+		cek_session();
 	}
 
 	public function index()

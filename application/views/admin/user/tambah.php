@@ -20,7 +20,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Tambah Akun</h1>
+                    <h1 class="h3 mb-3 text-gray-800">Tambah Tim</h1>
 
                     <!-- DataTales Example -->
                     <form method="post" action="" enctype="multipart/form-data">

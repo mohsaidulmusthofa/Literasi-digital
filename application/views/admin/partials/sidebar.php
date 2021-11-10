@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?= base_url("admin/DashboardController") ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -30,7 +30,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url("admin/UserController") ?>">
             <i class="fas fa-fw fa-user"></i>
-            <span>Data Pekerja</span>
+            <span>Data Tim</span>
         </a>
     </li>
 

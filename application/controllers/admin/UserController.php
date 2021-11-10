@@ -8,6 +8,7 @@ class UserController extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('admin/UserModel');
+		cek_session();
 	}
 
 	public function index()
