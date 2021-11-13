@@ -20,44 +20,35 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800 mb-3">Data Produk</h1>
-
+                    <h1 class="h3 mb-2 text-gray-800 mb-3">Data Pesan</h1>
+                    
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <a href="<?= site_url('admin/ProdukController/create') ?>" class="btn btn-sm btn-primary btn-icon-split shadow-sm">
-                                <span class="icon text-white-50">
-                                    <i class="fas fa-plus"></i>
-                                </span>
-                                <span class="text">Tambah Data</span>
-                            </a>
-                        </div>
                         <div class="card-body">
-                            <?php echo $this->session->userdata('pesan'); ?>
+                            <!-- <?php echo $this->session->userdata('pesan'); ?> -->
                             <div class="table-responsive">
 
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th style="width: 10px;">No</th>
-                                            <th style="text-align: center;">Nama Produk</th>
-                                            <th style="text-align: center;">Foto Produk</th>
-                                            <th style="text-align: center;">Deskripsi Produk</th>
+                                            <th style="text-align: center;">Nama Pengirim</th>
+                                            <th style="text-align: center;">Email Pengirim</th>
+                                            <th style="text-align: center;">Subject</th>
+                                            <th style="text-align: center;">Pesan</th>
                                             <th style="width: 96px; text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>                                        
-                                        <?php $no=1; foreach ($produk as $row) {?>
+                                        <?php $no=1; foreach ($pesan as $row) {?>
                                             <tr>
                                                 <td style="text-align: center;"><?= $no ?></td>
-                                                <td><?= $row->NAMA_PRODUK ?></td>
-                                                <td style="text-align: center;"><img src="<?= base_url('./uploads/produk/' . $row->FOTO) ?>" alt="Img" width="100px"></td>
-                                                <td style="text-align: center;"><?= $row->DESKRIPSI ?></td>
+                                                <td><?= $row->NAMA_PENGIRIM ?></td>
+                                                <td style="text-align: center;"><?= $row->EMAIL_PENGIRIM ?></td>
+                                                <td style="text-align: center;"><?= $row->SUBJECT?></td>
+                                                <td style="text-align: center;"><?= $row->PESAN ?></td>
                                                 <td style="text-align: center;">
-                                                    <a href="<?= site_url('admin/ProdukController/update/' . $row->ID_PRODUK) ?>" class="btn btn-sm btn-info btn-circle">
-                                                        <i class="fa fa-pencil-alt"></i>
-                                                    </a>
-                                                    <a href="<?= site_url('admin/ProdukController/delete/' . $row->ID_PRODUK) ?>" onclick="confirm_modal('<?= '/ProdukController/delete/' . $row->ID_PRODUK ?>')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal" data-target="#hapusModal">
+                                                    <a href="<?= site_url('admin/PesanController/delete/' . $row->ID_PESAN) ?>" onclick="confirm_modal('<?= '/ProdukController/delete/' . $row->ID_PRODUK ?>')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal" data-target="#hapusModal">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 </td>
@@ -71,15 +62,17 @@
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">Apakah Anda yakin
                                                     untuk menghapus?</h5>
-                                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">×</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">Pilih "Hapus" untuk menghapus, pilih "Batal"
-                                                untuk kembali ke Panel Admin.</div>
-                                            <div class="modal-footer">
-                                                <button class="btn btn-danger" type="button" data-dismiss="modal">Batal</button>
-                                                <a id="delete_link" class="btn btn-info" href="<?= site_url('admin/ProdukController/delete/' . $row->ID_PRODUK) ?>">Hapus</a>
+                                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">Pilih "Hapus" untuk menghapus, pilih "Batal"
+                                                    untuk kembali ke Panel Admin.</div>
+                                                    <div class="modal-footer">
+                                                        <button class="btn btn-danger" type="button" data-dismiss="modal">Batal</button>
+                                                        <a id="delete_link" class="btn btn-info" href="<?= site_url('admin/PesanController/delete/' . $row->ID_PESAN) ?>">Hapus</a>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -92,7 +85,7 @@
             </div>
             <!-- End of Main Content -->
         </div>
+            <!-- Footer -->
     </div>
-    <!-- Footer -->
     <?php $this->load->view('admin/partials/footer'); ?>
 </body>
