@@ -72,7 +72,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?= base_url("admin/ProdukController")?>">
         <i class="fas fa-fw fa-list-ul"></i>
             <span>Produk</span>
         </a>
