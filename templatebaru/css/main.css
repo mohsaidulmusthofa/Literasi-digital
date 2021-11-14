@@ -266,11 +266,11 @@ button:focus {
 }
 
 .twitter a {
-  color: #1da1f2;
+  color:  #E1306C;
 }
 
 .twitter a:hover {
-  background: #1da1f2;
+  background:  #E1306C;
 }
 
 .google-plus a {
@@ -1468,7 +1468,7 @@ button:focus {
 }
 
 .single-team .social-list .twitter a:hover {
-  background: #1da1f2;
+  background:  #E1306C;
   color: #fff;
 }
 
