@@ -20,5 +20,6 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/menu_sideslide.css')?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/main.css')?>">    
     <link rel="stylesheet" href="<?= base_url('assets/css/responsive.css')?>">
+    <link rel="stylesheet" href="<?= base_url('assets/css/color-switcher.css')?>">
 
   </head>
