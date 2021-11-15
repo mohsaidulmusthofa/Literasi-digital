@@ -1,3 +1,4 @@
+<?php $this->load->view('user/partials/header'); ?>
 <body>
     <!-- Header Section Start -->
     <header id="slider-area">  
@@ -543,3 +544,4 @@
       </div>
     </section>
     <!-- Map Section End -->
+    <?php $this->load->view('user/partials/footer'); ?>
