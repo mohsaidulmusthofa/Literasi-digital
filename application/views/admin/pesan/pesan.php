@@ -48,7 +48,7 @@
                                                 <td style="text-align: center;"><?= $row->SUBJECT?></td>
                                                 <td style="text-align: center;"><?= $row->PESAN ?></td>
                                                 <td style="text-align: center;">
-                                                    <a href="<?= site_url('admin/PesanController/delete/' . $row->ID_PESAN) ?>" onclick="confirm_modal('<?= '/ProdukController/delete/' . $row->ID_PRODUK ?>')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal" data-target="#hapusModal">
+                                                    <a href="<?= site_url('admin/PesanController/delete/' . $row->ID_PESAN) ?>" onclick="confirm_modal('<?= '/ProdukController/delete/' . $row->ID_PESAN ?>')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal" data-target="#hapusModal">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 </td>
