@@ -43,13 +43,17 @@
             <div class="portfolio-item">
               <div class="shot-item">
                 <img src="<?= base_url('assets/img/user/produk/cocofiber.jpg')?>" alt="" style="height: 20rem;" />
+                <a href="<?= base_url('PagesController/product_details')?>">
                 <div class="single-content">
                   <div class="fancy-table">
                     <div class="table-cell">
-                      <a href="<?= base_url('assets/img/user/produk/cocofiber.jpg')?>">Cocofiber</a>
+                      <span style="color: white; font-size: 1rem">
+                      Cocofiber
+                    </span>
                     </div>
                   </div>
                 </div>
+                </a>
               </div>
             </div>
           </div>
