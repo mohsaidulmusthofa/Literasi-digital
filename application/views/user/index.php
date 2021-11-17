@@ -42,8 +42,8 @@
             <li data-target="#carousel-slider" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active" style="height: 96vh;">
-              <img src="<?= base_url('assets/img/user/slider/slide1.jpg')?>" style="width:100%;height:100%" cc alt="">
+            <div class="carousel-item active" style="height: 100vh">
+              <img src="<?= base_url('assets/img/user/slider/slide1.jpg')?>" style="width:100%; height:100%; opacity: 0.7" alt="">
               <div class="carousel-caption text-center">
                 <h3 class="wow fadeInDown" data-wow-delay="0.3s">Welcome to</h3>
                 <h2 class="wow bounceIn" data-wow-delay="0.6s">Nusantara Coco Indo</h2>
@@ -51,8 +51,8 @@
                 <a href="#" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="1.2s">View Our Product</a>
               </div>
             </div>
-            <div class="carousel-item" style="height: 90vh;">
-              <img src="<?= base_url('assets/img/user/slider/slide2.jpg')?>" style="width:100%;height:100%" alt="">
+            <div class="carousel-item" style="height: 100vh;">
+              <img src="<?= base_url('assets/img/user/slider/slide2.jpg')?>" style="width:100%;height:100%;opacity: 0.7" alt="">
               <div class="carousel-caption text-center">
                 <h3 class="wow fadeInDown" data-wow-delay="0.3s">Welcome to</h3>
                 <h2 class="wow bounceIn" data-wow-delay="0.6s">Nusantara Coco Indo</h2>
@@ -60,8 +60,8 @@
                 <a href="#" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="1.2s">View Our Product</a>
               </div>
             </div>
-            <div class="carousel-item" style="height: 90vh;">
-              <img src="<?= base_url('assets/img/user/slider/slide3.jpg')?>" style="width:100%;height:100%" alt="">
+            <div class="carousel-item" style="height: 100vh;">
+              <img src="<?= base_url('assets/img/user/slider/slide3.jpg')?>" style="width:100%;height:100%;opacity: 0.7" alt="">
               <div class="carousel-caption text-center">
                 <h3 class="wow fadeInDown" data-wow-delay="0.3s">Welcome to</h3>
                 <h2 class="wow bounceIn" data-wow-delay="0.6s">Nusantara Coco Indo</h2>
