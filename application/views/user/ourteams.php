@@ -4,10 +4,11 @@
           <h2 class="section-title">Our Teams</h2>
           <p class="section-subtitle">Let's get to know our teams</p>
         </div>
-        <div class="row">
+        <div class="row justify-content-center" style="">
           <div class="col-lg-3 col-md-6 col-xs-12">
             <div class="single-team" style="padding: 10px;">
-              <img src="<?= base_url('assets/img/user/teams/Kavin1.jpg')?>" alt="" style="height: 14rem; border-radius: 50%;">
+              <img src="<?= base_url('assets/img/user/teams/Kavin1.jpg')?>" alt="" 
+              style="border-radius: 50%;">
               <div class="team-details">
                 <div class="team-inner">
                   <h4 class="team-title">Rachman Kavin</h4>
@@ -23,7 +24,8 @@
           </div>
           <div class="col-lg-3 col-md-6 col-xs-12">
             <div class="single-team" style="padding: 10px;">
-              <img src="<?= base_url('assets/img/user/teams/ulul1.jpg')?>" alt="" style="height: 14rem; border-radius: 50%;">
+              <img src="<?= base_url('assets/img/user/teams/ulul1.jpg')?>" alt="" 
+              style="height: 100%;border-radius: 50%;">
               <div class="team-details">
                 <div class="team-inner">
                   <h4 class="team-title">M. Ulul Fauzi, S.Pd.</h4>
@@ -37,7 +39,8 @@
           </div>
           <div class="col-lg-3 col-md-6 col-xs-12">
             <div class="single-team" style="padding: 10px;">
-              <img src="<?= base_url('assets/img/user/teams/Nurbuat.jpg')?>" alt="" style="height: 14rem; border-radius: 50%;">
+              <img src="<?= base_url('assets/img/user/teams/Nurbuat.jpg')?>" alt="" 
+              style="border-radius: 50%;">
               <div class="team-details">
                 <div class="team-inner">
                   <h4 class="team-title">Lutfin Nurbuat</h4>
