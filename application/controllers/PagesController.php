@@ -9,6 +9,6 @@ class PagesController extends CI_Controller {
 	}
 
 	public function product_details() {
-		$this->load->view('user/productdetail');
+		$this->load->view('user/detailproduk');
 	}
 }
