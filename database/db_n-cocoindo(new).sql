@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2021 at 04:03 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.3
+-- Generation Time: Nov 18, 2021 at 04:58 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -39,8 +38,8 @@ CREATE TABLE `tb_bisnis` (
   `ABOUT_US` longtext NOT NULL,
   `ALAMAT` varchar(255) NOT NULL,
   `FOTO` varchar(30) NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `UPDATED_AT` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -48,7 +47,7 @@ CREATE TABLE `tb_bisnis` (
 --
 
 INSERT INTO `tb_bisnis` (`ID_BISNIS`, `NAMA_BISNIS`, `SLOGAN`, `CONTACT_PERSON`, `IG`, `FB`, `EMAIL`, `ABOUT_US`, `ALAMAT`, `FOTO`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(1, 'Nusantara Cocoindo.Inc', 'Lorem ipsum dolor sit amet queque el toro malaguena como tocar a', '087362728192', 'asdasd', 'asdasd', 'info.ncocoindo@gmail.com', 'asdasdasd', 'Ambulu - Jember.', 'Seven-Inc.png', '2021-11-12 08:01:29', '2021-11-12 02:11:28');
+(1, 'Nusantara Coco Indo', 'Becoming Buyer Our Sibling', '+628820093516', 'NULL', 'NULL', 'info.ncocoindo@gmail.com', 'Nusantara Coco Indo is an Indonesian agricultural product export company. Established in 2021, Nusantara Coco Indo is committed to improving the quality, quantity, and continuity of Indonesia\'s superior products.', 'Ambulu - Jember.', 'profile.jpg', '2021-11-18 03:17:58', '2021-11-12 02:11:28');
 
 -- --------------------------------------------------------
 
@@ -60,9 +59,19 @@ CREATE TABLE `tb_counter` (
   `ID_COUNTER` int(1) NOT NULL,
   `NAMA` varchar(30) NOT NULL,
   `JUMLAH` int(4) NOT NULL,
-  `CREATED_AT` datetime NOT NULL,
-  `UPDATED_AT` datetime NOT NULL
+  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp(),
+  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_counter`
+--
+
+INSERT INTO `tb_counter` (`ID_COUNTER`, `NAMA`, `JUMLAH`, `CREATED_AT`, `UPDATED_AT`) VALUES
+(1, 'Tons Production Capacity', 400, '2021-11-17 21:18:22', '2021-11-17 21:18:22'),
+(2, 'Hectars Cultivated Land', 500, '2021-11-17 21:18:22', '2021-11-17 21:18:22'),
+(3, 'Projects Running', 3, '2021-11-17 21:19:50', '2021-11-17 21:19:50'),
+(4, 'Countries Collaberate', 5, '2021-11-17 21:19:50', '2021-11-17 21:19:50');
 
 -- --------------------------------------------------------
 
@@ -73,8 +82,8 @@ CREATE TABLE `tb_counter` (
 CREATE TABLE `tb_jabatan` (
   `ID_JABATAN` int(2) NOT NULL,
   `JABATAN` varchar(50) NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `UPDATED_AT` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -82,10 +91,9 @@ CREATE TABLE `tb_jabatan` (
 --
 
 INSERT INTO `tb_jabatan` (`ID_JABATAN`, `JABATAN`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(1, 'CEO', '2021-11-07 17:00:00', '0000-00-00 00:00:00'),
-(2, 'CFO', '2021-11-07 17:00:00', '2021-11-07 17:00:00'),
-(3, 'CTO', '2021-11-07 17:00:00', '2021-11-07 17:00:00'),
-(4, 'Marketing', '2021-11-09 08:42:48', '2021-11-09 02:11:48');
+(5, 'Founder', '2021-11-18 03:21:55', '0000-00-00 00:00:00'),
+(6, 'Co-Founder', '2021-11-18 03:21:55', '0000-00-00 00:00:00'),
+(7, 'Business Development', '2021-11-18 03:21:55', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -97,9 +105,18 @@ CREATE TABLE `tb_ourmission` (
   `ID_OURMISSION` int(2) NOT NULL,
   `FOTO` varchar(30) NOT NULL,
   `DESCRIPTION` varchar(255) NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `UPDATED_AT` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_ourmission`
+--
+
+INSERT INTO `tb_ourmission` (`ID_OURMISSION`, `FOTO`, `DESCRIPTION`, `CREATED_AT`, `UPDATED_AT`) VALUES
+(1, 'relations.png', 'Creating an integrated export ecosystem between stakeholders', '2021-11-18 03:26:47', '0000-00-00 00:00:00'),
+(2, 'fist.png', 'Empowering domestic production Improve quality, quantity, and continuity through collaboration between stakeholders', '2021-11-18 03:26:47', '0000-00-00 00:00:00'),
+(3, 'growth.png', 'Increase employment and inclusive economic growth', '2021-11-18 03:26:47', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -113,8 +130,8 @@ CREATE TABLE `tb_pesan` (
   `EMAIL_PENGIRIM` varchar(100) NOT NULL,
   `SUBJECT` varchar(50) NOT NULL,
   `PESAN` longtext NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `UPDATED_AT` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -127,18 +144,20 @@ CREATE TABLE `tb_produk` (
   `ID_PRODUK` int(3) NOT NULL,
   `NAMA_PRODUK` varchar(100) NOT NULL,
   `FOTO` varchar(50) NOT NULL,
+  `RINCIAN` text NOT NULL,
   `DESKRIPSI` varchar(255) NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `UPDATED_AT` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tb_produk`
 --
 
-INSERT INTO `tb_produk` (`ID_PRODUK`, `NAMA_PRODUK`, `FOTO`, `DESKRIPSI`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(1, 'Serabut Kelapa', '16367859821.jpg', 'Serabut kelapa merupakan bagian dari kelapa yang dapat dimanfaatkan untuk kebutuhan bahan bakar dsb', '2021-11-14 09:31:35', '2021-11-13 01:11:53'),
-(2, 'Batok Kelapa', '1636786530.jpg', 'Batok kelapa merupakan salah satu bagian dari kelapa yang dapat dimanfaatkan sebagai kerajinan', '2021-11-13 00:11:29', '2021-11-13 00:11:29');
+INSERT INTO `tb_produk` (`ID_PRODUK`, `NAMA_PRODUK`, `FOTO`, `RINCIAN`, `DESKRIPSI`, `CREATED_AT`, `UPDATED_AT`) VALUES
+(3, 'Cocofibre', 'cocofibre.jpg', '1. Color : White<br>2. Moisture : 10%-20%<br>3. Length : 12-35 cm<br>4. Impurity : +/- 5%<br>5. Weight : 100 kg/bale<br>6. Container :<br>- 20 feet = 170-180 bales<br>- 40 feet = 240-250 bales<br>- 40 feet high cube = 260-270 bales<br>Shipping : FOB International Port of Perak, Surabaya, Indonesia \r\n', 'Coconut fiber, is a natural fiber extracted from the husk of coconut and used in products such as floor mats, doormats, brushes and mattresses. Coir is the fibrous material found between the hard, internal shell and the outer coat of a coconut. Other uses', '2021-11-18 03:49:21', '2021-11-18 03:44:21'),
+(4, 'Cocopot', 'cocopot.jpg', '1. Color : White<br>2. Moisture : 10%-20%<br>3. Length : 12 cm all models<br>4. Impurity : +/- 5%<br>5. Weight : 1 kg/pack\r\n6. Container :<br>- 20 feet = 1700-1800 packs<br>- 40 feet = 2400-2500 packs<br>- 40 feet high cube = 2600-2700 packs<br>Shipping : FOB International Port of Perak, Surabaya, Indonesia \r\n', 'Eco-friendly pots made of well pressed coconut coir, not easily broken, durable in sunlight and able to absorb water for soil availability. One of the main benefits of Coir Pot is beautifying plants, a source of organic material for planting media and bei', '2021-11-18 03:53:52', '2021-11-18 03:53:25'),
+(5, 'Cocopeat', 'cocopeat.jpg', '1. Color : Brown<br>2. Moisture : 12%-40%<br>3. Impurity : +/- 5%<br>4. Weight : 15 kg/bag<br>5. Container :<br>- 20 feet = 1000-1200 bags<br>- 40 feet = 1500-1666 bags<br>- 40 feet high cube = 1700-1800 bags<br>Shipping : FOB International Port of Perak, Surabaya, Indonesia \r\n', 'Cocopeat is considered an ideal growing medium. The obtained cocopeat powder is filtered, washed, dried and finally compacted into blocks. Blocks can be used for a variety of planting needs. Coir is known for its natural rooting hormone and anti-fungal pr', '2021-11-18 03:54:10', '2021-11-18 03:53:25');
 
 -- --------------------------------------------------------
 
@@ -159,8 +178,8 @@ CREATE TABLE `tb_user` (
   `IG` varchar(255) NOT NULL,
   `NO_HP` varchar(13) NOT NULL,
   `ALAMAT` varchar(255) NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `UPDATED_AT` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -231,19 +250,19 @@ ALTER TABLE `tb_bisnis`
 -- AUTO_INCREMENT for table `tb_counter`
 --
 ALTER TABLE `tb_counter`
-  MODIFY `ID_COUNTER` int(1) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_COUNTER` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
-  MODIFY `ID_JABATAN` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_JABATAN` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `tb_ourmission`
 --
 ALTER TABLE `tb_ourmission`
-  MODIFY `ID_OURMISSION` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_OURMISSION` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_pesan`
@@ -255,7 +274,7 @@ ALTER TABLE `tb_pesan`
 -- AUTO_INCREMENT for table `tb_produk`
 --
 ALTER TABLE `tb_produk`
-  MODIFY `ID_PRODUK` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_PRODUK` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb_user`
