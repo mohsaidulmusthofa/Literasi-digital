@@ -68,6 +68,12 @@
                                     <textarea name="alamat" id="alamat" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Alamat ..." aria-describedby="basic-addon2"><?= $bagian[0]->ALAMAT ?></textarea>
                                 </div>
                                 <?= form_error('alamat', '<small class="text-danger pl-2">', '</small>'); ?>
+                                
+                                <p>Motto</p>
+                                <div class="input-group">
+                                    <textarea name="motto" id="motto" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan motto ..." aria-describedby="basic-addon2"><?= $bagian[0]->MOTTO ?></textarea>
+                                </div>
+                                <?= form_error('motto', '<small class="text-danger pl-2">', '</small>'); ?>
 
                                 <div class="row">
                                     <div class="col-sm-6">
@@ -121,22 +127,14 @@
                                     </div>
                                 </div>
 
-                                <!-- <div class="row">
+                                <div class="row">
                                     <div class="col-sm-6">
-                                        <p>Password</p>
                                         <div class="input-group">
-                                            <input name="password1" id="password" type="password" class="form-control border-dark small mb-3" placeholder="Masukkan Password" aria-describedby="basic-addon2">
+                                            <input name="created_at" id="created_at" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Password" aria-describedby="basic-addon2" value="<?= $bagian[0]->CREATED_AT ?>" hidden>
                                         </div>
-                                        <?= form_error('password1', '<small class="text-danger pl-2">', '</small>'); ?>
+                                        <?= form_error('created_at', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <p>Konfirmasi Password</p>
-                                        <div class="input-group">
-                                            <input name="password2" id="password2" type="password" class="form-control border-dark small mb-3" placeholder="Konfirmasi Password" aria-describedby="basic-addon2">
-                                        </div>
-                                        <?= form_error('password2', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
-                                </div> -->
+                                </div>
 
                                 <button type="submit" href="<?= site_url('admin/UserController') ?>" class="btn btn-success btn-icon-split ml-2" style="float: right;"> 
                                     <span class="icon text-white-50">

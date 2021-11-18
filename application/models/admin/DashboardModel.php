@@ -29,9 +29,9 @@ class DashboardModel extends CI_Model
         }
     }
 
-    public function count_service()
+    public function count_ourmission()
     {
-        $query = $this->db->get('tb_layanan');
+        $query = $this->db->get('tb_ourmission');
         if ($query->num_rows() > 0) {
             return $query->num_rows();
         } else {

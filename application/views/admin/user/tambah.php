@@ -65,6 +65,12 @@
                                     <textarea name="alamat" id="alamat" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Alamat ..." aria-describedby="basic-addon2"><?= set_value('alamat'); ?></textarea>
                                 </div>
                                 <?= form_error('alamat', '<small class="text-danger pl-2">', '</small>'); ?>
+                                
+                                <p>Motto</p>
+                                <div class="input-group">
+                                    <textarea name="motto" id="motto" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan motto ..." aria-describedby="basic-addon2"><?= set_value('motto'); ?></textarea>
+                                </div>
+                                <?= form_error('motto', '<small class="text-danger pl-2">', '</small>'); ?>
 
                                 <div class="row">
                                     <div class="col-sm-6">

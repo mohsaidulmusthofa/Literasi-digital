@@ -14,7 +14,7 @@ class DashboardController extends CI_Controller
     {
         $data['produk']     = $this->DashboardModel->count_product();
         $data['pesan']      = $this->DashboardModel->count_message();
-        $data['layanan']    = $this->DashboardModel->count_service();
+        $data['ourmission'] = $this->DashboardModel->count_ourmission();
         $data['user']       = $this->DashboardModel->count_members();
         $this->load->view('admin/dashboard', $data);
     }

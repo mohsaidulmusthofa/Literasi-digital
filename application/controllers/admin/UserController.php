@@ -25,6 +25,7 @@ class UserController extends CI_Controller
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[tb_user.EMAIL]');
 		$this->form_validation->set_rules('no_telpon', 'No Telepon', 'required|numeric|min_length[11]|max_length[13]');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+		$this->form_validation->set_rules('motto', 'Motto', 'required|trim');
 		$this->form_validation->set_rules('foto', 'Foto Profile', 'trim');
 		$this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
 		$this->form_validation->set_rules('fb', 'Facebook', 'required|valid_url');
@@ -55,13 +56,14 @@ class UserController extends CI_Controller
 					'EMAIL'			=> $this->input->post('email'),
 					'NO_HP'			=> $this->input->post('no_telpon'),
 					'ALAMAT'		=> $this->input->post('alamat'),
+					'MOTTO'			=> $this->input->post('motto'),
 					'ID_JABATAN'	=> $this->input->post('jabatan'),
 					'FOTO'			=> trim($foto),
 					'PASSWORD'		=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
 					'FB'			=> $this->input->post('fb'),
 					'IG'			=> $this->input->post('ig'),
-					'CREATED_AT'	=> date('Y-m-d h-m-s'),
-					'UPDATED_AT'	=> date('Y-m-d h-m-s')
+					'CREATED_AT'	=> date('Y-m-d H:i:s'),
+					'UPDATED_AT'	=> date('Y-m-d H:i:s')
 				);
 				if ($this->UserModel->create($dataPost)) {
 					$this->session->set_flashdata(
@@ -140,6 +142,7 @@ class UserController extends CI_Controller
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
 		$this->form_validation->set_rules('no_telpon', 'No Telepon', 'required|numeric|min_length[11]|max_length[13]');
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+		$this->form_validation->set_rules('motto', 'Motto', 'required|trim');
 		$this->form_validation->set_rules('foto', 'Foto Profile', 'trim');
 		$this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
 		$this->form_validation->set_rules('fb', 'Facebook', 'required|valid_url');
@@ -159,11 +162,12 @@ class UserController extends CI_Controller
 				'EMAIL'			=> $this->input->post('email'),
 				'NO_HP'			=> $this->input->post('no_telpon'),
 				'ALAMAT'		=> $this->input->post('alamat'),
+				'MOTTO'			=> $this->input->post('motto'),
 				'ID_JABATAN'	=> $this->input->post('jabatan'),
 				'FB'			=> $this->input->post('fb'),
 				'IG'			=> $this->input->post('ig'),
 				'CREATED_AT'	=> $this->input->post('created_at'),
-				'UPDATED_AT'	=> date('Y-m-d h-m-s')
+				'UPDATED_AT'	=> date('Y-m-d H:i:s')
 			), $id);
 
 			if ($update) {
