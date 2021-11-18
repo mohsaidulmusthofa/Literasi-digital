@@ -3,7 +3,7 @@
       <div class="container">
         <div class="section-header">          
           <h2 class="section-title">Our Products</h2>
-          <p class="section-subtitle">
+          <p class="section-subtitle" style="font-size: 1rem;">
             Nusantara Coco Indo Indonesia provide the best coconut derivative products in Indonesia by prioritizing Quality, Quantity and
           Continuity of a product.
         </p>

@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/main.css')?>">    
     <link rel="stylesheet" href="<?= base_url('assets/css/responsive.css')?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/color-switcher.css')?>">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
 
   </head>
   <body>
