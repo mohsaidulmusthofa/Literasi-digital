@@ -91,8 +91,8 @@
                 <!-- /.container-fluid -->
             </div>
             <!-- End of Main Content -->
+            <!-- Footer -->
+            <?php $this->load->view('admin/partials/footer'); ?>
         </div>
     </div>
-    <!-- Footer -->
-    <?php $this->load->view('admin/partials/footer'); ?>
 </body>
