@@ -45,41 +45,41 @@
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url("admin/PerusahaanController") ?>">
-        <i class="fas fa-fw fa-solid fa-building"></i>
+            <i class="fas fa-fw fa-solid fa-building"></i>
             <span>Perusahaan</span>
         </a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url("admin/JabatanController") ?>">
-        <i class="fas fa-fw fa-briefcase"></i>
+            <i class="fas fa-fw fa-briefcase"></i>
             <span>Jabatan</span>
         </a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="#">
-        <i class="fas fa-fw fa-chart-line"></i>
-            <span>Keunggulan</span>
+            <i class="fas fa-fw fa-chart-line"></i>
+            <span>Our Mission</span>
         </a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-headset"></i>
-            <span>Layanan</span>
+            <i class="fas fa-fw fa-calculator"></i>
+            <span>Counter</span>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("admin/ProdukController")?>">
-        <i class="fas fa-fw fa-list-ul"></i>
+        <a class="nav-link" href="<?= base_url("admin/ProdukController") ?>">
+            <i class="fas fa-fw fa-list-ul"></i>
             <span>Produk</span>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("admin/PesanController")?>">
+        <a class="nav-link" href="<?= base_url("admin/PesanController") ?>">
             <i class="far fa-fw fa-comments"></i>
             <span>Pesan</span></a>
     </li>

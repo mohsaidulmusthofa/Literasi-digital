@@ -37,6 +37,15 @@
                                     </div>
                                 </div>
 
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input name="created_at" id="created_at" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Password" aria-describedby="basic-addon2" value="<?= $jabatan[0]->CREATED_AT ?>" hidden>
+                                        </div>
+                                        <?= form_error('created_at', '<small class="text-danger pl-2">', '</small>'); ?>
+                                    </div>
+                                </div>
+
                                 <button type="submit" href="<?= site_url('admin/JabatanController') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>

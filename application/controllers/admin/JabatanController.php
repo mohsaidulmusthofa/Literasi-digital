@@ -27,8 +27,8 @@ class JabatanController extends CI_Controller
 			$dataPost = array(
 				'ID_JABATAN'	=> '',
 				'JABATAN'		=> $this->input->post('jabatan'),
-				'CREATED_AT'	=> date('Y-m-d h-m-s'),
-				'UPDATED_AT'	=> date('Y-m-d h-m-s')
+				'CREATED_AT'	=> date('Y-m-d H:i:s'),
+				'UPDATED_AT'	=> date('Y-m-d H:i:s')
 			);
 			if ($this->JabatanModel->create($dataPost)) {
 				$this->session->set_flashdata(
@@ -101,7 +101,7 @@ class JabatanController extends CI_Controller
 					'ID_JABATAN'		=> $this->input->post('id'),
 					'JABATAN'			=> $this->input->post('jabatan'),
 					'CREATED_AT'		=> $this->input->post('created_at'),
-					'UPDATED_AT'		=> date('Y-m-d h-m-s')
+					'UPDATED_AT'		=> date('Y-m-d H:i:s')
 				), $id);
 				if ($update) {
 					$this->session->set_flashdata(

@@ -54,8 +54,8 @@ class PerusahaanController extends CI_Controller {
 					'FOTO'				=> trim($foto),
 					'FB'				=> $this->input->post('fb'),
 					'IG'				=> $this->input->post('ig'),
-					'CREATED_AT'		=> date('Y-m-d h-m-s'),
-					'UPDATED_AT'		=> date('Y-m-d h-m-s')
+					'CREATED_AT'		=> date('Y-m-d H:i:s'),
+					'UPDATED_AT'		=> date('Y-m-d H:i:s')
 				);
 				if ($this->PerusahaanModel->create($dataPost)) {
 					$this->session->set_flashdata(
@@ -155,7 +155,7 @@ class PerusahaanController extends CI_Controller {
 				'FB'				=> $this->input->post('fb'),
 				'IG'				=> $this->input->post('ig'),
 				'CREATED_AT'		=> $this->input->post('created_at'),
-				'UPDATED_AT'		=> date('Y-m-d h-m-s')
+				'UPDATED_AT'		=> date('Y-m-d H:i:s')
 			), $id);
 
 			if ($update) {
