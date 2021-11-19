@@ -9,6 +9,15 @@ class JabatanModel extends CI_Model
         $this->load->database();
     }
 
+    public function team()
+    {
+        $this->db->select('*');
+        $this->db->from('tb_team');
+        $this->db->join('tb_jabatan','tb_jabatan.ID_JABATAN = tb_team.ID_JABATAN');      
+        $query = $this->db->get()->result();
+        return $query;
+    }
+
     public function read()
     {
         return $this->db->get('tb_jabatan')->result();
