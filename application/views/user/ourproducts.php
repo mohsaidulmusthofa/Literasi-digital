@@ -16,7 +16,7 @@
             <div class="portfolio-item">
               <div class="shot-item">
                 <a href="<?= base_url('PagesController/product_details/' .$produks->ID_PRODUK)?>">
-                    <img src="<?= base_url('./assets/img/user/produk/' . $produks->FOTO)?>" alt="" style="height: 20rem;"/>  
+                    <img src="<?= base_url('./assets/img/user/produk/' . $produks->FOTO)?>" alt="<?= $produks->NAMA_PRODUK ?>" style="height: 20rem;"/>  
                     <div class="single-content">
                       <div class="fancy-table">
                         <div class="table-cell">

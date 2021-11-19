@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-5">
-            <img src="<?= base_url('./assets/img/user/profile/' .$perusahaan[0]->FOTO)?>" alt="Generic placeholder image"
+            <img src="<?= base_url('./assets/img/user/profile/' .$perusahaan[0]->FOTO)?>" alt="<?php $perusahaan[0]->FOTO ?>"
             style="width: 100%; height: 50vh; border-radius: 10%">
           </div>
           <div class="col-lg-6 mt-5 mt-lg-0">
