@@ -14,10 +14,10 @@ class CounterModel extends CI_Model
         return $this->db->get('tb_counter')->result();
     }
 
-    public function create($data = array())
-    {
-        return $this->db->insert('tb_counter', $data);
-    }
+    // public function create($data = array())
+    // {
+    //     return $this->db->insert('tb_counter', $data);
+    // }
 
     public function update($data, $id)
     {
@@ -31,7 +31,7 @@ class CounterModel extends CI_Model
         return $this->db->delete('tb_counter');
     }
 
-    public function detail($id)
+    public function getCounter($id)
     {
         $this->db->where('ID_COUNTER', $id);
         return $this->db->get("tb_counter")->result();
