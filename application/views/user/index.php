@@ -13,8 +13,8 @@
               <img src="<?= base_url('assets/img/user/slider/slide1.jpg')?>" style="width:100%; height:100%; opacity: 0.7" alt="">
               <div class="carousel-caption text-center">
                 <h3 class="wow fadeInDown" data-wow-delay="0.3s">Welcome to</h3>
-                <h2 class="wow bounceIn" data-wow-delay="0.6s">Nusantara Coco Indo</h2>
-                <h4 class="wow fadeInUp" data-wow-delay="0.9s">A Company of Coconut Derivate Product</h4>
+                <h2 class="wow bounceIn" data-wow-delay="0.6s"><?= $perusahaan[0]->NAMA_BISNIS ?></h2>
+                <h4 class="wow fadeInUp" data-wow-delay="0.9s"><?= $perusahaan[0]->SLOGAN ?></h4>
                 <a href="#" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="1.2s">View Our Product</a>
               </div>
             </div>
@@ -22,8 +22,8 @@
               <img src="<?= base_url('assets/img/user/slider/slide2.jpg')?>" style="width:100%;height:100%;opacity: 0.7" alt="">
               <div class="carousel-caption text-center">
                 <h3 class="wow fadeInDown" data-wow-delay="0.3s">Welcome to</h3>
-                <h2 class="wow bounceIn" data-wow-delay="0.6s">Nusantara Coco Indo</h2>
-                <h4 class="wow fadeInUp" data-wow-delay="0.9s">A Company of Coconut Derivate Product</h4>
+                <h2 class="wow bounceIn" data-wow-delay="0.6s"><?= $perusahaan[0]->NAMA_BISNIS ?></h2>
+                <h4 class="wow fadeInUp" data-wow-delay="0.9s"><?= $perusahaan[0]->SLOGAN ?></h4>
                 <a href="#" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="1.2s">View Our Product</a>
               </div>
             </div>
@@ -31,8 +31,8 @@
               <img src="<?= base_url('assets/img/user/slider/slide3.jpg')?>" style="width:100%;height:100%;opacity: 0.7" alt="">
               <div class="carousel-caption text-center">
                 <h3 class="wow fadeInDown" data-wow-delay="0.3s">Welcome to</h3>
-                <h2 class="wow bounceIn" data-wow-delay="0.6s">Nusantara Coco Indo</h2>
-                <h4 class="wow fadeInUp" data-wow-delay="0.9s">A Company of Coconut Derivate Product</h4>
+                <h2 class="wow bounceIn" data-wow-delay="0.6s"><?= $perusahaan[0]->NAMA_BISNIS ?></h2>
+                <h4 class="wow fadeInUp" data-wow-delay="0.9s"><?= $perusahaan[0]->SLOGAN ?></h4>
                 <a href="#" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="1.2s">View Our Product</a>
               </div>
             </div>
@@ -66,39 +66,18 @@
     <!-- Counter Section Start -->
     <div class="counters section bg-defult">
       <div class="container">
-        <div class="row"> 
-          <div class="col-sm-6 col-md-6 col-lg-3">
+        <div class="row">
+          <?php foreach ($counter as $counter) {?>
+            <div class="col-sm-6 col-md-6 col-lg-3">
             <div class="facts-item">   
               <div class="fact-count">
-                <h3><span class="counter">400</span></h3>
-                <h4>Tons Production Capacity</h4>
+                <h3><span class="counter"><?= $counter->JUMLAH ?></span></h3>
+                <h4><?= $counter->NAMA ?></h4>
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <div class="facts-item">   
-              <div class="fact-count">
-                <h3><span class="counter">500</span></h3>
-                <h4>Hectars Cultivated Land</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <div class="facts-item">  
-              <div class="fact-count">
-                <h3><span class="counter">3</span>+</h3>
-                <h4>Projects Running</h4>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-6 col-lg-3">
-            <div class="facts-item">  
-              <div class="fact-count">
-                <h3><span class="counter">5</span></h3>
-                <h4>Countries Collaberate</h4>
-              </div>
-            </div>
-          </div>
+          <?php }?>
+          
         </div>
       </div>
     </div>

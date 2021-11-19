@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2021 at 04:58 AM
+-- Generation Time: Nov 19, 2021 at 04:36 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.11
 
@@ -47,7 +47,7 @@ CREATE TABLE `tb_bisnis` (
 --
 
 INSERT INTO `tb_bisnis` (`ID_BISNIS`, `NAMA_BISNIS`, `SLOGAN`, `CONTACT_PERSON`, `IG`, `FB`, `EMAIL`, `ABOUT_US`, `ALAMAT`, `FOTO`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(1, 'Nusantara Coco Indo', 'Becoming Buyer Our Sibling', '+628820093516', 'NULL', 'NULL', 'info.ncocoindo@gmail.com', 'Nusantara Coco Indo is an Indonesian agricultural product export company. Established in 2021, Nusantara Coco Indo is committed to improving the quality, quantity, and continuity of Indonesia\'s superior products.', 'Ambulu - Jember.', 'profile.jpg', '2021-11-18 03:17:58', '2021-11-12 02:11:28');
+(1, 'Nusantara Coco Indo', 'A Company of Coconut Derivate Product', '+628820093516', '', '', 'info.ncocoindo@gmail.com', 'Nusantara Coco Indo is an Indonesian agricultural product export company. Established in 2021, Nusantara Coco Indo is committed to improving the quality, quantity, and continuity of Indonesia\'s superior products.', 'Kecamatan Ambulu, Kabupaten Jember, Jawa Timur', 'profile.jpg', '2021-11-19 13:03:29', '2021-11-12 02:11:28');
 
 -- --------------------------------------------------------
 
@@ -162,6 +162,33 @@ INSERT INTO `tb_produk` (`ID_PRODUK`, `NAMA_PRODUK`, `FOTO`, `RINCIAN`, `DESKRIP
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tb_team`
+--
+
+CREATE TABLE `tb_team` (
+  `ID_MEMBER` int(11) NOT NULL,
+  `ID_JABATAN` int(2) NOT NULL,
+  `NAMA_MEMBER` varchar(100) NOT NULL,
+  `FOTO` varchar(100) NOT NULL,
+  `MOTTO` varchar(200) NOT NULL,
+  `FACEBOOK` varchar(200) NOT NULL COMMENT 'Masukkan username http://www.facebook.com/USERNAME',
+  `IG` varchar(200) NOT NULL COMMENT 'Masukkan username https://www.instagram.com/USERNAME',
+  `LINKEDIN` varchar(200) NOT NULL COMMENT 'HARUS LINK',
+  `EMAIL` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_team`
+--
+
+INSERT INTO `tb_team` (`ID_MEMBER`, `ID_JABATAN`, `NAMA_MEMBER`, `FOTO`, `MOTTO`, `FACEBOOK`, `IG`, `LINKEDIN`, `EMAIL`) VALUES
+(1, 5, 'Rachman Kavin', 'Kavin1.jpg', 'Whatever you are, be a good one', '', 'Rachmankavin', '', ''),
+(2, 6, 'M. Ulul Fauzi, S.Pd.', 'Ulul1.jpg', 'World is a while, but afterlife is forever', '', '', '', 'tulityosih@gmail.com'),
+(3, 7, 'Lutfin Nurbuat', 'Nurbuat.jpg', '', '', '', '', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tb_user`
 --
 
@@ -231,6 +258,12 @@ ALTER TABLE `tb_produk`
   ADD PRIMARY KEY (`ID_PRODUK`);
 
 --
+-- Indexes for table `tb_team`
+--
+ALTER TABLE `tb_team`
+  ADD PRIMARY KEY (`ID_MEMBER`);
+
+--
 -- Indexes for table `tb_user`
 --
 ALTER TABLE `tb_user`
@@ -275,6 +308,12 @@ ALTER TABLE `tb_pesan`
 --
 ALTER TABLE `tb_produk`
   MODIFY `ID_PRODUK` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `tb_team`
+--
+ALTER TABLE `tb_team`
+  MODIFY `ID_MEMBER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_user`

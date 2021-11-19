@@ -3,7 +3,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-5">
-            <img src="<?= base_url('assets/img/user/sistem/profile.jpg')?>" alt="Generic placeholder image"
+            <img src="<?= base_url('./assets/img/user/profile/' .$perusahaan[0]->FOTO)?>" alt="Generic placeholder image"
             style="width: 100%; height: 50vh; border-radius: 10%">
           </div>
           <div class="col-lg-6 mt-5 mt-lg-0">
@@ -12,8 +12,8 @@
                 Who we are
               </h2>
               <p class="section-subtitle" style="font-size: 1rem">
-                Nusantara Coco Indo is an Indonesian agricultural product export company. Established in 2021, Nusantara Coco Indo is committed
-              to improving the quality, quantity, and continuity of Indonesia's superior products.</p>
+                <?= $perusahaan[0]->ABOUT_US ?>
+              </p>
             </div>
           </div>
         </div>
@@ -33,7 +33,7 @@
                 </b>
               </p>
               <h2 class="section-title" style="color: #c79c72;">
-              A Company of coconut derivate product
+              <?= $perusahaan[0]->SLOGAN ?>
             </h2>
               <p class="section-subtitle">
                 We believe that Indonesia is able to compete at the international level in the field of exports, Indonesian farmers have

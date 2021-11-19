@@ -50,26 +50,31 @@
                   <div class="contact-info">
                     <i class="lni-map"></i>
                     <h5>Location</h5>
-                    <p>Kecamatan Ambulu, Kabupaten Jember, Jawa Timur</p>
+                    <p><?= $perusahaan[0]->ALAMAT ?></p>
                   </div>
                   <!-- Content Info -->
                   <div class="contact-info">
                     <i class="lni-envelope"></i>
                     <h5>E-mail</h5>
-                    <p>info.ncocoindo@gmail.com</p>
+                    <p><?= $perusahaan[0]->EMAIL ?></p>
                   </div>
                   <!-- Content Info -->
                   <div class="contact-info">
                     <i class="lni-phone"></i>
                     <h5>Phone</h5>
-                    <p>+6288 2009 351 634</p>
+                    <p><?= $perusahaan[0]->CONTACT_PERSON ?></p>
                   </div>
                   <!-- Icon -->
                   <ul class="footer-social">
-                    <li><a class="facebook" href="#"><i class="lni-facebook-filled"></i></a></li>
-                    <li><a class="twitter" href="#"><i class="lni-twitter-filled"></i></a></li>
-                    <li><a class="linkedin" href="#"><i class="lni-linkedin-fill"></i></a></li>
-                    <li><a class="google-plus" href="#"><i class="lni-google-plus"></i></a></li>
+                    <?php if ($perusahaan[0]->IG != NULL) {
+                      echo '<li><a class="twitter" href="https://www.instagram.com/'.$perusahaan[0]->IG.'"><i class="lni-instagram-filled"></i></a></li>';
+                    }?>
+                    <?php if ($perusahaan[0]->FB != NULL) {
+                      echo '<li><a class="facebook" href="http://www.facebook.com/'.$perusahaan[0]->FB.'"><i class="lni-facebook-filled"></i></a></li>';
+                    }?>
+                    <?php if ($perusahaan[0]->EMAIL != NULL) {
+                      echo '<li><a class="google-plus" href="mailto:'.$perusahaan[0]->EMAIL.'"><i class="lni-envelope"></i></a></li>';
+                    }?>
                   </ul>
                 </div>
               </div>
