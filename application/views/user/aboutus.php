@@ -45,7 +45,7 @@
         <div class="row">
           <div class="col-lg-4" style="margin-top: 4rem;">
             <div style="padding: 0rem 4rem; margin-bottom:2rem">
-              <img src="<?= base_url('assets/img/user/sdgs/SDGS8.jpg')?>" alt=""<img src="<?= base_url('assets/img/user/icon/relations.png')?>" alt=""
+              <img src="<?= base_url('assets/img/user/sdgs/SDGS8.jpg')?>" alt="SDGs8"
               style="width: 100%;">
             </div>
             <p style="font-weight: 600; text-align:center; font-size: 1rem">
@@ -54,7 +54,7 @@
           </div>
           <div class="col-lg-4" style="margin-top: 4rem;">
             <div style="padding: 0rem 4rem; margin-bottom:2rem">
-              <img src="<?= base_url('assets/img/user/sdgs/SDGS12.jpg')?>" alt=""<img src="<?= base_url('assets/img/user/icon/relations.png')?>" alt=""
+              <img src="<?= base_url('assets/img/user/sdgs/SDGS12.jpg')?>" alt="SDGs12"
               style="width: 100%;">
             </div>
             <p style="font-weight: 600; text-align:center; font-size: 1rem">
@@ -63,7 +63,7 @@
           </div>
           <div class="col-lg-4" style="margin-top: 4rem;">
             <div style="padding: 0rem 4rem; margin-bottom:2rem">
-              <img src="<?= base_url('assets/img/user/sdgs/SDGS15.jpg')?>" alt=""<img src="<?= base_url('assets/img/user/icon/relations.png')?>" alt=""
+              <img src="<?= base_url('assets/img/user/sdgs/SDGS15.jpg')?>" alt="SDGs15"
               style="width: 100%;">
             </div>
             <p style="font-weight: 600; text-align:center; font-size: 1rem">

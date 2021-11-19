@@ -23,12 +23,6 @@
                       </div> 
                     </div>
                     <div class="col-md-12">
-                      <div class="form-group">
-                        <input type="text" placeholder="Subject" id="msg_subject" class="form-control" required data-error="Please enter your subject">
-                        <div class="help-block with-errors"></div>
-                      </div>
-                    </div>
-                    <div class="col-md-12">
                       <div class="form-group"> 
                         <textarea class="form-control" id="message" placeholder="Your Message" rows="7" data-error="Write your message" required></textarea>
                         <div class="help-block with-errors"></div>

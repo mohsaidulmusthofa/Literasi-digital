@@ -15,7 +15,7 @@
                 <h3 class="wow fadeInDown" data-wow-delay="0.3s">Welcome to</h3>
                 <h2 class="wow bounceIn" data-wow-delay="0.6s"><?= $perusahaan[0]->NAMA_BISNIS ?></h2>
                 <h4 class="wow fadeInUp" data-wow-delay="0.9s"><?= $perusahaan[0]->SLOGAN ?></h4>
-                <a href="#" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="1.2s">View Our Product</a>
+                <a href="#portfolios" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="1.2s">View Our Product</a>
               </div>
             </div>
             <div class="carousel-item" style="height: 100vh;">
@@ -24,7 +24,7 @@
                 <h3 class="wow fadeInDown" data-wow-delay="0.3s">Welcome to</h3>
                 <h2 class="wow bounceIn" data-wow-delay="0.6s"><?= $perusahaan[0]->NAMA_BISNIS ?></h2>
                 <h4 class="wow fadeInUp" data-wow-delay="0.9s"><?= $perusahaan[0]->SLOGAN ?></h4>
-                <a href="#" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="1.2s">View Our Product</a>
+                <a href="#portfolios" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="1.2s">View Our Product</a>
               </div>
             </div>
             <div class="carousel-item" style="height: 100vh;">
@@ -33,7 +33,7 @@
                 <h3 class="wow fadeInDown" data-wow-delay="0.3s">Welcome to</h3>
                 <h2 class="wow bounceIn" data-wow-delay="0.6s"><?= $perusahaan[0]->NAMA_BISNIS ?></h2>
                 <h4 class="wow fadeInUp" data-wow-delay="0.9s"><?= $perusahaan[0]->SLOGAN ?></h4>
-                <a href="#" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="1.2s">View Our Product</a>
+                <a href="#portfolios" class="btn btn-lg btn-common btn-effect wow fadeInUp" data-wow-delay="1.2s">View Our Product</a>
               </div>
             </div>
           </div>
