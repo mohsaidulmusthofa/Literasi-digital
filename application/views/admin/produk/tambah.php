@@ -30,20 +30,27 @@
                                     <div class="col-sm-6">
                                         <p>Nama Produk</p>
                                         <div class="input-group">
-                                            <input name="nama_produk" id="nama_produk" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan nama perusahaan ..." aria-describedby="basic-addon2" value="<?= set_value('nama_produk'); ?>">
+                                            <input name="nama_produk" id="nama_produk" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Nama Produk  ..." aria-describedby="basic-addon2" value="<?= set_value('nama_produk'); ?>">
                                         </div>
                                         <?= form_error('nama_produk', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
                                         <p>Deskripsi Produk</p>
                                         <div class="input-group">
-                                            <textarea name="deskripsi" id="deskripsi" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan deskripsi singkat perusahaan ..." aria-describedby="basic-addon2"><?= set_value('deskripsi'); ?></textarea>
+                                            <textarea name="deskripsi" id="deskripsi" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan deskripsi singkat Produk ..." aria-describedby="basic-addon2"><?= set_value('deskripsi'); ?></textarea>
                                         </div>
                                         <?= form_error('deskripsi', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                 </div>
 
                                 <div class="row">
+                                    <div class="col-sm-6">
+                                        <p>Rincian Produk</p>
+                                        <div class="input-group">
+                                            <textarea name="rincian_produk" id="rincian_produk" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Rincian Produk ..." aria-describedby="basic-addon2"><?= set_value('rincian_produk');?></textarea>
+                                        </div>
+                                        <?= form_error('rincian_produk', '<small class="text-danger pl-2">', '</small>'); ?>
+                                    </div>
                                     <div class="col-sm-6">
                                         <p>Upload Foto Produk</p>
                                         <div class="input-group">
@@ -54,12 +61,12 @@
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="input-group">
-                                            <img id="preview" src="" alt="" width="320px" /> <br>
+                                            <input type="hidden" name="blank" id="blank" class="form-control border-dark small mb-3" placeholder="blank" aria-describedby="basic-addon2">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="input-group">
-                                            <input type="hidden" name="blank" id="blank" class="form-control border-dark small mb-3" placeholder="blank" aria-describedby="basic-addon2">
+                                            <img id="preview" src="" alt="" width="320px" /> <br>
                                         </div>
                                     </div>
                                 </div>

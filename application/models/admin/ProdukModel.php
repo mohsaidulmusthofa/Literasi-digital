@@ -17,22 +17,23 @@ class ProdukModel extends CI_Model{
         return $this->db->insert('tb_produk', $data);
     }
 
-    public function delete($id)
-    {
-        $this->db->where('ID_PRODUK', $id);
-        return $this->db->delete('tb_produk');
-    }
-
     public function update($data, $id)
     {
         $this->db->where('ID_PRODUK', $id);
         return $this->db->update('tb_produk', $data);
     }
 
-    public function detail($id)
+    public function delete($id)
     {
         $this->db->where('ID_PRODUK', $id);
-        return $this->db->get("tb_produk")->result();
+        return $this->db->delete('tb_produk');
+    }
+
+    public function getProduk($id)
+    {
+        $this->db->where('ID_PRODUK', $id);
+        $sql = $this->db->get("tb_produk")->result();
+        return $sql;
     }
 }
 

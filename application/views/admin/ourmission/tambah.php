@@ -20,76 +20,47 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Edit Data Produk</h1>
+                    <h1 class="h3 mb-3 text-gray-800">Tambah Data Our Mission</h1>
 
                     <!-- DataTales Example -->
-                    <form method="post" action="<?= site_url('admin/ProdukController/update/' . $produk[0]->ID_PRODUK) ?>" enctype="multipart/form-data">
+                    <form method="post" action="" enctype="multipart/form-data">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <p>Nama Produk</p>
-                                        <input name="id" id="id" type="text" value="<?= $produk[0]->ID_PRODUK ?>" hidden>
+                                        <p>Deskripsi Our Mission</p>
                                         <div class="input-group">
-                                            <input name="nama_produk" id="nama_produk" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Nama Produk ..." aria-describedby="basic-addon2" value="<?= $produk[0]->NAMA_PRODUK ?>">
+                                            <textarea name="description" id="description" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan description singkat Our Mission ..." aria-describedby="basic-addon2"><?= set_value('description'); ?></textarea>
                                         </div>
-                                        <?= form_error('nama_produk', '<small class="text-danger pl-2">', '</small>'); ?>
+                                        <?= form_error('description', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
-                                        <p>Upload Foto Produk</p>
+                                        <p>Upload Foto Our Mission</p>
                                         <div class="input-group">
-                                            <input name="foto" id="foto" type="file" accept="image/*" onchange="tampilkanPreview(this,'preview')" class="form-control border-dark small mb-3" placeholder="" aria-describedby="basic-addon2">
+                                            <input name="foto" id="foto" type="file" accept="image/*" onchange="tampilkanPreview(this,'preview')" class="form-control border-dark small mb-3" placeholder="" aria-describedby="basic-addon2" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <input type="hidden" name="blank" id="blank" class="form-control border-dark small mb-3" placeholder="blank" aria-describedby="basic-addon2">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="input-group">
+                                            <img id="preview" src="" alt="" width="320px" /> <br>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <p>Foto Lama</p>
-                                                <div class="input-group">
-                                                    <img src="<?= base_url('./uploads/produk/'). $produk[0]->FOTO ?>" alt="img" width="250px">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-6">
-                                                <p>Foto Baru</p>
-                                                <div class="input-group">
-                                                    <img id="preview" src="" alt="" width="250px" /> <br>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> <br>
-
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <p>Deskripsi Produk</p>
-                                        <div class="input-group">
-                                            <textarea style="height: 200px;" name="deskripsi" id="deskripsi" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Deskripsi Produk ..." aria-describedby="basic-addon2"><?= $produk[0]->DESKRIPSI ?></textarea>
-                                        </div>
-                                        <?= form_error('deskripsi', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <p>Rincian Produk</p>
-                                        <div class="input-group">
-                                            <textarea style="height: 200px;" name="rincian_produk" id="rincian_produk" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Rincian Produk ..." aria-describedby="basic-addon2"><?= $produk[0]->RINCIAN ?></textarea>
-                                        </div>
-                                        <?= form_error('rincian_produk', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
-                                </div>
-                                
-
-                                <button type="submit" href="<?= site_url('admin/ProdukController') ?>" class="btn btn-success btn-icon-split ml-2" style="float: right;">
+                                <button type="submit" href="<?= site_url('admin/OurMissionController') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
-                                        <i class="fa fa-save"></i>
+                                        <i class="fas fa-plus"></i>
                                     </span>
-                                    <span class="text">Simpan Data</span>
+                                    <span class="text">Tambah Data</span>
                                 </button>
-                                <a href="<?= site_url('admin/ProdukController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
+                                <a href="<?= site_url('admin/OurMissionController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-reply"></i>
                                     </span>

@@ -58,7 +58,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?= base_url("admin/OurMissionController")?>">
             <i class="fas fa-fw fa-chart-line"></i>
             <span>Our Mission</span>
         </a>

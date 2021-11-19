@@ -20,23 +20,23 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Edit Data Produk</h1>
+                    <h1 class="h3 mb-3 text-gray-800">Edit Data Our Mission</h1>
 
                     <!-- DataTales Example -->
-                    <form method="post" action="<?= site_url('admin/ProdukController/update/' . $produk[0]->ID_PRODUK) ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?= site_url('admin/OurMissionController/update/' . $mission[0]->ID_OURMISSION) ?>" enctype="multipart/form-data">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <p>Nama Produk</p>
-                                        <input name="id" id="id" type="text" value="<?= $produk[0]->ID_PRODUK ?>" hidden>
+                                        <p>Deskripsi</p>
+                                        <input name="id" id="id" type="text" value="<?= $mission[0]->ID_OURMISSION ?>" hidden>
                                         <div class="input-group">
-                                            <input name="nama_produk" id="nama_produk" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Nama Produk ..." aria-describedby="basic-addon2" value="<?= $produk[0]->NAMA_PRODUK ?>">
+                                            <input name="description" id="description" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Deksripsi Our Mission ..." aria-describedby="basic-addon2" value="<?= $mission[0]->DESCRIPTION ?>">
                                         </div>
-                                        <?= form_error('nama_produk', '<small class="text-danger pl-2">', '</small>'); ?>
+                                        <?= form_error('description', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
-                                        <p>Upload Foto Produk</p>
+                                        <p>Upload Foto Our Mission</p>
                                         <div class="input-group">
                                             <input name="foto" id="foto" type="file" accept="image/*" onchange="tampilkanPreview(this,'preview')" class="form-control border-dark small mb-3" placeholder="" aria-describedby="basic-addon2">
                                         </div>
@@ -52,7 +52,7 @@
                                             <div class="col-6">
                                                 <p>Foto Lama</p>
                                                 <div class="input-group">
-                                                    <img src="<?= base_url('./uploads/produk/'). $produk[0]->FOTO ?>" alt="img" width="250px">
+                                                    <img src="<?= site_url('./uploads/ourmission/'). $mission[0]->FOTO ?>" alt="img" width="250px">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
@@ -65,31 +65,13 @@
                                     </div>
                                 </div> <br>
 
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <p>Deskripsi Produk</p>
-                                        <div class="input-group">
-                                            <textarea style="height: 200px;" name="deskripsi" id="deskripsi" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Deskripsi Produk ..." aria-describedby="basic-addon2"><?= $produk[0]->DESKRIPSI ?></textarea>
-                                        </div>
-                                        <?= form_error('deskripsi', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <p>Rincian Produk</p>
-                                        <div class="input-group">
-                                            <textarea style="height: 200px;" name="rincian_produk" id="rincian_produk" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Rincian Produk ..." aria-describedby="basic-addon2"><?= $produk[0]->RINCIAN ?></textarea>
-                                        </div>
-                                        <?= form_error('rincian_produk', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
-                                </div>
-                                
-
-                                <button type="submit" href="<?= site_url('admin/ProdukController') ?>" class="btn btn-success btn-icon-split ml-2" style="float: right;">
+                                <button type="submit" href="<?= site_url('admin/OurMissionController') ?>" class="btn btn-success btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fa fa-save"></i>
                                     </span>
                                     <span class="text">Simpan Data</span>
                                 </button>
-                                <a href="<?= site_url('admin/ProdukController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
+                                <a href="<?= site_url('admin/OurMissionController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-reply"></i>
                                     </span>

@@ -32,7 +32,6 @@
                                         <input name="id" id="id" type="text" value="<?= $bisnis[0]->ID_BISNIS ?>" hidden>
                                         <div class="input-group">
                                             <input name="nama_bisnis" id="nama_bisnis" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan nama perusahaan ..." aria-describedby="basic-addon2" value="<?= $bisnis[0]->NAMA_BISNIS ?>">
-                                            
                                         </div>
                                         <?= form_error('nama_bisnis', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
