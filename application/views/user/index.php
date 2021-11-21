@@ -90,13 +90,15 @@
     <!-- Contact Section Start -->
     <?php $this->load->view('user/getintouch'); ?>
     <!-- Contact Section End -->
+
+    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3947.6485211066515!2d113.5076363!3d-8.3376776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zOMKwMjAnMTUuOCJTIDExM8KwMzAnMzUuNSJF!5e0!3m2!1sid!2sid!4v1637509965288!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe> -->
     
     <!-- Map Section Start -->
     <section id="google-map-area">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 padding-0">
-            <object style="border:0; height: 450px; width: 100%;" data="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126311.62153815525!2d113.53644691645762!3d-8.378217828829372!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd69c09f07bf8c5%3A0x83617b11fef89bc5!2sAmbulu%2C%20Kabupaten%20Jember%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1636872418418!5m2!1sid!2sid">
+            <object style="border:0; height: 450px; width: 100%;" data="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3947.6485211066515!2d113.5076363!3d-8.3376776!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0!2zOMKwMjAnMTUuOCJTIDExM8KwMzAnMzUuNSJF!5e0!3m2!1sid!2sid!4v1637509965288!5m2!1sid!2sid">
             </object>
           </div>
         </div>
