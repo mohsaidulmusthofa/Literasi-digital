@@ -21,7 +21,7 @@ class User extends CI_Controller
 	public function create()
 	{
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim|max_length[100]');
-		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[tb_user.EMAIL]');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[tb_team.EMAIL]');
 		$this->form_validation->set_rules('motto', 'Motto', 'required|trim');
 		$this->form_validation->set_rules('foto', 'Foto Profile', 'trim');
 		$this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
