@@ -14,6 +14,7 @@ class Pages extends CI_Controller
 		$this->load->model('admin/TeamsModel');
 		$this->load->model('admin/JabatanModel');
 		$this->load->model('admin/PesanModel');
+		$this->load->model('admin/OurMissionModel');
 	}
 
 	public function index()
@@ -24,13 +25,14 @@ class Pages extends CI_Controller
 		$data['counter'] = $this->CounterModel->read();
 		$data['teams'] = $this->TeamsModel->read();
 		$data['jabatan'] = $this->JabatanModel->team();
+		$data['ourmission'] = $this->OurMissionModel->read();
 		$this->load->view('user/index', $data);
 		// var_dump($data);
 	}
 
 	public function product_details($id)
 	{
-		$data['detailproduk'] = $this->ProdukModel->detail($id);
+		$data['detailproduk'] = $this->ProdukModel->getProduk($id);
 		$this->load->view('user/detailproduk', $data);
 		// var_dump($data);
 	}

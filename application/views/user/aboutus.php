@@ -5,33 +5,20 @@
           <p class="section-subtitle"></p>
         </div>
         <div class="row">
-          <div class="col-lg-4" style="margin-top: 4rem;">
+          <?php 
+          foreach ($ourmission as $ourmission) {
+          ?>
+            <div class="col-lg-4" style="margin-top: 4rem;">
             <div style="padding: 0rem 8.5rem; margin-bottom:2rem">
-              <img src="<?= base_url('assets/img/user/about_us/relations.png')?>" alt=""
+              <img src="<?= base_url('uploads/ourmission/'.$ourmission->FOTO)?>" alt=""
               style="width: 100%;">
             </div>
             <p style="font-weight: 600; text-align:center; font-size: 1rem">
-              Creating an integrated export ecosystem between stakeholders
+              <?= $ourmission->DESCRIPTION ?>
             </p>
           </div>
-          <div class="col-lg-4" style="margin-top: 4rem;">
-            <div style="padding: 0rem 8.5rem; margin-bottom:2rem">
-              <img src="<?= base_url('assets/img/user/about_us/fist.png')?>" alt=""
-              style="width: 100%;">
-            </div>
-            <p style="font-weight: 600; text-align:center; font-size: 1rem">
-              Empowering domestic production Improve quality, quantity, and continuity through collaboration between stakeholders
-            </p>
-          </div>
-          <div class="col-lg-4" style="margin-top: 4rem;">
-            <div style="padding: 0rem 8.5rem; margin-bottom:2rem">
-              <img src="<?= base_url('assets/img/user/about_us/growth.png')?>" alt=""
-              style="width: 100%;">
-            </div>
-            <p style="font-weight: 600; text-align:center; font-size: 1rem">
-              Increase employment and inclusive economic growth
-            </p>
-          </div>
+          <?php } ?>
+
         </div>
       </div>
     </section>
