@@ -30,7 +30,25 @@
 <!-- Page level custom scripts -->
 <script src="<?= base_url('') ?>assets/js/demo/chart-area-demo.js"></script>
 <script src="<?= base_url('') ?>assets/js/demo/chart-pie-demo.js"></script>
-<script src="<?= base_url('assets/js/summernote.min.js') ?>"></script>
+<script src="<?= base_url('') ?>assets/plugin/summernote/summernote-bs4.min.js"></script>
+
+<!-- Form Tambah Produk, Deskripsi Produk -->
+<script>
+    $(document).ready(function(){
+        $('#deskripsi').summernote({
+            height: '200px'
+        })
+    })
+</script>
+
+<!-- Form Tambah Produk, Rincian Produk -->
+<script>
+    $(document).ready(function(){
+        $('#rincian_produk').summernote({
+            height: '200px'
+        })
+    })
+</script>
 
 </body>
 

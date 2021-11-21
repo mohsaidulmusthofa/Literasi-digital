@@ -14,7 +14,7 @@
     <!-- Custom styles for this template-->
     <link href="<?= base_url('') ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?= base_url('assets/img/ic-coco.png') ?>" rel="icon">
-    <link rel="stylesheet" href="<?= base_url('assets/css/summernote.min.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/plugin/summernote/summernote-bs4.min.css') ?>">
     
     <!-- Custom styles for this page -->
     <link href="<?= base_url('') ?>assets/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">

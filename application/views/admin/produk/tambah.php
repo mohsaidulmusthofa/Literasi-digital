@@ -41,7 +41,7 @@
                                         </div>
                                         <?= form_error('deskripsi', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
-                                </div>
+                                </div><br>
 
                                 <div class="row">
                                     <div class="col-sm-6">
@@ -55,6 +55,23 @@
                                         <p>Upload Foto Produk</p>
                                         <div class="input-group">
                                             <input name="foto" id="foto" type="file" accept="image/*" onchange="tampilkanPreview(this,'preview')" class="form-control border-dark small mb-3" placeholder="" aria-describedby="basic-addon2" required>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="input-group">
+                                                    <input type="hidden" name="blank" id="blank" class="form-control border-dark small mb-3" placeholder="blank" aria-describedby="basic-addon2">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <div class="input-group">
+                                                    <img id="preview" src="" alt="" width="320px" /> <br>
+                                                </div>                  
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="input-group">
+                                                    <img id="preview" src="" alt="" width="320px" /> <br>
+                                                </div>                  
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -122,9 +139,7 @@
                         }
                     }
                 }
-                $('.rincian_produk').summernote()
             </script>
-
 
             <!-- Footer -->
             <?php $this->load->view('admin/partials/footer'); ?>
