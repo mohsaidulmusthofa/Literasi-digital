@@ -4,9 +4,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="keywords" content="Coco, Kelapa, startup, cocopot, cocopeat, Nusantara, Nusantara Coco Indo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="author" content="Grayrids">
+    <meta name="author" content="Nusantara Coco Indo">
+    <meta name="description" content="Nusantara Coco Indo is Company of Coconut Derivate Product. visit our website to see all our products">
     <title>Nusantara Coco Indo</title>
     <link href="<?= base_url('assets/img/coco-ic.png') ?>" rel="icon">
 
