@@ -143,7 +143,7 @@ class User extends CI_Controller
 			$data["bagian"]	 = $this->UserModel->detail($id);
 			$data["row"]	 = $this->UserModel->getJab($id);
 			$data["data"]	 = $this->UserModel->getDetail($id);
-			$data['user']	 = $this->db->get_where('tb_user', ['EMAIL' => $this->session->userdata('EMAIL')])->row_array();
+			// $data['user']	 = $this->db->get_where('tb_user', ['EMAIL' => $this->session->userdata('EMAIL')])->row_array();
 			$this->load->view('admin/user/edit', $data);
 		} else {
 			$update = $this->UserModel->update(array(
