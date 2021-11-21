@@ -19,6 +19,11 @@ class PesanModel extends CI_Model{
         $this->db->where('ID_PESAN', $id);
         return $this->db->delete('tb_pesan');
     }
+
+    public function create($data = array())
+    {
+        return $this->db->insert('tb_pesan', $data);
+    }
 }
 
 ?>

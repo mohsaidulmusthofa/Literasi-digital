@@ -25,7 +25,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-body">
-                            <!-- <?php echo $this->session->userdata('pesan'); ?> -->
+                            <?php echo $this->session->userdata('pesan'); ?>
                             <div class="table-responsive">
 
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -34,7 +34,7 @@
                                             <th style="width: 10px;">No</th>
                                             <th style="text-align: center;">Nama Pengirim</th>
                                             <th style="text-align: center;">Email Pengirim</th>
-                                            <th style="text-align: center;">Subject</th>
+                                            <th style="text-align: center;">No Telepon</th>
                                             <th style="text-align: center;">Pesan</th>
                                             <th style="width: 96px; text-align: center;">Aksi</th>
                                         </tr>
@@ -46,7 +46,7 @@
                                                 <td style="text-align: center;"><?= $no ?></td>
                                                 <td><?= $row->NAMA_PENGIRIM ?></td>
                                                 <td style="text-align: center;"><?= $row->EMAIL_PENGIRIM ?></td>
-                                                <td style="text-align: center;"><?= $row->SUBJECT ?></td>
+                                                <td style="text-align: center;"><?= $row->TELEPHONE ?></td>
                                                 <td style="text-align: center;"><?= $row->PESAN ?></td>
                                                 <td style="text-align: center;">
                                                     <a href="<?= site_url('admin/Pesan/delete/' . $row->ID_PESAN) ?>" onclick="confirm_modal('<?= '/Produk/delete/' . $row->ID_PESAN ?>')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal" data-target="#hapusModal">

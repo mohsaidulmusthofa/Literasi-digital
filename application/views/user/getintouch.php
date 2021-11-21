@@ -8,27 +8,37 @@
           <div class="row">          
             <div class="col-lg-9 col-md-9 col-xs-12">
               <div class="contact-block">
-                <form id="contactForm">
+                <form  method="POST" action="<?= site_url('admin/Pesan/create/') ?>" enctype="multipart/form-data" >
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name" value="<?= set_value('name'); ?>">
                         <div class="help-block with-errors"></div>
+                        <?= form_error('name', '<small class="text-danger pl-2">', '</small>'); ?>
                       </div>                                 
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="name" required data-error="Please enter your email">
+                        <input type="text" placeholder="Your No Phone" id="telepon" name="telepon" class="form-control" required data-error="Please enter your No Phone" value="<?= set_value('telepon'); ?>">
                         <div class="help-block with-errors"></div>
+                        <?= form_error('telepon', '<small class="text-danger pl-2">', '</small>'); ?>
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Please enter your email" value="<?= set_value('email'); ?>">
+                        <div class="help-block with-errors"></div>
+                        <?= form_error('email', '<small class="text-danger pl-2">', '</small>'); ?>
                       </div> 
                     </div>
                     <div class="col-md-12">
                       <div class="form-group"> 
-                        <textarea class="form-control" id="message" placeholder="Your Message" rows="7" data-error="Write your message" required></textarea>
+                        <textarea class="form-control" id="message" name="message" placeholder="Your Message" rows="7" data-error="Write your message" value="<?= set_value('message'); ?>" required></textarea>
                         <div class="help-block with-errors"></div>
+                        <?= form_error('message', '<small class="text-danger pl-2">', '</small>'); ?>
                       </div>
                       <div class="submit-button">
-                        <button class="btn btn-common btn-effect" id="submit" type="submit">Send Message</button>
+                        <button class="btn btn-common btn-effect" href="<?= site_url("admin/Pesan")?>" id="submit" type="submit">Send Message</button>
                         <div id="msgSubmit" class="h3 hidden"></div> 
                         <div class="clearfix"></div> 
                       </div>
