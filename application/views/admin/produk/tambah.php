@@ -47,7 +47,7 @@
                                     <div class="col-sm-6">
                                         <p>Rincian Produk</p>
                                         <div class="input-group">
-                                            <textarea name="rincian_produk" id="rincian_produk" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Rincian Produk ..." aria-describedby="basic-addon2"><?= set_value('rincian_produk');?></textarea>
+                                            <textarea name="rincian_produk" id="rincian_produk" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Rincian Produk ..." aria-describedby="basic-addon2"><?= set_value('rincian_produk'); ?></textarea>
                                         </div>
                                         <?= form_error('rincian_produk', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
@@ -71,13 +71,13 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" href="<?= site_url('admin/ProdukController') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
+                                <button type="submit" href="<?= site_url('admin/Produk') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>
                                     </span>
                                     <span class="text">Tambah Data</span>
                                 </button>
-                                <a href="<?= site_url('admin/ProdukController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
+                                <a href="<?= site_url('admin/Produk') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-reply"></i>
                                     </span>

@@ -1,51 +1,64 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class ProdukController extends CI_Controller {
 
-    public function __construct() {
-        parent::__construct();
-		$this->load->model('admin/ProdukModel');
-		cek_session();
-    }
+class Perusahaan extends CI_Controller
+{
 
-    public function index()
+	public function __construct()
 	{
-		$data['produk'] = $this->ProdukModel->read();
-		$this->load->view('admin/produk/produk', $data);
+		parent::__construct();
+		$this->load->model('admin/PerusahaanModel');
+		cek_session();
+	}
+
+	public function index()
+	{
+		$data['bisnis'] = $this->PerusahaanModel->read();
+		$this->load->view('admin/perusahaan/perusahaan', $data);
 	}
 
 	public function create()
 	{
-		$this->form_validation->set_rules('nama_produk', 'Nama Produk', 'required|trim|max_length[100]');
-		$this->form_validation->set_rules('rincian_produk', 'Rincian Produk', 'required|trim');
-		$this->form_validation->set_rules('deskripsi', 'Deskripsi Produk', 'required|trim');
-		$this->form_validation->set_rules('foto', 'Foto Produk', 'trim');
+		$this->form_validation->set_rules('nama_bisnis', 'Nama perusahaan', 'required|trim|max_length[100]');
+		$this->form_validation->set_rules('slogan', 'Slogan', 'required|trim');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[tb_bisnis.EMAIL]');
+		$this->form_validation->set_rules('no_telpon', 'Contact person', 'required|numeric|min_length[11]|max_length[13]');
+		$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+		$this->form_validation->set_rules('deskripsi', 'Deskripsi perusahaan', 'required|trim');
+		$this->form_validation->set_rules('foto', 'Foto Profile', 'trim');
+		$this->form_validation->set_rules('fb', 'Facebook', 'required|valid_url');
+		$this->form_validation->set_rules('ig', 'Instagram', 'required|valid_url');
 
 		if ($this->form_validation->run() == false) {
-			$this->load->view('admin/produk/tambah');
+			$this->load->view('admin/perusahaan/tambah');
 		} else {
 			$temp = explode(".", $_FILES['foto']['name']);
 			$foto = round(microtime(true)) . '.' . end($temp);
-			move_uploaded_file($_FILES['foto']['name'], "./uploads/produk/" . $foto);
+			move_uploaded_file($_FILES['foto']['name'], "./uploads/perusahaan/" . $foto);
 			// $foto = date('d-m-Y-H-m-s');
 			$config['allowed_types'] = 'jpg|jpeg|png';
 			$config['max_size']		 = '2048';
-			$config['upload_path'] 	 = './uploads/produk/';
+			$config['upload_path'] 	 = './uploads/perusahaan/';
 			$config['file_name'] 	 = $foto;
 
 			$this->upload->initialize($config);
 
 			if ($this->upload->do_upload('foto')) {
 				$dataPost = array(
-					'ID_PRODUK'			=> '',
-					'NAMA_PRODUK'		=> $this->input->post('nama_produk'),
-					'RINCIAN'			=> $this->input->post('rincian_produk'),
-					'DESKRIPSI'			=> $this->input->post('deskripsi'),
+					'ID_BISNIS'			=> '',
+					'NAMA_BISNIS'		=> $this->input->post('nama_bisnis'),
+					'SLOGAN'			=> $this->input->post('slogan'),
+					'EMAIL'				=> $this->input->post('email'),
+					'CONTACT_PERSON'	=> $this->input->post('no_telpon'),
+					'ALAMAT'			=> $this->input->post('alamat'),
+					'ABOUT_US'			=> $this->input->post('deskripsi'),
 					'FOTO'				=> trim($foto),
-					'CREATED_AT'		=> date('Y-m-d h-m-s'),
-					'UPDATED_AT'		=> date('Y-m-d h-m-s')
+					'FB'				=> $this->input->post('fb'),
+					'IG'				=> $this->input->post('ig'),
+					'CREATED_AT'		=> date('Y-m-d H:i:s'),
+					'UPDATED_AT'		=> date('Y-m-d H:i:s')
 				);
-				if ($this->ProdukModel->create($dataPost)) {
+				if ($this->PerusahaanModel->create($dataPost)) {
 					$this->session->set_flashdata(
 						'pesan',
 						'<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -56,7 +69,7 @@ class ProdukController extends CI_Controller {
 							</button>
 						</div>'
 					);
-					redirect('admin/ProdukController');
+					redirect('admin/Perusahaan');
 				} else {
 					$this->session->set_flashdata(
 						'pesan',
@@ -68,7 +81,7 @@ class ProdukController extends CI_Controller {
 							</button>
 						</div>'
 					);
-					redirect('admin/ProdukController');
+					redirect('admin/Perusahaan');
 				}
 			} else {
 				$this->session->set_flashdata(
@@ -80,14 +93,14 @@ class ProdukController extends CI_Controller {
 						</button>
 					</div>'
 				);
-				redirect('admin/ProdukController');
+				redirect('admin/Perusahaan');
 			}
 		}
 	}
 
 	public function delete($id)
 	{
-		$delete = $this->ProdukModel->delete($id);
+		$delete = $this->PerusahaanModel->delete($id);
 		if ($delete) {
 			$this->session->set_flashdata(
 				'pesan',
@@ -99,7 +112,7 @@ class ProdukController extends CI_Controller {
 					</button>
 				</div>'
 			);
-			redirect('admin/ProdukController');
+			redirect('admin/Perusahaan');
 		} else {
 			$this->session->set_flashdata(
 				'pesan',
@@ -111,56 +124,61 @@ class ProdukController extends CI_Controller {
 					</button>
 				</div>'
 			);
-			redirect('admin/ProdukController');
+			redirect('admin/Perusahaan');
 		}
 	}
 
 	public function update($id = null)
 	{
-		$this->form_validation->set_rules('nama_produk', 'Nama Produk', 'required|trim|max_length[100]');
-		$this->form_validation->set_rules('rincian_produk', 'Rincian Produk', 'required|trim');
-		$this->form_validation->set_rules('deskripsi', 'Deskripsi Produk', 'required|trim');
-		$this->form_validation->set_rules('foto', 'Foto Produk', 'trim');
+		$this->form_validation->set_rules('nama_bisnis', 'Nama perusahaan', 'required|trim|max_length[100]');
+		$this->form_validation->set_rules('slogan', 'Slogan', 'required|trim');
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('no_telpon', 'Contact person', 'required|numeric|min_length[11]|max_length[13]');
+		$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
+		$this->form_validation->set_rules('deskripsi', 'Deskripsi perusahaan', 'required|trim');
+		$this->form_validation->set_rules('foto', 'Foto Profile', 'trim');
+		$this->form_validation->set_rules('fb', 'Facebook', 'required|valid_url');
+		$this->form_validation->set_rules('ig', 'Instagram', 'required|valid_url');
 
 		if ($this->form_validation->run() == false) {
-
-			/* Menampilkan Data Produk */
-			$data["produk"]	 = $this->ProdukModel->getProduk($id);
-			/* Menampilkan Data Produk Pada Form Edit */
-			$this->load->view('admin/produk/edit', $data);
+			$data["bisnis"]	 = $this->PerusahaanModel->detail($id);
+			$data['user']	 = $this->db->get_where('tb_bisnis', ['EMAIL' => $this->session->userdata('EMAIL')])->row_array();
+			$this->load->view('admin/perusahaan/edit', $data);
 		} else {
-			/* Update Data Produk */
-			$update = $this->ProdukModel->update(array(
-				'ID_PRODUK'			=> $this->input->post('id'),
-				'NAMA_PRODUK'		=> $this->input->post('nama_produk'),
-				'RINCIAN'			=> $this->input->post('rincian_produk'),
-				'DESKRIPSI'			=> $this->input->post('deskripsi'),
-				'CREATED_AT'		=> date('Y-m-d h-m-s'),
-				'UPDATED_AT'		=> date('Y-m-d h-m-s')
+			$update = $this->PerusahaanModel->update(array(
+				'ID_BISNIS'			=> $this->input->post('id'),
+				'NAMA_BISNIS'		=> $this->input->post('nama_bisnis'),
+				'SLOGAN'			=> $this->input->post('slogan'),
+				'EMAIL'				=> $this->input->post('email'),
+				'CONTACT_PERSON'	=> $this->input->post('no_telpon'),
+				'ALAMAT'			=> $this->input->post('alamat'),
+				'ABOUT_US'			=> $this->input->post('deskripsi'),
+				'FB'				=> $this->input->post('fb'),
+				'IG'				=> $this->input->post('ig'),
+				'CREATED_AT'		=> $this->input->post('created_at'),
+				'UPDATED_AT'		=> date('Y-m-d H:i:s')
 			), $id);
+
 			if ($update) {
-				/* Cek apakah ada Gambar yang mau di Edit */
 				$ubahfoto = $_FILES['foto']['name'];
 				if ($ubahfoto) {
 					$config['allowed_types'] = 'jpg|jpeg|png';
 					$config['max_size']		 = '2048';
-					$config['upload_path'] 	 = './uploads/produk/';
+					$config['upload_path'] 	 = './uploads/perusahaan/';
 					$config['file_name'] 	 = $ubahfoto;
 
 					$this->upload->initialize($config);
-					/* Jika ada Gambar di upload */
+
 					if ($this->upload->do_upload('foto')) {
-						$user = $this->db->get_where('tb_produk', ['ID_PRODUK' => $id])->row_array();
-						/* Menampilkan Foto Lama */
+						$user = $this->db->get_where('tb_bisnis', ['ID_BISNIS' => $id])->row_array();
 						$fotolama = $user['foto'];
 						if ($fotolama) {
-							unlink(FCPATH . './uploads/produk/' . $fotolama);
+							unlink(FCPATH . './uploads/perusahaan/' . $fotolama);
 						}
-						/* Update Foto Baru */
 						$fotobaru = $this->upload->data('file_name');
 						$this->db->set('FOTO', $fotobaru);
-						$this->db->where('ID_PRODUK', $id);
-						$this->db->update('tb_produk');
+						$this->db->where('ID_BISNIS', $id);
+						$this->db->update('tb_bisnis');
 					} else {
 						$this->session->set_flashdata(
 							'pesan',
@@ -172,7 +190,7 @@ class ProdukController extends CI_Controller {
 								</button>
 							</div>'
 						);
-						redirect('admin/ProdukController');
+						redirect('admin/Perusahaan');
 					}
 				}
 				$this->session->set_flashdata(
@@ -185,7 +203,7 @@ class ProdukController extends CI_Controller {
 						</button>
 					</div>'
 				);
-				redirect('admin/ProdukController');
+				redirect('admin/Perusahaan');
 			} else {
 				$this->session->set_flashdata(
 					'pesan',
@@ -197,9 +215,8 @@ class ProdukController extends CI_Controller {
 						</button>
 					</div>'
 				);
-				redirect('admin/ProdukController');
+				redirect('admin/Perusahaan');
 			}
 		}
 	}
 }
-?>

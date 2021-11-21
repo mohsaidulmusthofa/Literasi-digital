@@ -36,13 +36,13 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" href="<?= site_url('admin/JabatanController') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
+                                <button type="submit" href="<?= site_url('admin/Jabatan') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>
                                     </span>
                                     <span class="text">Tambah Data</span>
                                 </button>
-                                <a href="<?= site_url('admin/JabatanController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
+                                <a href="<?= site_url('admin/Jabatan') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-reply"></i>
                                     </span>

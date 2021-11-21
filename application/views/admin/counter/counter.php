@@ -37,19 +37,21 @@
                                             <th style="width: 96px; text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody>                                        
-                                        <?php $no=1; foreach ($counter as $row) {?>
+                                    <tbody>
+                                        <?php $no = 1;
+                                        foreach ($counter as $row) { ?>
                                             <tr>
                                                 <td style="text-align: center;"><?= $no ?></td>
                                                 <td><?= $row->NAMA ?></td>
                                                 <td><?= $row->JUMLAH ?></td>
                                                 <td style="text-align: center;">
-                                                    <a href="<?= site_url('admin/CounterController/update/' . $row->ID_COUNTER)?>" class="btn btn-sm btn-info btn-circle">
+                                                    <a href="<?= site_url('admin/Counter/update/' . $row->ID_COUNTER) ?>" class="btn btn-sm btn-info btn-circle">
                                                         <i class="fa fa-pencil-alt"></i>
                                                     </a>
                                                 </td>
                                             </tr>
-                                            <?php $no++; }?>
+                                        <?php $no++;
+                                        } ?>
                                     </tbody>
                                 </table>
                             </div>

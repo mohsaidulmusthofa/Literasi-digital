@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class UserController extends CI_Controller
+class User extends CI_Controller
 {
 
 	public function __construct()
@@ -21,17 +21,13 @@ class UserController extends CI_Controller
 	public function create()
 	{
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim|max_length[100]');
-		$this->form_validation->set_rules('username', 'Username', 'required|trim|max_length[50]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[tb_user.EMAIL]');
-		$this->form_validation->set_rules('no_telpon', 'No Telepon', 'required|numeric|min_length[11]|max_length[13]');
-		$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
 		$this->form_validation->set_rules('motto', 'Motto', 'required|trim');
 		$this->form_validation->set_rules('foto', 'Foto Profile', 'trim');
 		$this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
-		$this->form_validation->set_rules('fb', 'Facebook', 'required|valid_url');
-		$this->form_validation->set_rules('ig', 'Instagram', 'required|valid_url');
-		$this->form_validation->set_rules('password1', 'Password', 'required|trim|min_length[6]|max_length[100]');
-		$this->form_validation->set_rules('password2', 'Konfirmasi Password', 'required|matches[password1]');
+		$this->form_validation->set_rules('fb', 'Facebook', 'valid_url');
+		$this->form_validation->set_rules('ig', 'Instagram', 'valid_url');
+		$this->form_validation->set_rules('linkedin', 'LinkedIn', 'valid_url');
 
 		if ($this->form_validation->run() == false) {
 			$data['jabatan'] = $this->UserModel->getJabatan();
@@ -50,18 +46,15 @@ class UserController extends CI_Controller
 
 			if ($this->upload->do_upload('foto')) {
 				$dataPost = array(
-					'ID_USER'		=> '',
-					'NAMA'			=> $this->input->post('nama'),
-					'USERNAME'		=> $this->input->post('username'),
+					'ID_MEMBER'		=> '',
+					'NAMA_MEMBER'	=> $this->input->post('nama'),
 					'EMAIL'			=> $this->input->post('email'),
-					'NO_HP'			=> $this->input->post('no_telpon'),
-					'ALAMAT'		=> $this->input->post('alamat'),
 					'MOTTO'			=> $this->input->post('motto'),
 					'ID_JABATAN'	=> $this->input->post('jabatan'),
 					'FOTO'			=> trim($foto),
-					'PASSWORD'		=> password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-					'FB'			=> $this->input->post('fb'),
+					'FACEBOOK'		=> $this->input->post('fb'),
 					'IG'			=> $this->input->post('ig'),
+					'LINKEDIN'		=> $this->input->post('linkedin'),
 					'CREATED_AT'	=> date('Y-m-d H:i:s'),
 					'UPDATED_AT'	=> date('Y-m-d H:i:s')
 				);
@@ -76,7 +69,7 @@ class UserController extends CI_Controller
 							</button>
 						</div>'
 					);
-					redirect('admin/UserController');
+					redirect('admin/User');
 				} else {
 					$this->session->set_flashdata(
 						'pesan',
@@ -88,7 +81,7 @@ class UserController extends CI_Controller
 							</button>
 						</div>'
 					);
-					redirect('admin/UserController');
+					redirect('admin/User');
 				}
 			} else {
 				$this->session->set_flashdata(
@@ -100,7 +93,7 @@ class UserController extends CI_Controller
 						</button>
 					</div>'
 				);
-				redirect('admin/UserController');
+				redirect('admin/User');
 			}
 		}
 	}
@@ -119,7 +112,7 @@ class UserController extends CI_Controller
 					</button>
 				</div>'
 			);
-			redirect('admin/UserController');
+			redirect('admin/User');
 		} else {
 			$this->session->set_flashdata(
 				'pesan',
@@ -131,22 +124,20 @@ class UserController extends CI_Controller
 					</button>
 				</div>'
 			);
-			redirect('admin/UserController');
+			redirect('admin/User');
 		}
 	}
 
 	public function update($id = null)
 	{
 		$this->form_validation->set_rules('nama', 'Nama', 'required|trim|max_length[100]');
-		$this->form_validation->set_rules('username', 'Username', 'required|trim|max_length[50]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-		$this->form_validation->set_rules('no_telpon', 'No Telepon', 'required|numeric|min_length[11]|max_length[13]');
-		$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
 		$this->form_validation->set_rules('motto', 'Motto', 'required|trim');
 		$this->form_validation->set_rules('foto', 'Foto Profile', 'trim');
 		$this->form_validation->set_rules('jabatan', 'Jabatan', 'required');
-		$this->form_validation->set_rules('fb', 'Facebook', 'required|valid_url');
-		$this->form_validation->set_rules('ig', 'Instagram', 'required|valid_url');
+		$this->form_validation->set_rules('fb', 'Facebook', 'valid_url');
+		$this->form_validation->set_rules('ig', 'Instagram', 'valid_url');
+		$this->form_validation->set_rules('linkedin', 'LinkedIn', 'valid_url');
 
 		if ($this->form_validation->run() == false) {
 			$data["bagian"]	 = $this->UserModel->detail($id);
@@ -156,16 +147,14 @@ class UserController extends CI_Controller
 			$this->load->view('admin/user/edit', $data);
 		} else {
 			$update = $this->UserModel->update(array(
-				'ID_USER'		=> $this->input->post('id'),
-				'NAMA'			=> $this->input->post('nama'),
-				'USERNAME'		=> $this->input->post('username'),
+				'ID_MEMBER'		=> $this->input->post('id'),
+				'NAMA_MEMBER'	=> $this->input->post('nama'),
 				'EMAIL'			=> $this->input->post('email'),
-				'NO_HP'			=> $this->input->post('no_telpon'),
-				'ALAMAT'		=> $this->input->post('alamat'),
 				'MOTTO'			=> $this->input->post('motto'),
 				'ID_JABATAN'	=> $this->input->post('jabatan'),
-				'FB'			=> $this->input->post('fb'),
+				'FACEBOOK'		=> $this->input->post('fb'),
 				'IG'			=> $this->input->post('ig'),
+				'LINKEDIN'		=> $this->input->post('linkedin'),
 				'CREATED_AT'	=> $this->input->post('created_at'),
 				'UPDATED_AT'	=> date('Y-m-d H:i:s')
 			), $id);
@@ -181,15 +170,15 @@ class UserController extends CI_Controller
 					$this->upload->initialize($config);
 
 					if ($this->upload->do_upload('foto')) {
-						$user = $this->db->get_where('tb_user', ['ID_USER' => $id])->row_array();
+						$user = $this->db->get_where('tb_team', ['ID_MEMBER' => $id])->row_array();
 						$fotolama = $user['foto'];
 						if ($fotolama) {
 							unlink(FCPATH . './uploads/user/' . $fotolama);
 						}
 						$fotobaru = $this->upload->data('file_name');
 						$this->db->set('FOTO', $fotobaru);
-						$this->db->where('ID_USER', $id);
-						$this->db->update('tb_user');
+						$this->db->where('ID_MEMBER', $id);
+						$this->db->update('tb_team');
 					} else {
 						$this->session->set_flashdata(
 							'pesan',
@@ -201,7 +190,7 @@ class UserController extends CI_Controller
 								</button>
 							</div>'
 						);
-						redirect('admin/UserController');
+						redirect('admin/User');
 					}
 				}
 				$this->session->set_flashdata(
@@ -214,7 +203,7 @@ class UserController extends CI_Controller
 						</button>
 					</div>'
 				);
-				redirect('admin/UserController');
+				redirect('admin/User');
 			} else {
 				$this->session->set_flashdata(
 					'pesan',
@@ -226,10 +215,8 @@ class UserController extends CI_Controller
 						</button>
 					</div>'
 				);
-				redirect('admin/UserController');
+				redirect('admin/User');
 			}
 		}
 	}
-
-
 }

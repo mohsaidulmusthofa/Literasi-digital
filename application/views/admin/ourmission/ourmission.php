@@ -25,7 +25,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="<?= site_url('admin/OurMissionController/create')?>" class="btn btn-sm btn-primary btn-icon-split shadow-sm">
+                            <a href="<?= site_url('admin/OurMission/create') ?>" class="btn btn-sm btn-primary btn-icon-split shadow-sm">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-plus"></i>
                                 </span>
@@ -45,22 +45,24 @@
                                             <th style="width: 96px; text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody>                                        
-                                        <?php $no=1; foreach ($mission as $row) {?>
+                                    <tbody>
+                                        <?php $no = 1;
+                                        foreach ($mission as $row) { ?>
                                             <tr>
                                                 <td style="text-align: center;"><?= $no ?></td>
                                                 <td style="text-align: center;"><img src="<?= base_url('./uploads/ourmission/' . $row->FOTO) ?>" alt="Img" width="100px"></td>
                                                 <td><?= $row->DESCRIPTION ?></td>
                                                 <td style="text-align: center;">
-                                                    <a href="<?= base_url('admin/OurMissionController/update/' . $row->ID_OURMISSION)?>" class="btn btn-sm btn-info btn-circle">
+                                                    <a href="<?= base_url('admin/OurMission/update/' . $row->ID_OURMISSION) ?>" class="btn btn-sm btn-info btn-circle">
                                                         <i class="fa fa-pencil-alt"></i>
                                                     </a>
-                                                    <a href="<?= base_url('admin/OurMissionController/delete/'. $row->ID_OURMISSION)?>" onclick="confirm_modal('<?= '/OurMissionController/delete/' . $row->ID_OURMISSION ?>')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal" data-target="#hapusModal">
+                                                    <a href="<?= base_url('admin/OurMission/delete/' . $row->ID_OURMISSION) ?>" onclick="confirm_modal('<?= '/OurMission/delete/' . $row->ID_OURMISSION ?>')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal" data-target="#hapusModal">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 </td>
                                             </tr>
-                                            <?php $no++; }?>
+                                        <?php $no++;
+                                        } ?>
                                     </tbody>
                                 </table>
                                 <div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -77,7 +79,7 @@
                                                 untuk kembali ke Panel Admin.</div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-danger" type="button" data-dismiss="modal">Batal</button>
-                                                <a id="delete_link" class="btn btn-info" href="<?= site_url('admin/OurMissionController/delete/' . $row->ID_OURMISSION) ?>">Hapus</a>
+                                                <a id="delete_link" class="btn btn-info" href="<?= site_url('admin/OurMission/delete/' . $row->ID_OURMISSION) ?>">Hapus</a>
                                             </div>
                                         </div>
                                     </div>

@@ -23,7 +23,7 @@
                     <h1 class="h3 mb-3 text-gray-800">Edit Data COunter</h1>
 
                     <!-- DataTales Example -->
-                    <form method="post" action="<?= site_url('admin/CounterController/update/' . $counter[0]->ID_COUNTER) ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?= site_url('admin/Counter/update/' . $counter[0]->ID_COUNTER) ?>" enctype="multipart/form-data">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <div class="row">
@@ -42,16 +42,16 @@
                                         </div>
                                         <?= form_error('jumlah', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
-                                    
+
                                 </div> <br>
 
-                                <button type="submit" href="<?= site_url('admin/CounterController') ?>" class="btn btn-success btn-icon-split ml-2" style="float: right;">
+                                <button type="submit" href="<?= site_url('admin/Counter') ?>" class="btn btn-success btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fa fa-save"></i>
                                     </span>
                                     <span class="text">Simpan Data</span>
                                 </button>
-                                <a href="<?= site_url('admin/CounterController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
+                                <a href="<?= site_url('admin/Counter') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-reply"></i>
                                     </span>

@@ -25,7 +25,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="<?= site_url('admin/UserController/create') ?>" class="btn btn-sm btn-primary btn-icon-split shadow-sm">
+                            <a href="<?= site_url('admin/User/create') ?>" class="btn btn-sm btn-primary btn-icon-split shadow-sm">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-plus"></i>
                                 </span>
@@ -70,15 +70,15 @@
                                         foreach ($users as $row) : ?>
                                             <tr>
                                                 <td style="text-align: center;"><?= $no ?></td>
-                                                <td><?= $row->NAMA ?></td>
+                                                <td><?= $row->NAMA_MEMBER ?></td>
                                                 <td><?= $row->EMAIL ?></td>
                                                 <td style="text-align: center;"><img src="<?= base_url('./uploads/user/' . $row->FOTO) ?>" alt="Img" width="100px"></td>
                                                 <td style="text-align: center;"><?= $row->JABATAN ?></td>
                                                 <td style="text-align: center;">
-                                                    <a href="<?= site_url('admin/UserController/update/' . $row->ID_USER) ?>" class="btn btn-sm btn-info btn-circle">
+                                                    <a href="<?= site_url('admin/User/update/' . $row->ID_MEMBER) ?>" class="btn btn-sm btn-info btn-circle">
                                                         <i class="fa fa-pencil-alt"></i>
                                                     </a>
-                                                    <a href="<?= site_url('admin/UserController/delete/' . $row->ID_USER) ?>" onclick="confirm_modal('<?= 'UserController/delete' . $row->ID_USER ?>')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal" data-target="#hapusModal">
+                                                    <a href="<?= site_url('admin/User/delete/' . $row->ID_MEMBER) ?>" onclick="confirm_modal('<?= 'User/delete' . $row->ID_MEMBER ?>')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal" data-target="#hapusModal">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 </td>
@@ -101,7 +101,7 @@
                                                 untuk kembali ke Panel Admin.</div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-danger" type="button" data-dismiss="modal">Batal</button>
-                                                <a id="delete_link" class="btn btn-info" href="<?= site_url('admin/UserController/delete/' . $row->ID_USER) ?>">Hapus</a>
+                                                <a id="delete_link" class="btn btn-info" href="<?= site_url('admin/User/delete/' . $row->ID_MEMBER) ?>">Hapus</a>
                                             </div>
                                         </div>
                                     </div>
@@ -111,10 +111,10 @@
                     </div>
                 </div>
                 <!-- /.container-fluid -->
+                <!-- Footer -->
+                <?php $this->load->view('admin/partials/footer'); ?>
             </div>
             <!-- End of Main Content -->
-            <!-- Footer -->
-            <?php $this->load->view('admin/partials/footer'); ?>
         </div>
     </div>
 </body>

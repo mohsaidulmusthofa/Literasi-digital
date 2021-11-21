@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class PagesController extends CI_Controller {
+class Pages extends CI_Controller
+{
 
 	public function __construct()
 	{
@@ -26,7 +27,8 @@ class PagesController extends CI_Controller {
 		// var_dump($data);
 	}
 
-	public function product_details($id) {
+	public function product_details($id)
+	{
 		$data['detailproduk'] = $this->ProdukModel->detail($id);
 		$this->load->view('user/detailproduk', $data);
 		// var_dump($data);

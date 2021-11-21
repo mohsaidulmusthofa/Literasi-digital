@@ -23,7 +23,7 @@
                     <h1 class="h3 mb-3 text-gray-800">Tambah Data Perusahaan</h1>
 
                     <!-- DataTales Example -->
-                    <form method="post" action="<?= site_url('admin/PerusahaanController/update/' . $bisnis[0]->ID_BISNIS) ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?= site_url('admin/Perusahaan/update/' . $bisnis[0]->ID_BISNIS) ?>" enctype="multipart/form-data">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <div class="row">
@@ -65,7 +65,7 @@
                                 <div class="input-group">
                                     <textarea name="alamat" id="alamat" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan alamat lengkap perusahaan ..." aria-describedby="basic-addon2"><?= $bisnis[0]->ALAMAT ?></textarea>
                                 </div>
-                                <?= form_error('alamat', '<small class="text-danger pl-2">', '</small>'); ?>                                
+                                <?= form_error('alamat', '<small class="text-danger pl-2">', '</small>'); ?>
 
                                 <div class="row">
                                     <div class="col-sm-6">
@@ -102,7 +102,7 @@
                                     <div class="col-sm-3">
                                         <p>Foto Lama</p>
                                         <div class="input-group">
-                                            <img src="<?= base_url('./uploads/perusahaan/'). $bisnis[0]->FOTO ?>" alt="img" width="250px">
+                                            <img src="<?= base_url('./uploads/perusahaan/') . $bisnis[0]->FOTO ?>" alt="img" width="250px">
                                         </div>
                                     </div>
                                     <div class="col-sm-3">
@@ -121,13 +121,13 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" href="<?= site_url('admin/PerusahaanController') ?>" class="btn btn-success btn-icon-split ml-2" style="float: right;">
+                                <button type="submit" href="<?= site_url('admin/Perusahaan') ?>" class="btn btn-success btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fa fa-save"></i>
                                     </span>
                                     <span class="text">Simpan Data</span>
                                 </button>
-                                <a href="<?= site_url('admin/PerusahaanController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
+                                <a href="<?= site_url('admin/Perusahaan') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-reply"></i>
                                     </span>

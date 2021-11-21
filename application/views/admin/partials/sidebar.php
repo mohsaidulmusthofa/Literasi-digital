@@ -13,7 +13,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="<?= base_url("admin/DashboardController") ?>">
+        <a class="nav-link" href="<?= base_url("admin/Dashboard") ?>">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -28,7 +28,7 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("admin/UserController") ?>">
+        <a class="nav-link" href="<?= base_url("admin/User") ?>">
             <i class="fas fa-fw fa-user"></i>
             <span>Data Tim</span>
         </a>
@@ -44,21 +44,21 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("admin/PerusahaanController") ?>">
+        <a class="nav-link" href="<?= base_url("admin/Perusahaan") ?>">
             <i class="fas fa-fw fa-solid fa-building"></i>
             <span>Perusahaan</span>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("admin/JabatanController") ?>">
+        <a class="nav-link" href="<?= base_url("admin/Jabatan") ?>">
             <i class="fas fa-fw fa-briefcase"></i>
             <span>Jabatan</span>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("admin/OurMissionController")?>">
+        <a class="nav-link" href="<?= base_url("admin/OurMission") ?>">
             <i class="fas fa-fw fa-chart-line"></i>
             <span>Our Mission</span>
         </a>
@@ -72,14 +72,14 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("admin/ProdukController") ?>">
+        <a class="nav-link" href="<?= base_url("admin/Produk") ?>">
             <i class="fas fa-fw fa-list-ul"></i>
             <span>Produk</span>
         </a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="<?= base_url("admin/PesanController") ?>">
+        <a class="nav-link" href="<?= base_url("admin/Pesan") ?>">
             <i class="far fa-fw fa-comments"></i>
             <span>Pesan</span></a>
     </li>

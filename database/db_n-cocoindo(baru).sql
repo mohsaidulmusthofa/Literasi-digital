@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2021 at 04:36 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Generation Time: Nov 21, 2021 at 06:48 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -20,6 +21,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_n-cocoindo`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_auth`
+--
+
+CREATE TABLE `tb_auth` (
+  `ID_USER` int(2) NOT NULL,
+  `NAMA` varchar(100) NOT NULL,
+  `EMAIL` varchar(100) NOT NULL,
+  `PASSWORD` varchar(100) NOT NULL,
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tb_auth`
+--
+
+INSERT INTO `tb_auth` (`ID_USER`, `NAMA`, `EMAIL`, `PASSWORD`, `CREATED_AT`, `UPDATED_AT`) VALUES
+(3, 'Admin N-CocoIndo', 'info.ncocoindo@gmail.com', '$2y$10$CZ9wkjSbUfNNEO3s2EwTJuihN4AlnPrtgwhnv3u3EaThXiIG6hg3O', '2021-11-21 05:11:17', '2021-11-21 05:10:05');
 
 -- --------------------------------------------------------
 
@@ -38,8 +61,8 @@ CREATE TABLE `tb_bisnis` (
   `ABOUT_US` longtext NOT NULL,
   `ALAMAT` varchar(255) NOT NULL,
   `FOTO` varchar(30) NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -59,8 +82,8 @@ CREATE TABLE `tb_counter` (
   `ID_COUNTER` int(1) NOT NULL,
   `NAMA` varchar(30) NOT NULL,
   `JUMLAH` int(4) NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp(),
-  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -82,8 +105,8 @@ INSERT INTO `tb_counter` (`ID_COUNTER`, `NAMA`, `JUMLAH`, `CREATED_AT`, `UPDATED
 CREATE TABLE `tb_jabatan` (
   `ID_JABATAN` int(2) NOT NULL,
   `JABATAN` varchar(50) NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -105,8 +128,8 @@ CREATE TABLE `tb_ourmission` (
   `ID_OURMISSION` int(2) NOT NULL,
   `FOTO` varchar(30) NOT NULL,
   `DESCRIPTION` varchar(255) NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -130,8 +153,8 @@ CREATE TABLE `tb_pesan` (
   `EMAIL_PENGIRIM` varchar(100) NOT NULL,
   `SUBJECT` varchar(50) NOT NULL,
   `PESAN` longtext NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -146,8 +169,8 @@ CREATE TABLE `tb_produk` (
   `FOTO` varchar(50) NOT NULL,
   `RINCIAN` text NOT NULL,
   `DESKRIPSI` varchar(255) NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -174,52 +197,29 @@ CREATE TABLE `tb_team` (
   `FACEBOOK` varchar(200) NOT NULL COMMENT 'Masukkan username http://www.facebook.com/USERNAME',
   `IG` varchar(200) NOT NULL COMMENT 'Masukkan username https://www.instagram.com/USERNAME',
   `LINKEDIN` varchar(200) NOT NULL COMMENT 'HARUS LINK',
-  `EMAIL` varchar(200) NOT NULL
+  `EMAIL` varchar(200) NOT NULL,
+  `CREATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `UPDATED_AT` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `tb_team`
 --
 
-INSERT INTO `tb_team` (`ID_MEMBER`, `ID_JABATAN`, `NAMA_MEMBER`, `FOTO`, `MOTTO`, `FACEBOOK`, `IG`, `LINKEDIN`, `EMAIL`) VALUES
-(1, 5, 'Rachman Kavin', 'Kavin1.jpg', 'Whatever you are, be a good one', '', 'Rachmankavin', '', ''),
-(2, 6, 'M. Ulul Fauzi, S.Pd.', 'Ulul1.jpg', 'World is a while, but afterlife is forever', '', '', '', 'tulityosih@gmail.com'),
-(3, 7, 'Lutfin Nurbuat', 'Nurbuat.jpg', '', '', '', '', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_user`
---
-
-CREATE TABLE `tb_user` (
-  `ID_USER` int(2) NOT NULL,
-  `NAMA` varchar(100) NOT NULL,
-  `USERNAME` varchar(50) NOT NULL,
-  `EMAIL` varchar(100) NOT NULL,
-  `PASSWORD` varchar(100) NOT NULL,
-  `FOTO` varchar(50) NOT NULL,
-  `MOTTO` varchar(255) NOT NULL,
-  `ID_JABATAN` int(2) NOT NULL,
-  `FB` varchar(255) NOT NULL,
-  `IG` varchar(255) NOT NULL,
-  `NO_HP` varchar(13) NOT NULL,
-  `ALAMAT` varchar(255) NOT NULL,
-  `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tb_user`
---
-
-INSERT INTO `tb_user` (`ID_USER`, `NAMA`, `USERNAME`, `EMAIL`, `PASSWORD`, `FOTO`, `MOTTO`, `ID_JABATAN`, `FB`, `IG`, `NO_HP`, `ALAMAT`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(1, 'Andrea Santana A', 'andrea03', 'andrea@gmail.com', '$2y$10$J6dxmxDjVN6TVnz9AnV.HeBGnvrUCYDu1NDwCcIUACQZvu4IgElWO', 'andre-jogja.jpeg', '', 1, 'qweqwe', 'qweqwe', '085257423236', 'asdasd', '2021-11-08 13:41:08', '2021-11-07 19:11:08'),
-(2, 'Joko', 'joko034', 'joko@gmail.com', '$2y$10$km2GvCdlXqD.xSjZvCQ05e09LmLnq9Ija0v.rKkeAXLvnXbh00dgu', '1636883367.png', '', 4, 'asdasdasd', 'asdasdasd', '087362728192', 'asdasdasd', '2021-11-14 03:11:26', '2021-11-14 03:11:26');
+INSERT INTO `tb_team` (`ID_MEMBER`, `ID_JABATAN`, `NAMA_MEMBER`, `FOTO`, `MOTTO`, `FACEBOOK`, `IG`, `LINKEDIN`, `EMAIL`, `CREATED_AT`, `UPDATED_AT`) VALUES
+(1, 5, 'Rachman Kavin', 'Kavin1.jpg', 'Whatever you are, be a good one', 'tes', 'Rachmankavin', '', 'kavin@gmail.com', '2021-11-21 04:42:37', '2021-11-21 04:54:37'),
+(2, 6, 'M. Ulul Fauzi, S.Pd.', 'ulul1.jpg', 'World is a while, but afterlife is forever', '', '', '', 'tulityosih@gmail.com', '2021-11-21 04:42:37', '2021-11-21 04:55:00'),
+(3, 7, 'Lutfin Nurbuat', 'Nurbuat.jpg', '', '', '', '', '', '2021-11-21 04:42:37', '2021-11-21 04:42:37');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `tb_auth`
+--
+ALTER TABLE `tb_auth`
+  ADD PRIMARY KEY (`ID_USER`);
 
 --
 -- Indexes for table `tb_bisnis`
@@ -264,14 +264,14 @@ ALTER TABLE `tb_team`
   ADD PRIMARY KEY (`ID_MEMBER`);
 
 --
--- Indexes for table `tb_user`
---
-ALTER TABLE `tb_user`
-  ADD PRIMARY KEY (`ID_USER`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tb_auth`
+--
+ALTER TABLE `tb_auth`
+  MODIFY `ID_USER` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_bisnis`
@@ -313,13 +313,7 @@ ALTER TABLE `tb_produk`
 -- AUTO_INCREMENT for table `tb_team`
 --
 ALTER TABLE `tb_team`
-  MODIFY `ID_MEMBER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `tb_user`
---
-ALTER TABLE `tb_user`
-  MODIFY `ID_USER` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ID_MEMBER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

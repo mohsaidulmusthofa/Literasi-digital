@@ -23,7 +23,7 @@
                     <h1 class="h3 mb-3 text-gray-800">Edit Data Our Mission</h1>
 
                     <!-- DataTales Example -->
-                    <form method="post" action="<?= site_url('admin/OurMissionController/update/' . $mission[0]->ID_OURMISSION) ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?= site_url('admin/OurMission/update/' . $mission[0]->ID_OURMISSION) ?>" enctype="multipart/form-data">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <div class="row">
@@ -45,14 +45,14 @@
 
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        
+
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="row">
                                             <div class="col-6">
                                                 <p>Foto Lama</p>
                                                 <div class="input-group">
-                                                    <img src="<?= site_url('./uploads/ourmission/'). $mission[0]->FOTO ?>" alt="img" width="250px">
+                                                    <img src="<?= site_url('./uploads/ourmission/') . $mission[0]->FOTO ?>" alt="img" width="250px">
                                                 </div>
                                             </div>
                                             <div class="col-sm-6">
@@ -65,13 +65,13 @@
                                     </div>
                                 </div> <br>
 
-                                <button type="submit" href="<?= site_url('admin/OurMissionController') ?>" class="btn btn-success btn-icon-split ml-2" style="float: right;">
+                                <button type="submit" href="<?= site_url('admin/OurMission') ?>" class="btn btn-success btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fa fa-save"></i>
                                     </span>
                                     <span class="text">Simpan Data</span>
                                 </button>
-                                <a href="<?= site_url('admin/OurMissionController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
+                                <a href="<?= site_url('admin/OurMission') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-reply"></i>
                                     </span>

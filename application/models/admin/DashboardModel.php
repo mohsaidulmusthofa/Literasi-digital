@@ -41,7 +41,7 @@ class DashboardModel extends CI_Model
 
     public function count_members()
     {
-        $query = $this->db->get('tb_user');
+        $query = $this->db->get('tb_team');
         if ($query->num_rows() > 0) {
             return $query->num_rows();
         } else {

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class JabatanController extends CI_Controller
+class Jabatan extends CI_Controller
 {
 
 	public function __construct()
@@ -41,7 +41,7 @@ class JabatanController extends CI_Controller
 							</button>
 						</div>'
 				);
-				redirect('admin/JabatanController');
+				redirect('admin/Jabatan');
 			} else {
 				$this->session->set_flashdata(
 					'pesan',
@@ -53,7 +53,7 @@ class JabatanController extends CI_Controller
 							</button>
 						</div>'
 				);
-				redirect('admin/JabatanController');
+				redirect('admin/Jabatan');
 			}
 		}
 	}
@@ -72,7 +72,7 @@ class JabatanController extends CI_Controller
 					</button>
 				</div>'
 			);
-			redirect('admin/JabatanController');
+			redirect('admin/Jabatan');
 		} else {
 			$this->session->set_flashdata(
 				'pesan',
@@ -84,7 +84,7 @@ class JabatanController extends CI_Controller
 					</button>
 				</div>'
 			);
-			redirect('admin/JabatanController');
+			redirect('admin/Jabatan');
 		}
 	}
 
@@ -114,7 +114,7 @@ class JabatanController extends CI_Controller
 						</button>
 					</div>'
 					);
-					redirect('admin/JabatanController');
+					redirect('admin/Jabatan');
 				} else {
 					$this->session->set_flashdata(
 						'pesan',
@@ -126,7 +126,7 @@ class JabatanController extends CI_Controller
 						</button>
 					</div>'
 					);
-					redirect('admin/JabatanController');
+					redirect('admin/Jabatan');
 				}
 			}
 		}

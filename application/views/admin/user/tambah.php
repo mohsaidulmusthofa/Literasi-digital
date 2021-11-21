@@ -35,37 +35,14 @@
                                         <?= form_error('nama', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
-                                        <p>Username</p>
-                                        <div class="input-group">
-                                            <input name="username" id="username" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan username ..." aria-describedby="basic-addon2" value="<?= set_value('username'); ?>">
-                                        </div>
-                                        <?= form_error('username', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-6">
                                         <p>Email</p>
                                         <div class="input-group">
                                             <input name="email" id="email" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Email ..." aria-describedby="basic-addon2" maxlength="100" value="<?= set_value('email'); ?>">
                                         </div>
                                         <?= form_error('email', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <p>Telepon/Whatsapp</p>
-                                        <div class="input-group">
-                                            <input name="no_telpon" id="no_telpon" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan No Telepon/Whatsapp ..." aria-describedby="basic-addon2" value="<?= set_value('no_telpon'); ?>">
-                                        </div>
-                                        <?= form_error('no_telpon', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
                                 </div>
 
-                                <p>Alamat</p>
-                                <div class="input-group">
-                                    <textarea name="alamat" id="alamat" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Alamat ..." aria-describedby="basic-addon2"><?= set_value('alamat'); ?></textarea>
-                                </div>
-                                <?= form_error('alamat', '<small class="text-danger pl-2">', '</small>'); ?>
-                                
                                 <p>Motto</p>
                                 <div class="input-group">
                                     <textarea name="motto" id="motto" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan motto ..." aria-describedby="basic-addon2"><?= set_value('motto'); ?></textarea>
@@ -109,14 +86,14 @@
                                     <div class="col-sm-6">
                                         <p>Facebook</p>
                                         <div class="input-group">
-                                            <input name="fb" id="fb" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan link/tautan facebook ..." aria-describedby="basic-addon2" maxlength="100" value="<?= set_value('fb'); ?>">
+                                            <input name="fb" id="fb" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan username http://www.facebook.com/USERNAME" aria-describedby="basic-addon2" maxlength="100" value="<?= set_value('fb'); ?>">
                                         </div>
                                         <?= form_error('fb', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
                                         <p>Instagram</p>
                                         <div class="input-group">
-                                            <input name="ig" id="ig" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan link/tautan instagram ..." aria-describedby="basic-addon2" value="<?= set_value('ig'); ?>">
+                                            <input name="ig" id="ig" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan username https://www.instagram.com/USERNAME " aria-describedby="basic-addon2" value="<?= set_value('ig'); ?>">
                                         </div>
                                         <?= form_error('ig', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
@@ -124,28 +101,21 @@
 
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <p>Password</p>
+                                        <p>LinkedIn</p>
                                         <div class="input-group">
-                                            <input name="password1" id="password" type="password" class="form-control border-dark small mb-3" placeholder="Masukkan Password" aria-describedby="basic-addon2">
+                                            <input name="linkedin" id="linkedin" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan link/tautan LinkedIn ..." aria-describedby="basic-addon2" maxlength="100" value="<?= set_value('linkedin'); ?>">
                                         </div>
-                                        <?= form_error('password1', '<small class="text-danger pl-2">', '</small>'); ?>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <p>Konfirmasi Password</p>
-                                        <div class="input-group">
-                                            <input name="password2" id="password2" type="password" class="form-control border-dark small mb-3" placeholder="Konfirmasi Password" aria-describedby="basic-addon2">
-                                        </div>
-                                        <?= form_error('password2', '<small class="text-danger pl-2">', '</small>'); ?>
+                                        <?= form_error('linkedin', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                 </div>
 
-                                <button type="submit" href="<?= site_url('admin/UserController') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
+                                <button type="submit" href="<?= site_url('admin/User') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>
                                     </span>
                                     <span class="text">Tambah Data</span>
                                 </button>
-                                <a href="<?= site_url('admin/UserController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
+                                <a href="<?= site_url('admin/User') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-reply"></i>
                                     </span>

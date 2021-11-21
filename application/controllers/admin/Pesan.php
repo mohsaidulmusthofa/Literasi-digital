@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-class PesanController extends CI_Controller {
+class Pesan extends CI_Controller {
 
     public function __construct()
 	{
@@ -29,7 +29,7 @@ class PesanController extends CI_Controller {
 					</button>
 				</div>'
 			);
-			redirect('admin/PesanController');
+			redirect('admin/Pesan');
 		} else {
 			$this->session->set_flashdata(
 				'pesan',
@@ -41,8 +41,7 @@ class PesanController extends CI_Controller {
 					</button>
 				</div>'
 			);
-			redirect('admin/PesanController');
+			redirect('admin/Pesan');
 		}
 	}
 }
-?>

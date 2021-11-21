@@ -25,7 +25,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="<?= site_url('admin/PerusahaanController/create') ?>" class="btn btn-sm btn-primary btn-icon-split shadow-sm">
+                            <a href="<?= site_url('admin/Perusahaan/create') ?>" class="btn btn-sm btn-primary btn-icon-split shadow-sm">
                                 <span class="icon text-white-50">
                                     <i class="fas fa-plus"></i>
                                 </span>
@@ -66,25 +66,27 @@
                                             <th style="width: 96px; text-align: center;">Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tbody>                                        
-                                        <?php $no=1; foreach ($bisnis as $row) {?>
+                                    <tbody>
+                                        <?php $no = 1;
+                                        foreach ($bisnis as $row) { ?>
                                             <tr>
                                                 <td style="text-align: center;"><?= $no ?></td>
                                                 <td><?= $row->NAMA_BISNIS ?></td>
-                                                <td><?=  (str_word_count($row->SLOGAN) > 10 ? substr("$row->SLOGAN",0,30)."..." : "$row->SLOGAN") ?></td>
+                                                <td><?= (str_word_count($row->SLOGAN) > 10 ? substr("$row->SLOGAN", 0, 30) . "..." : "$row->SLOGAN") ?></td>
                                                 <td style="text-align: center;"><?= $row->CONTACT_PERSON ?></td>
                                                 <td style="text-align: center;"><img src="<?= base_url('./uploads/perusahaan/' . $row->FOTO) ?>" alt="Img" width="100px"></td>
                                                 <td style="text-align: center;"><?= $row->EMAIL ?></td>
                                                 <td style="text-align: center;">
-                                                    <a href="<?= site_url('admin/PerusahaanController/update/' . $row->ID_BISNIS) ?>" class="btn btn-sm btn-info btn-circle">
+                                                    <a href="<?= site_url('admin/Perusahaan/update/' . $row->ID_BISNIS) ?>" class="btn btn-sm btn-info btn-circle">
                                                         <i class="fa fa-pencil-alt"></i>
                                                     </a>
-                                                    <a href="<?= site_url('admin/PerusahaanController/delete/' . $row->ID_BISNIS) ?>" onclick="confirm_modal('<?= '/PerusahaanController/delete/' . $row->ID_BISNIS ?>')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal" data-target="#hapusModal">
+                                                    <a href="<?= site_url('admin/Perusahaan/delete/' . $row->ID_BISNIS) ?>" onclick="confirm_modal('<?= '/Perusahaan/delete/' . $row->ID_BISNIS ?>')" class="btn btn-sm btn-danger btn-circle" data-toggle="modal" data-target="#hapusModal">
                                                         <i class="fa fa-trash"></i>
                                                     </a>
                                                 </td>
                                             </tr>
-                                            <?php $no++; }?>
+                                        <?php $no++;
+                                        } ?>
                                     </tbody>
                                 </table>
                                 <div class="modal fade" id="hapusModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -101,7 +103,7 @@
                                                 untuk kembali ke Panel Admin.</div>
                                             <div class="modal-footer">
                                                 <button class="btn btn-danger" type="button" data-dismiss="modal">Batal</button>
-                                                <a id="delete_link" class="btn btn-info" href="<?= site_url('admin/PerusahaanController/delete/' . $row->ID_BISNIS) ?>">Hapus</a>
+                                                <a id="delete_link" class="btn btn-info" href="<?= site_url('admin/Perusahaan/delete/' . $row->ID_BISNIS) ?>">Hapus</a>
                                             </div>
                                         </div>
                                     </div>

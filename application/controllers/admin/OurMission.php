@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class OurMissionController extends CI_Controller{
+class OurMission extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
@@ -54,7 +54,7 @@ class OurMissionController extends CI_Controller{
 							</button>
 						</div>'
 					);
-					redirect('admin/OurMissionController');
+					redirect('admin/OurMission');
 				} else {
 					$this->session->set_flashdata(
 						'pesan',
@@ -66,7 +66,7 @@ class OurMissionController extends CI_Controller{
 							</button>
 						</div>'
 					);
-					redirect('admin/OurMissionController');
+					redirect('admin/OurMission');
 				}
 			} else {
 				$this->session->set_flashdata(
@@ -78,7 +78,7 @@ class OurMissionController extends CI_Controller{
 						</button>
 					</div>'
 				);
-				redirect('admin/OurMissionController');
+				redirect('admin/OurMission');
 			}
 		}
     }
@@ -97,7 +97,7 @@ class OurMissionController extends CI_Controller{
 					</button>
 				</div>'
 			);
-			redirect('admin/OurMissionController');
+			redirect('admin/OurMission');
 		} else {
 			$this->session->set_flashdata(
 				'pesan',
@@ -109,7 +109,7 @@ class OurMissionController extends CI_Controller{
 					</button>
 				</div>'
 			);
-			redirect('admin/OurMissionController');
+			redirect('admin/OurMission');
 		}
 	}
 
@@ -166,7 +166,7 @@ class OurMissionController extends CI_Controller{
 								</button>
 							</div>'
 						);
-						redirect('admin/OurMissionController');
+						redirect('admin/OurMission');
 					}
 				}
 				$this->session->set_flashdata(
@@ -179,7 +179,7 @@ class OurMissionController extends CI_Controller{
 						</button>
 					</div>'
 				);
-				redirect('admin/OurMissionController');
+				redirect('admin/OurMission');
 			} else {
 				$this->session->set_flashdata(
 					'pesan',
@@ -191,10 +191,9 @@ class OurMissionController extends CI_Controller{
 						</button>
 					</div>'
 				);
-				redirect('admin/OurMissionController');
+				redirect('admin/OurMission');
 			}
 		}
 	}
 
 }
-?>

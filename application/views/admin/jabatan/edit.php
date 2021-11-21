@@ -23,7 +23,7 @@
                     <h1 class="h3 mb-3 text-gray-800">Tambah Jabatan</h1>
 
                     <!-- DataTales Example -->
-                    <form method="post" action="<?= site_url('admin/JabatanController/update/' . $jabatan[0]->ID_JABATAN) ?>" enctype="multipart/form-data">
+                    <form method="post" action="<?= site_url('admin/Jabatan/update/' . $jabatan[0]->ID_JABATAN) ?>" enctype="multipart/form-data">
                         <div class="card shadow mb-4">
                             <div class="card-body">
                                 <div class="row">
@@ -46,13 +46,13 @@
                                     </div>
                                 </div>
 
-                                <button type="submit" href="<?= site_url('admin/JabatanController') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
+                                <button type="submit" href="<?= site_url('admin/Jabatan') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>
                                     </span>
                                     <span class="text">Edit Data</span>
                                 </button>
-                                <a href="<?= site_url('admin/JabatanController') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
+                                <a href="<?= site_url('admin/Jabatan') ?>" class="btn btn-danger btn-icon-split" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-reply"></i>
                                     </span>

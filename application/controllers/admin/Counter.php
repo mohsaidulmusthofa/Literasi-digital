@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class CounterController extends CI_Controller{
+class Counter extends CI_Controller{
     public function __construct()
     {
         parent::__construct();
@@ -48,7 +48,7 @@ class CounterController extends CI_Controller{
 						</button>
 					</div>'
 				);
-				redirect('admin/CounterController');
+				redirect('admin/Counter');
 			} else {
 				$this->session->set_flashdata(
 					'pesan',
@@ -60,10 +60,9 @@ class CounterController extends CI_Controller{
 						</button>
 					</div>'
 				);
-				redirect('admin/CounterController');
+				redirect('admin/Counter');
 			}
 		}
 	}
 
 }
-?>
