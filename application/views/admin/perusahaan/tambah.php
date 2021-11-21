@@ -88,7 +88,7 @@
                                     <textarea name="deskripsi" id="deskripsi" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan deskripsi singkat perusahaan ..." aria-describedby="basic-addon2"><?= set_value('deskripsi'); ?></textarea>
                                 </div>
                                 <?= form_error('deskripsi', '<small class="text-danger pl-2">', '</small>'); ?>
-
+    
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <p>Upload Foto Perusahaan</p>
@@ -108,7 +108,7 @@
                                             <input type="hidden" name="blank" id="blank" class="form-control border-dark small mb-3" placeholder="blank" aria-describedby="basic-addon2">
                                         </div>
                                     </div>
-                                </div>
+                                </div><br>
 
                                 <button type="submit" href="<?= site_url('admin/Perusahaan') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">

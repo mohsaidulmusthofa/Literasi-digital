@@ -39,21 +39,25 @@
                                         <div class="input-group">
                                             <input name="foto" id="foto" type="file" accept="image/*" onchange="tampilkanPreview(this,'preview')" class="form-control border-dark small mb-3" placeholder="" aria-describedby="basic-addon2" required>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="input-group">
-                                            <input type="hidden" name="blank" id="blank" class="form-control border-dark small mb-3" placeholder="blank" aria-describedby="basic-addon2">
+                                        <div class="row">
+                                            <div class="col-sm-3">
+                                                <div class="input-group">
+                                                    <input type="hidden" name="blank" id="blank" class="form-control border-dark small mb-3" placeholder="blank" aria-describedby="basic-addon2">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <div class="input-group">
+                                                    <img id="preview" src="" alt="" width="320px" /> <br>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <div class="input-group">
+                                                    <input type="hidden" name="blank" id="blank" class="form-control border-dark small mb-3" placeholder="blank" aria-describedby="basic-addon2">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="input-group">
-                                            <img id="preview" src="" alt="" width="320px" /> <br>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                </div> <br>
                                 <button type="submit" href="<?= site_url('admin/OurMission') ?>" class="btn btn-primary btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">
                                         <i class="fas fa-plus"></i>

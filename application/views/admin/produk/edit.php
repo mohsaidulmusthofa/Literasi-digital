@@ -45,9 +45,6 @@
 
                                 <div class="row">
                                     <div class="col-sm-6">
-
-                                    </div>
-                                    <div class="col-sm-6">
                                         <div class="row">
                                             <div class="col-6">
                                                 <p>Foto Lama</p>
@@ -80,8 +77,7 @@
                                         </div>
                                         <?= form_error('rincian_produk', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
-                                </div>
-
+                                </div><br>
 
                                 <button type="submit" href="<?= site_url('admin/Produk') ?>" class="btn btn-success btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">

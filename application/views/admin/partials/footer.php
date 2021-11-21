@@ -32,7 +32,7 @@
 <script src="<?= base_url('') ?>assets/js/demo/chart-pie-demo.js"></script>
 <script src="<?= base_url('') ?>assets/plugin/summernote/summernote-bs4.min.js"></script>
 
-<!-- Form Tambah Produk, Deskripsi Produk -->
+<!-- Form Tambah Produk, Deskripsi Produk | Form Tambah Perusahaan, About us   -->
 <script>
     $(document).ready(function(){
         $('#deskripsi').summernote({
@@ -45,6 +45,15 @@
 <script>
     $(document).ready(function(){
         $('#rincian_produk').summernote({
+            height: '200px'
+        })
+    })
+</script>
+
+<!-- Form Our Mission, Description Produk -->
+<script>
+    $(document).ready(function(){
+        $('#description').summernote({
             height: '200px'
         })
     })

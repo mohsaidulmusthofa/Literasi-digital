@@ -31,7 +31,7 @@
                                         <p>Deskripsi</p>
                                         <input name="id" id="id" type="text" value="<?= $mission[0]->ID_OURMISSION ?>" hidden>
                                         <div class="input-group">
-                                            <input name="description" id="description" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Deksripsi Our Mission ..." aria-describedby="basic-addon2" value="<?= $mission[0]->DESCRIPTION ?>">
+                                            <textarea name="description" id="description" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan Deksripsi Our Mission ..." aria-describedby="basic-addon2" > <?= $mission[0]->DESCRIPTION ?> </textarea>
                                         </div>
                                         <?= form_error('description', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
@@ -40,30 +40,34 @@
                                         <div class="input-group">
                                             <input name="foto" id="foto" type="file" accept="image/*" onchange="tampilkanPreview(this,'preview')" class="form-control border-dark small mb-3" placeholder="" aria-describedby="basic-addon2">
                                         </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-6">
-
-                                    </div>
-                                    <div class="col-sm-6">
                                         <div class="row">
-                                            <div class="col-6">
-                                                <p>Foto Lama</p>
-                                                <div class="input-group">
-                                                    <img src="<?= site_url('./uploads/ourmission/') . $mission[0]->FOTO ?>" alt="img" width="250px">
+                                            <div class="row">
+                                                <div class="col-sm-1">
+                                                    <div class="input-group">
+                                                        <input type="hidden" name="blank" id="blank" class="form-control border-dark small mb-3" placeholder="blank" aria-describedby="basic-addon2">
+                                                    </div>
+                                                </div>
+                                                <div class="col-5">
+                                                    <p>Foto Lama</p>
+                                                    <div class="input-group">
+                                                        <img src="<?= site_url('./uploads/ourmission/') . $mission[0]->FOTO ?>" alt="img" width="250px">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-5">
+                                                    <p>Foto Baru</p>
+                                                    <div class="input-group">
+                                                        <img id="preview" src="" alt="" width="250px" /> <br>
+                                                     </div>
+                                                </div>
+                                                <div class="col-sm-1">
+                                                    <div class="input-group">
+                                                        <input type="hidden" name="blank" id="blank" class="form-control border-dark small mb-3" placeholder="blank" aria-describedby="basic-addon2">
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="col-sm-6">
-                                                <p>Foto Baru</p>
-                                                <div class="input-group">
-                                                    <img id="preview" src="" alt="" width="250px" /> <br>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </div> 
                                     </div>
-                                </div> <br>
+                                </div><br>
 
                                 <button type="submit" href="<?= site_url('admin/OurMission') ?>" class="btn btn-success btn-icon-split ml-2" style="float: right;">
                                     <span class="icon text-white-50">

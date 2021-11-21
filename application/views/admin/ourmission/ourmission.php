@@ -51,7 +51,7 @@
                                             <tr>
                                                 <td style="text-align: center;"><?= $no ?></td>
                                                 <td style="text-align: center;"><img src="<?= base_url('./uploads/ourmission/' . $row->FOTO) ?>" alt="Img" width="100px"></td>
-                                                <td><?= $row->DESCRIPTION ?></td>
+                                                <td><?= htmlspecialchars_decode($row->DESCRIPTION) ?></td>
                                                 <td style="text-align: center;">
                                                     <a href="<?= base_url('admin/OurMission/update/' . $row->ID_OURMISSION) ?>" class="btn btn-sm btn-info btn-circle">
                                                         <i class="fa fa-pencil-alt"></i>

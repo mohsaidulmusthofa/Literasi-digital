@@ -55,7 +55,7 @@
                                                 <td><?= $row->NAMA_PRODUK ?></td>
                                                 <td style="text-align: center;"><img src="<?= base_url('./uploads/produk/' . $row->FOTO) ?>" alt="Img" width="100px"></td>
                                                 <td style="text-align: left;"><?= htmlspecialchars_decode($row->RINCIAN)?></td>
-                                                <td style="text-align: center;"><?= htmlspecialchars_decode($row->DESKRIPSI) ?></td>
+                                                <td style="text-align: center;"><?= htmlspecialchars_decode($row->DESKRIPSI)?></td>
                                                 <td style="text-align: center;">
                                                     <a href="<?= site_url('admin/Produk/update/' . $row->ID_PRODUK) ?>" class="btn btn-sm btn-info btn-circle">
                                                         <i class="fa fa-pencil-alt"></i>

@@ -14,7 +14,7 @@
               style="width: 100%;">
             </div>
             <p style="font-weight: 600; text-align:center; font-size: 1rem">
-              <?= $ourmission->DESCRIPTION ?>
+              <?= htmlspecialchars_decode($ourmission->DESCRIPTION) ?>
             </p>
           </div>
           <?php } ?>
