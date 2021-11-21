@@ -122,7 +122,9 @@
                         }
                     }
                 }
+                $('.rincian_produk').summernote()
             </script>
+
 
             <!-- Footer -->
             <?php $this->load->view('admin/partials/footer'); ?>

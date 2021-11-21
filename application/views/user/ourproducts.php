@@ -15,7 +15,7 @@
         <div class="col-lg-4 col-md-6 col-xs-12 mix development print">
           <div class="portfolio-item">
             <div class="shot-item">
-              <a href="<?= base_url('Pages/product_details/' . $produks->ID_PRODUK) ?>">
+              <a href="<?= base_url('Pages/product_details/' . $produks->ID_PRODUK) ?>" target="_blank">
                 <img src="<?= base_url('./uploads/produk/' . $produks->FOTO) ?>" alt="<?= $produks->NAMA_PRODUK ?>" style="height: 20rem;" />
                 <div class="single-content">
                   <div class="fancy-table">

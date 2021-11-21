@@ -37,27 +37,27 @@ class Pesan extends CI_Controller {
 			if ($this->PesanModel->create($dataPost)) {
 				$this->session->set_flashdata(
 					'pesan',
-					'<div class="alert alert-success alert-dismissible fade show" role="alert">
+					'<div class="alert alert-success alert-dismissible fade show col-sm-12" role="alert">
 							<span class="alert-icon"><i class="ni ni-check-bold"></i></span>
-							<span class="alert-text"><strong>Selamat,</strong> data berhasil ditambahkan !</span>
+							<span class="alert-text"><strong>Selamat,</strong> pesan berhasil dikirim !</span>
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>'
 				);
-				redirect('Pages');
+				redirect('Pages#contact');
 			} else {
 				$this->session->set_flashdata(
 					'pesan',
-					'<div class="alert alert-danger alert-dismissible fade show" role="alert">
+					'<div class="alert alert-danger alert-dismissible fade show col-sm-12" role="alert">
 							<span class="alert-icon"><i class="ni ni-check-bold"></i></span>
-							<span class="alert-text"><strong>Maaf,</strong> data gagal ditambahkan !</span>
+							<span class="alert-text"><strong>Maaf,</strong> pesan gagal dikirim !</span>
 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>'
 				);
-				redirect('Pages');
+				redirect('Pages#contact');
 			}
 		}
 	}

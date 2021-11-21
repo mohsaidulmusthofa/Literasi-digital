@@ -8,8 +8,8 @@
           <?php 
           foreach ($ourmission as $ourmission) {
           ?>
-            <div class="col-lg-4" style="margin-top: 4rem;">
-            <div style="padding: 0rem 8.5rem; margin-bottom:2rem">
+            <div class="col-lg-3" style="margin-top: 4rem;">
+            <div style="padding: 0rem 5rem; margin-bottom:2rem">
               <img src="<?= base_url('uploads/ourmission/'.$ourmission->FOTO)?>" alt=""
               style="width: 100%;">
             </div>

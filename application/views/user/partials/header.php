@@ -9,7 +9,7 @@
     <meta name="author" content="Nusantara Coco Indo">
     <meta name="description" content="Nusantara Coco Indo is Company of Coconut Derivate Product. visit our website to see all our products">
     <title>Nusantara Coco Indo</title>
-    <link href="<?= base_url('assets/img/coco-ic.png') ?>" rel="icon">
+    <link href="<?= base_url('assets/img/ic-coco.png') ?>" rel="icon">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css')?>">
@@ -43,7 +43,7 @@
                 <a class="nav-link page-scroll" href="#services">Services</a>
               </li>   -->
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#features">About Us</a>
+                <a class="nav-link page-scroll" href="#services">About Us</a>
               </li>                            
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="#portfolios">Products</a>

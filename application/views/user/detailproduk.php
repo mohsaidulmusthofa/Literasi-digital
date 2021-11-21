@@ -18,7 +18,7 @@
                 style="border: 2px solid black; border-radius: 9px;margin: 2rem 0; height: 100%">
                     <div class="card-body">
                         <span style="margin: auto 0; font-size: 1rem">
-                            <?= $detailproduk[0]->RINCIAN ?>
+                        <?= decode($detailproduk[0]->RINCIAN) ?>
                         </span>
                     </div>
                 </div>

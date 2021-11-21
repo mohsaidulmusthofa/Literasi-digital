@@ -6,6 +6,7 @@
             <p class="section-subtitle">Contact us for more information</p>
           </div>
           <div class="row">          
+          <?php echo $this->session->userdata('pesan'); ?>
             <div class="col-lg-9 col-md-9 col-xs-12">
               <div class="contact-block">
                 <form  method="POST" action="<?= site_url('admin/Pesan/create/') ?>" enctype="multipart/form-data" >
