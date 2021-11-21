@@ -65,7 +65,7 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="<?= base_url("admin/Counter") ?>">
             <i class="fas fa-fw fa-calculator"></i>
             <span>Counter</span>
         </a>

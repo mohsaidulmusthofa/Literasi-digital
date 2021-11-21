@@ -4,10 +4,10 @@
           <div class="row">
             <div class="col-md-12">
               <div class="site-info float-left">
-                <p>Crafted by <a href="http://uideck.com" rel="nofollow">UIdeck</a></p>
+                <p>Copyright &copy; <?= SITE_NAME . ' ' . date('Y') ?> | Crafted by <a href="http://uideck.com" rel="nofollow">UIdeck</a>. All Rights Reserved. </p>
               </div>
               <div class="site-info float-right">
-                <p>Develop by <a href="http://magangjogja.com" rel="nofollow">Magang Jogja</a></p>
+                <p>Develop by Caleam Dev</p>
               </div>
               <div class="float-right">
                 <ul class="nav nav-inline">
@@ -20,7 +20,7 @@
       <!-- Copyright End -->
 
       <!-- Go To Top Link -->
-      <a href="#" class="back-to-top" style="bottom: 80px; right:30px">
+      <a href="#" class="back-to-top" style="bottom: 80px; right:28px">
         <i class="lni-arrow-up"></i>
       </a>
 

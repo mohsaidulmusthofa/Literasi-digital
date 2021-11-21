@@ -74,8 +74,8 @@
                                                 <td><?= $row->NAMA_BISNIS ?></td>
                                                 <td><?= (str_word_count($row->SLOGAN) > 10 ? substr("$row->SLOGAN", 0, 30) . "..." : "$row->SLOGAN") ?></td>
                                                 <td style="text-align: center;"><?= $row->CONTACT_PERSON ?></td>
-                                                <td style="text-align: center;"><img src="<?= base_url('./uploads/perusahaan/' . $row->FOTO) ?>" alt="Img" width="100px"></td>
                                                 <td style="text-align: center;"><?= $row->EMAIL ?></td>
+                                                <td style="text-align: center;"><img src="<?= base_url('./uploads/perusahaan/' . $row->FOTO) ?>" alt="Img" width="100px"></td>
                                                 <td style="text-align: center;">
                                                     <a href="<?= site_url('admin/Perusahaan/update/' . $row->ID_BISNIS) ?>" class="btn btn-sm btn-info btn-circle">
                                                         <i class="fa fa-pencil-alt"></i>

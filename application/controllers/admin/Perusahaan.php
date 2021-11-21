@@ -26,8 +26,8 @@ class Perusahaan extends CI_Controller
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi perusahaan', 'required|trim');
 		$this->form_validation->set_rules('foto', 'Foto Profile', 'trim');
-		$this->form_validation->set_rules('fb', 'Facebook', 'required|valid_url');
-		$this->form_validation->set_rules('ig', 'Instagram', 'required|valid_url');
+		$this->form_validation->set_rules('fb', 'Facebook', 'valid_url');
+		$this->form_validation->set_rules('ig', 'Instagram', 'valid_url');
 
 		if ($this->form_validation->run() == false) {
 			$this->load->view('admin/perusahaan/tambah');
@@ -137,8 +137,8 @@ class Perusahaan extends CI_Controller
 		$this->form_validation->set_rules('alamat', 'Alamat', 'required|trim');
 		$this->form_validation->set_rules('deskripsi', 'Deskripsi perusahaan', 'required|trim');
 		$this->form_validation->set_rules('foto', 'Foto Profile', 'trim');
-		$this->form_validation->set_rules('fb', 'Facebook', 'required|valid_url');
-		$this->form_validation->set_rules('ig', 'Instagram', 'required|valid_url');
+		$this->form_validation->set_rules('fb', 'Facebook', 'valid_url');
+		$this->form_validation->set_rules('ig', 'Instagram', 'valid_url');
 
 		if ($this->form_validation->run() == false) {
 			$data["bisnis"]	 = $this->PerusahaanModel->detail($id);
