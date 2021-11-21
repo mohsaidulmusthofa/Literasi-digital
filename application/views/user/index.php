@@ -10,7 +10,7 @@
           </ol>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active" style="height: 100vh">
-              <img src="<?= base_url('assets/img/user/slider/slide1.jpg')?>" style="width:100%; height:100%; opacity: 0.7" alt="">
+              <img src="<?= base_url('assets/img/user/slider/slide2.jpg')?>" style="width:100%; height:100%; opacity: 0.7" alt="">
               <div class="carousel-caption text-center">
                 <h3 class="wow fadeInDown" data-wow-delay="0.3s">Welcome to</h3>
                 <h2 class="wow bounceIn" data-wow-delay="0.6s"><?= $perusahaan[0]->NAMA_BISNIS ?></h2>
@@ -19,7 +19,7 @@
               </div>
             </div>
             <div class="carousel-item" style="height: 100vh;">
-              <img src="<?= base_url('assets/img/user/slider/slide2.jpg')?>" style="width:100%;height:100%;opacity: 0.7" alt="">
+              <img src="<?= base_url('assets/img/user/slider/slide1.jpg')?>" style="width:100%;height:100%;opacity: 0.7" alt="">
               <div class="carousel-caption text-center">
                 <h3 class="wow fadeInDown" data-wow-delay="0.3s">Welcome to</h3>
                 <h2 class="wow bounceIn" data-wow-delay="0.6s"><?= $perusahaan[0]->NAMA_BISNIS ?></h2>
