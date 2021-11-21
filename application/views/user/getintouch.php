@@ -61,13 +61,25 @@
                   <!-- Icon -->
                   <ul class="footer-social">
                     <?php if ($perusahaan[0]->IG != NULL) {
-                      echo '<li><a class="twitter" href="https://www.instagram.com/'.$perusahaan[0]->IG.'"><i class="lni-instagram-filled"></i></a></li>';
+                      echo '<li  class="twitter">
+                              <a href="https://www.instagram.com/'.$perusahaan[0]->IG.'">
+                                <i class="lni-instagram-filled"></i>
+                              </a>
+                            </li>';
                     }?>
                     <?php if ($perusahaan[0]->FB != NULL) {
-                      echo '<li><a class="facebook" href="http://www.facebook.com/'.$perusahaan[0]->FB.'"><i class="lni-facebook-filled"></i></a></li>';
+                      echo '<li class="facebook">
+                              <a href="http://www.facebook.com/'.$perusahaan[0]->FB.'">
+                                <i class="lni-facebook-filled"></i>
+                              </a>
+                            </li>';
                     }?>
                     <?php if ($perusahaan[0]->EMAIL != NULL) {
-                      echo '<li><a class="google-plus" href="mailto:'.$perusahaan[0]->EMAIL.'"><i class="lni-envelope"></i></a></li>';
+                      echo '<li class="google-plus" >
+                              <a href="mailto:'.$perusahaan[0]->EMAIL.'">
+                                <i class="lni-envelope"></i>
+                              </a>
+                            </li>';
                     }?>
                   </ul>
                 </div>

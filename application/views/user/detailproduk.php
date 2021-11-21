@@ -9,7 +9,7 @@
                     <h4><?= $detailproduk[0]->NAMA_PRODUK ?></h4>
                 </div>
                 <div class="image-product">
-                    <img src="<?= base_url('./assets/img/user/produk/' . $detailproduk[0]->FOTO)?>" alt="<?= $detailproduk[0]->NAMA_PRODUK ?>"
+                    <img src="<?= base_url('./uploads/produk/' . $detailproduk[0]->FOTO)?>" alt="<?= $detailproduk[0]->NAMA_PRODUK ?>"
                     style="width: 100%;">
                 </div>
             </div>
