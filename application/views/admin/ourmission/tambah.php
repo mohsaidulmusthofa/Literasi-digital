@@ -20,7 +20,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Tambah Data Our Mission</h1>
+                    <h1 class="h3 mb-3 text-gray-800">Tambah Data Misi Kami</h1>
 
                     <!-- DataTales Example -->
                     <form method="post" action="" enctype="multipart/form-data">
@@ -28,14 +28,14 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <p>Deskripsi Our Mission</p>
+                                        <p>Deskripsi Misi</p>
                                         <div class="input-group">
                                             <textarea name="description" id="description" type="text" class="form-control border-dark small mb-3" placeholder="Masukkan description singkat Our Mission ..." aria-describedby="basic-addon2"><?= set_value('description'); ?></textarea>
                                         </div>
                                         <?= form_error('description', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
-                                        <p>Upload Foto Our Mission</p>
+                                        <p>Upload Foto Misi kami</p>
                                         <div class="input-group">
                                             <input name="foto" id="foto" type="file" accept="image/*" onchange="tampilkanPreview(this,'preview')" class="form-control border-dark small mb-3" placeholder="" aria-describedby="basic-addon2" required>
                                         </div>

@@ -1,8 +1,8 @@
 <section id="team" class="section">
       <div class="container">
         <div class="section-header">          
-          <h2 class="section-title">Our Teams</h2>
-          <p class="section-subtitle">Let's get to know our teams</p>
+          <h2 class="section-title">Tim Kami</h2>
+          <p class="section-subtitle">Kenali Tim kami</p>
         </div>
         <div class="row row-eq-height justify-content-center">
 

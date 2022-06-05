@@ -20,7 +20,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Edit Data COunter</h1>
+                    <h1 class="h3 mb-3 text-gray-800">Edit Data Counter</h1>
 
                     <!-- DataTales Example -->
                     <form method="post" action="<?= site_url('admin/Counter/update/' . $counter[0]->ID_COUNTER) ?>" enctype="multipart/form-data">

@@ -23,7 +23,7 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Management Users
+        Pengaturan Pengguna
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
@@ -39,7 +39,7 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Management Web Content
+        Pengaturan Konten Web
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
@@ -60,7 +60,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url("admin/OurMission") ?>">
             <i class="fas fa-fw fa-chart-line"></i>
-            <span>Our Mission</span>
+            <span>Misi Kami</span>
         </a>
     </li>
 

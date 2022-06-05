@@ -25,7 +25,7 @@
             </div>
             <div class="col-lg-4">
                 <div class="title-product-info" style="text-align: center; margin: 2rem 0">
-                    <h4>Product Info</h4>
+                    <h4>Info Produk</h4>
                 </div>
                 <div class="info-product" style="text-align: justify;">
                     <span style="padding: 4rem; font-size: 1rem">

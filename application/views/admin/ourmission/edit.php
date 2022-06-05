@@ -20,7 +20,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-3 text-gray-800">Edit Data Our Mission</h1>
+                    <h1 class="h3 mb-3 text-gray-800">Edit Data Misi kami</h1>
 
                     <!-- DataTales Example -->
                     <form method="post" action="<?= site_url('admin/OurMission/update/' . $mission[0]->ID_OURMISSION) ?>" enctype="multipart/form-data">
@@ -36,7 +36,7 @@
                                         <?= form_error('description', '<small class="text-danger pl-2">', '</small>'); ?>
                                     </div>
                                     <div class="col-sm-6">
-                                        <p>Upload Foto Our Mission</p>
+                                        <p>Upload Foto Misi Kami</p>
                                         <div class="input-group">
                                             <input name="foto" id="foto" type="file" accept="image/*" onchange="tampilkanPreview(this,'preview')" class="form-control border-dark small mb-3" placeholder="" aria-describedby="basic-addon2">
                                         </div>

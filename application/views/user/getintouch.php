@@ -2,8 +2,8 @@
       <div class="contact-form">
         <div class="container">
           <div class="section-header">          
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="section-subtitle">Contact us for more information</p>
+            <h2 class="section-title">Kontak Kami</h2>
+            <p class="section-subtitle">Kontak Kami Untuk Informasi Lainnya</p>
           </div>
           <div class="row">          
           <?php echo $this->session->userdata('pesan'); ?>
@@ -13,33 +13,33 @@
                   <div class="row">
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required data-error="Please enter your name" value="<?= set_value('name'); ?>">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Nama Anda" required data-error="Masukkan Nama Anda" value="<?= set_value('name'); ?>">
                         <div class="help-block with-errors"></div>
                         <?= form_error('name', '<small class="text-danger pl-2">', '</small>'); ?>
                       </div>                                 
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
-                        <input type="text" placeholder="Your No Phone" id="telepon" name="telepon" class="form-control" required data-error="Please enter your No Phone" value="<?= set_value('telepon'); ?>">
+                        <input type="text" placeholder="Nomor Telepon Anda" id="telepon" name="telepon" class="form-control" required data-error="Masukkan Nomor Teelepon Anda" value="<?= set_value('telepon'); ?>">
                         <div class="help-block with-errors"></div>
                         <?= form_error('telepon', '<small class="text-danger pl-2">', '</small>'); ?>
                       </div>
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Please enter your email" value="<?= set_value('email'); ?>">
+                        <input type="text" placeholder="Email Anda" id="email" class="form-control" name="email" required data-error=" Masukkan email Anda" value="<?= set_value('email'); ?>">
                         <div class="help-block with-errors"></div>
                         <?= form_error('email', '<small class="text-danger pl-2">', '</small>'); ?>
                       </div> 
                     </div>
                     <div class="col-md-12">
                       <div class="form-group"> 
-                        <textarea class="form-control" id="message" name="message" placeholder="Your Message" rows="7" data-error="Write your message" value="<?= set_value('message'); ?>" required></textarea>
+                        <textarea class="form-control" id="message" name="message" placeholder="Pesan Anda" rows="7" data-error="Tulis Pesan Anda" value="<?= set_value('message'); ?>" required></textarea>
                         <div class="help-block with-errors"></div>
                         <?= form_error('message', '<small class="text-danger pl-2">', '</small>'); ?>
                       </div>
                       <div class="submit-button">
-                        <button class="btn btn-common btn-effect" href="<?= site_url("admin/Pesan")?>" id="submit" type="submit">Send Message</button>
+                        <button class="btn btn-common btn-effect" href="<?= site_url("admin/Pesan")?>" id="submit" type="submit">Kirim Pesan</button>
                         <div id="msgSubmit" class="h3 hidden"></div> 
                         <div class="clearfix"></div> 
                       </div>
@@ -54,7 +54,7 @@
                 <div class="contact-info_area">
                   <div class="contact-info">
                     <i class="lni-map"></i>
-                    <h5>Location</h5>
+                    <h5>Lokasi</h5>
                     <p><?= $perusahaan[0]->ALAMAT ?></p>
                   </div>
                   <!-- Content Info -->
@@ -66,7 +66,7 @@
                   <!-- Content Info -->
                   <div class="contact-info">
                     <i class="lni-phone"></i>
-                    <h5>Phone</h5>
+                    <h5>Nomor Telepon</h5>
                     <p><?= $perusahaan[0]->CONTACT_PERSON ?></p>
                   </div>
                   <!-- Icon -->

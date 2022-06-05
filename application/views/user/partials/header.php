@@ -43,16 +43,16 @@
                 <a class="nav-link page-scroll" href="#services">Services</a>
               </li>   -->
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#services">About Us</a>
+                <a class="nav-link page-scroll" href="#services">Tentang kami</a>
               </li>                            
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#portfolios">Products</a>
+                <a class="nav-link page-scroll" href="#portfolios">Produk</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#team">Team</a>
+                <a class="nav-link page-scroll" href="#team">Tim</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#contact">Contact</a>
+                <a class="nav-link page-scroll" href="#contact">Kontak</a>
               </li> 
             </ul>              
           </div>
