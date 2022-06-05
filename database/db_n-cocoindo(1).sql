@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 21, 2021 at 05:49 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.11
+-- Generation Time: Jun 05, 2022 at 04:48 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -69,7 +69,7 @@ CREATE TABLE `tb_bisnis` (
 --
 
 INSERT INTO `tb_bisnis` (`ID_BISNIS`, `NAMA_BISNIS`, `SLOGAN`, `CONTACT_PERSON`, `IG`, `FB`, `EMAIL`, `ABOUT_US`, `ALAMAT`, `FOTO`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(1, 'Nusantara Coco Indo', 'A Company of Coconut Derivate Product', '+628820093516', '', '', 'info.ncocoindo@gmail.com', 'Nusantara Coco Indo is an Indonesian agricultural product export company. Established in 2021, Nusantara Coco Indo is committed to improving the quality, quantity, and continuity of Indonesia\'s superior products.', 'Kecamatan Ambulu, Kabupaten Jember, Jawa Timur', 'profile.jpg', '2021-11-19 13:03:29', '2021-11-12 02:11:28');
+(1, 'Nusantara Coco Indo', 'A Company of Coconut Derivate Product', '+628820093516', '', '', 'info.ncocoindo@gmail.com', 'Nusantara Coco Indo adalah perusahaan ekspor produk pertanian Indonesia. Didirikan pada tahun 2021, Nusantara Coco Indo berkomitmen untuk meningkatkan kualitas, kuantitas, dan kontinuitas produk unggulan Indonesia.', 'Kecamatan Ambulu, Kabupaten Jember, Jawa Timur', 'profile.jpg', '2021-11-19 13:03:29', '2022-06-05 14:28:48');
 
 -- --------------------------------------------------------
 
@@ -90,10 +90,10 @@ CREATE TABLE `tb_counter` (
 --
 
 INSERT INTO `tb_counter` (`ID_COUNTER`, `NAMA`, `JUMLAH`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(1, 'Tons Production Capacity', 400, '2021-11-17 21:18:22', '2021-11-17 21:18:22'),
-(2, 'Hectars Cultivated Land', 500, '2021-11-17 21:18:22', '2021-11-17 21:18:22'),
-(3, 'Projects Running', 3, '2021-11-17 21:19:50', '2021-11-17 21:19:50'),
-(4, 'Countries Collaberate', 5, '2021-11-17 21:19:50', '2021-11-17 21:19:50');
+(1, 'Kapasitas Produksi Ton', 400, '2022-06-05 02:06:45', '2022-06-05 02:06:45'),
+(2, 'Hektar Lahan yang Digarap', 500, '2022-06-05 02:06:02', '2022-06-05 02:06:02'),
+(3, 'Proyek Berjalan', 3, '2022-06-05 02:06:24', '2022-06-05 02:06:24'),
+(4, 'Kolaborasi Negara', 5, '2022-06-05 02:06:58', '2022-06-05 02:06:58');
 
 -- --------------------------------------------------------
 
@@ -136,12 +136,12 @@ CREATE TABLE `tb_ourmission` (
 --
 
 INSERT INTO `tb_ourmission` (`ID_OURMISSION`, `FOTO`, `DESCRIPTION`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(1, 'relations.png', 'Creating an integrated export ecosystem between stakeholders', '2021-11-18 03:26:47', '0000-00-00 00:00:00'),
-(2, 'fist.png', 'Empowering domestic production Improve quality, quantity, and continuity through collaboration between stakeholders', '2021-11-18 03:26:47', '0000-00-00 00:00:00'),
-(3, 'growth.png', 'Increase employment and inclusive economic growth', '2021-11-18 03:26:47', '0000-00-00 00:00:00'),
-(4, 'relationship.png', 'Best Relation<br>becoming buyer our sibling\r\n', '2021-11-21 14:10:46', '2021-11-21 14:10:46'),
-(5, 'Priority.png', 'Priority<br>Our time is buyer’s priority\r\n', '2021-11-21 14:10:46', '2021-11-21 14:10:46'),
-(6, 'work_fast.png', 'Work Fast<br>We get pre order (PO) from buyer, so we prepare to deliver fast\r\n', '2021-11-21 14:12:06', '2021-11-21 14:11:40');
+(1, 'relations.png', 'Menciptakan ekosistem ekspor yang terintegrasi antar pemangku kepentingan', '2022-06-05 02:06:38', '2022-06-05 02:06:38'),
+(2, 'fist.png', 'Pemberdayaan produksi dalam negeri Meningkatkan kualitas, kuantitas, dan kesinambungan melalui kerjasama antar pemangku kepentingan', '2022-06-05 02:06:11', '2022-06-05 02:06:11'),
+(3, 'growth.png', 'Meningkatkan lapangan kerja dan pertumbuhan ekonomi yang inklusif', '2022-06-05 02:06:44', '2022-06-05 02:06:44'),
+(4, 'relationship.png', 'Hubungan Terbaik<br>menjadi pembeli saudara kita', '2022-06-05 02:06:16', '2022-06-05 02:06:16'),
+(5, 'Priority.png', 'Prioritas<br>Waktu kami adalah prioritas pembeli', '2022-06-05 02:06:49', '2022-06-05 02:06:49'),
+(6, 'work_fast.png', 'Bekerja Cepat<br>Kami mendapatkan pre order (PO) dari pembeli, jadi kami bersiap untuk pengiriman cepat', '2022-06-05 02:06:22', '2022-06-05 02:06:22');
 
 -- --------------------------------------------------------
 
@@ -209,9 +209,9 @@ CREATE TABLE `tb_team` (
 --
 
 INSERT INTO `tb_team` (`ID_MEMBER`, `ID_JABATAN`, `NAMA_MEMBER`, `FOTO`, `MOTTO`, `FACEBOOK`, `IG`, `LINKEDIN`, `EMAIL`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(1, 5, 'Rachman Kavin', 'foto_kavin-min1.jpg', 'Whatever you are, be a good one', 'tes', 'Rachmankavin', 'halo', 'kavin@gmail.com', '2021-11-21 04:42:37', '2021-11-21 16:04:14'),
+(1, 5, 'asdasd', 'foto_kavin-min1.jpg', 'Whatever you are, be a good one', 'tes', 'Rachmankavin', 'halo', 'kavin@gmail.com', '2021-11-21 04:42:37', '2021-11-21 16:04:14'),
 (2, 6, 'M. Ulul Fauzi, S.Pd.', 'foto_ulul-min1.jpg', 'World is a while, but afterlife is forever', '', '', '', 'tulityosih@gmail.com', '2021-11-21 04:42:37', '2021-11-21 16:03:16'),
-(5, 7, 'Nur Lailah, B.Ed.', '1637510507.jpg', 'Live with honor or die with dignity', '', '', '', 'lailahtes@gmail.com', '2021-11-21 16:01:47', '2021-11-21 16:01:47');
+(6, 3, 'asdasd', 'asd.jpg', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd@gmail.com', '2022-06-05 13:33:21', '2022-06-05 13:33:21');
 
 --
 -- Indexes for dumped tables
@@ -315,7 +315,7 @@ ALTER TABLE `tb_produk`
 -- AUTO_INCREMENT for table `tb_team`
 --
 ALTER TABLE `tb_team`
-  MODIFY `ID_MEMBER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_MEMBER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
