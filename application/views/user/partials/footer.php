@@ -26,7 +26,7 @@
 
       <!-- Tombol WA -->
       <div style="position:fixed; right:10px; bottom:10px;">
-        <a href="https://api.whatsapp.com/send?phone=+6285257423236&text=Hi%20Nusantara%20Coco%20Indo,%20I%20want%20ask%20question%20and%20get%20more%20informations%20from%20your%20export%20company's%20products." target="_blank">
+        <a href="https://api.whatsapp.com/send?phone=+6285335490201&text=Hi%20Nusantara%20Coco%20Indo,%20I%20want%20ask%20question%20and%20get%20more%20informations%20from%20your%20export%20company's%20products." target="_blank">
           <img src="<?= base_url('') ?>assets/img/logo-wa.png" style="margin-bottom: 3px; width: 5em;"></a>
       </div>
 
