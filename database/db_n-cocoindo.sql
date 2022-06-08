@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 05, 2022 at 04:48 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- Waktu pembuatan: 08 Jun 2022 pada 18.01
+-- Versi server: 10.4.14-MariaDB
+-- Versi PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_auth`
+-- Struktur dari tabel `tb_auth`
 --
 
 CREATE TABLE `tb_auth` (
@@ -37,7 +37,7 @@ CREATE TABLE `tb_auth` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_auth`
+-- Dumping data untuk tabel `tb_auth`
 --
 
 INSERT INTO `tb_auth` (`ID_USER`, `NAMA`, `EMAIL`, `PASSWORD`, `CREATED_AT`, `UPDATED_AT`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `tb_auth` (`ID_USER`, `NAMA`, `EMAIL`, `PASSWORD`, `CREATED_AT`, `UP
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_bisnis`
+-- Struktur dari tabel `tb_bisnis`
 --
 
 CREATE TABLE `tb_bisnis` (
@@ -65,7 +65,7 @@ CREATE TABLE `tb_bisnis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_bisnis`
+-- Dumping data untuk tabel `tb_bisnis`
 --
 
 INSERT INTO `tb_bisnis` (`ID_BISNIS`, `NAMA_BISNIS`, `SLOGAN`, `CONTACT_PERSON`, `IG`, `FB`, `EMAIL`, `ABOUT_US`, `ALAMAT`, `FOTO`, `CREATED_AT`, `UPDATED_AT`) VALUES
@@ -74,7 +74,7 @@ INSERT INTO `tb_bisnis` (`ID_BISNIS`, `NAMA_BISNIS`, `SLOGAN`, `CONTACT_PERSON`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_counter`
+-- Struktur dari tabel `tb_counter`
 --
 
 CREATE TABLE `tb_counter` (
@@ -86,7 +86,7 @@ CREATE TABLE `tb_counter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_counter`
+-- Dumping data untuk tabel `tb_counter`
 --
 
 INSERT INTO `tb_counter` (`ID_COUNTER`, `NAMA`, `JUMLAH`, `CREATED_AT`, `UPDATED_AT`) VALUES
@@ -98,7 +98,7 @@ INSERT INTO `tb_counter` (`ID_COUNTER`, `NAMA`, `JUMLAH`, `CREATED_AT`, `UPDATED
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_jabatan`
+-- Struktur dari tabel `tb_jabatan`
 --
 
 CREATE TABLE `tb_jabatan` (
@@ -109,7 +109,7 @@ CREATE TABLE `tb_jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_jabatan`
+-- Dumping data untuk tabel `tb_jabatan`
 --
 
 INSERT INTO `tb_jabatan` (`ID_JABATAN`, `JABATAN`, `CREATED_AT`, `UPDATED_AT`) VALUES
@@ -120,7 +120,7 @@ INSERT INTO `tb_jabatan` (`ID_JABATAN`, `JABATAN`, `CREATED_AT`, `UPDATED_AT`) V
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_ourmission`
+-- Struktur dari tabel `tb_ourmission`
 --
 
 CREATE TABLE `tb_ourmission` (
@@ -132,7 +132,7 @@ CREATE TABLE `tb_ourmission` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_ourmission`
+-- Dumping data untuk tabel `tb_ourmission`
 --
 
 INSERT INTO `tb_ourmission` (`ID_OURMISSION`, `FOTO`, `DESCRIPTION`, `CREATED_AT`, `UPDATED_AT`) VALUES
@@ -146,7 +146,7 @@ INSERT INTO `tb_ourmission` (`ID_OURMISSION`, `FOTO`, `DESCRIPTION`, `CREATED_AT
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_pesan`
+-- Struktur dari tabel `tb_pesan`
 --
 
 CREATE TABLE `tb_pesan` (
@@ -162,7 +162,7 @@ CREATE TABLE `tb_pesan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_produk`
+-- Struktur dari tabel `tb_produk`
 --
 
 CREATE TABLE `tb_produk` (
@@ -171,23 +171,24 @@ CREATE TABLE `tb_produk` (
   `FOTO` varchar(50) NOT NULL,
   `RINCIAN` text NOT NULL,
   `DESKRIPSI` text NOT NULL,
+  `link` varchar(200) NOT NULL,
   `CREATED_AT` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `UPDATED_AT` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tb_produk`
+-- Dumping data untuk tabel `tb_produk`
 --
 
-INSERT INTO `tb_produk` (`ID_PRODUK`, `NAMA_PRODUK`, `FOTO`, `RINCIAN`, `DESKRIPSI`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(3, 'Cocofibre', 'cocofibre.jpg', '1. Color : White<br>2. Moisture : 10%-20%<br>3. Length : 12-35 cm<br>4. Impurity : +/- 5%<br>5. Weight : 100 kg/bale<br>6. Container :<br>- 20 feet = 170-180 bales<br>- 40 feet = 240-250 bales<br>- 40 feet high cube = 260-270 bales<br>Shipping : FOB International Port of Perak, Surabaya, Indonesia \r\n', 'Coconut fiber, is a natural fiber extracted from the husk of coconut and used in products such as floor mats, doormats, brushes and mattresses. Coir is the fibrous material found between the hard, internal shell and the outer coat of a coconut. Other uses', '2021-11-18 03:49:21', '2021-11-18 03:44:21'),
-(4, 'Cocopot', 'cocopot.jpg', '1. Color : White<br>2. Moisture : 10%-20%<br>3. Length : 12 cm all models<br>4. Impurity : +/- 5%<br>5. Weight : 1 kg/pack\r\n6. Container :<br>- 20 feet = 1700-1800 packs<br>- 40 feet = 2400-2500 packs<br>- 40 feet high cube = 2600-2700 packs<br>Shipping : FOB International Port of Perak, Surabaya, Indonesia \r\n', 'Eco-friendly pots made of well pressed coconut coir, not easily broken, durable in sunlight and able to absorb water for soil availability. One of the main benefits of Coir Pot is beautifying plants, a source of organic material for planting media and bei', '2021-11-18 03:53:52', '2021-11-18 03:53:25'),
-(5, 'Cocopeat', 'cocopeat.jpg', '1. Color : Brown<br>2. Moisture : 12%-40%<br>3. Impurity : +/- 5%<br>4. Weight : 15 kg/bag<br>5. Container :<br>- 20 feet = 1000-1200 bags<br>- 40 feet = 1500-1666 bags<br>- 40 feet high cube = 1700-1800 bags<br>Shipping : FOB International Port of Perak, Surabaya, Indonesia \r\n', 'Cocopeat is considered an ideal growing medium. The obtained cocopeat powder is filtered, washed, dried and finally compacted into blocks. Blocks can be used for a variety of planting needs. Coir is known for its natural rooting hormone and anti-fungal pr', '2021-11-18 03:54:10', '2021-11-18 03:53:25');
+INSERT INTO `tb_produk` (`ID_PRODUK`, `NAMA_PRODUK`, `FOTO`, `RINCIAN`, `DESKRIPSI`, `link`, `CREATED_AT`, `UPDATED_AT`) VALUES
+(3, 'Cocofibre', 'cocofibre.jpg', '1. Color : White<br>2. Moisture : 10%-20%<br>3. Length : 12-35 cm<br>4. Impurity : +/- 5%<br>5. Weight : 100 kg/bale<br>6. Container :<br>- 20 feet = 170-180 bales<br>- 40 feet = 240-250 bales<br>- 40 feet high cube = 260-270 bales<br>Shipping : FOB International Port of Perak, Surabaya, Indonesia \r\n', 'Coconut fiber, is a natural fiber extracted from the husk of coconut and used in products such as floor mats, doormats, brushes and mattresses. Coir is the fibrous material found between the hard, internal shell and the outer coat of a coconut. Other uses', 'https://shopee.co.id/product/560896596/18208677326?smtt=0.560916181-1654437583.3', '2022-06-08 15:28:37', '2021-11-18 03:44:21'),
+(4, 'Cocopot', 'cocopot.jpg', '1. Color : White<br>2. Moisture : 10%-20%<br>3. Length : 12 cm all models<br>4. Impurity : +/- 5%<br>5. Weight : 1 kg/pack\r\n6. Container :<br>- 20 feet = 1700-1800 packs<br>- 40 feet = 2400-2500 packs<br>- 40 feet high cube = 2600-2700 packs<br>Shipping : FOB International Port of Perak, Surabaya, Indonesia \r\n', 'Eco-friendly pots made of well pressed coconut coir, not easily broken, durable in sunlight and able to absorb water for soil availability. One of the main benefits of Coir Pot is beautifying plants, a source of organic material for planting media and bei', 'https://shopee.co.id/product/560896596/18708678812?smtt=0.560916181-1654438568.3', '2022-06-08 15:28:37', '2021-11-18 03:53:25'),
+(5, 'Cocopeat', 'cocopeat.jpg', '1. Color : Brown<br>2. Moisture : 12%-40%<br>3. Impurity : +/- 5%<br>4. Weight : 15 kg/bag<br>5. Container :<br>- 20 feet = 1000-1200 bags<br>- 40 feet = 1500-1666 bags<br>- 40 feet high cube = 1700-1800 bags<br>Shipping : FOB International Port of Perak, Surabaya, Indonesia \r\n', 'Cocopeat is considered an ideal growing medium. The obtained cocopeat powder is filtered, washed, dried and finally compacted into blocks. Blocks can be used for a variety of planting needs. Coir is known for its natural rooting hormone and anti-fungal pr', 'https://shopee.co.id/product/560896596/15886679794?smtt=0.560916181-1654438515.3', '2022-06-08 15:28:37', '2021-11-18 03:53:25');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_team`
+-- Struktur dari tabel `tb_team`
 --
 
 CREATE TABLE `tb_team` (
@@ -205,7 +206,7 @@ CREATE TABLE `tb_team` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `tb_team`
+-- Dumping data untuk tabel `tb_team`
 --
 
 INSERT INTO `tb_team` (`ID_MEMBER`, `ID_JABATAN`, `NAMA_MEMBER`, `FOTO`, `MOTTO`, `FACEBOOK`, `IG`, `LINKEDIN`, `EMAIL`, `CREATED_AT`, `UPDATED_AT`) VALUES
@@ -218,101 +219,101 @@ INSERT INTO `tb_team` (`ID_MEMBER`, `ID_JABATAN`, `NAMA_MEMBER`, `FOTO`, `MOTTO`
 --
 
 --
--- Indexes for table `tb_auth`
+-- Indeks untuk tabel `tb_auth`
 --
 ALTER TABLE `tb_auth`
   ADD PRIMARY KEY (`ID_USER`);
 
 --
--- Indexes for table `tb_bisnis`
+-- Indeks untuk tabel `tb_bisnis`
 --
 ALTER TABLE `tb_bisnis`
   ADD PRIMARY KEY (`ID_BISNIS`);
 
 --
--- Indexes for table `tb_counter`
+-- Indeks untuk tabel `tb_counter`
 --
 ALTER TABLE `tb_counter`
   ADD PRIMARY KEY (`ID_COUNTER`);
 
 --
--- Indexes for table `tb_jabatan`
+-- Indeks untuk tabel `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
   ADD PRIMARY KEY (`ID_JABATAN`);
 
 --
--- Indexes for table `tb_ourmission`
+-- Indeks untuk tabel `tb_ourmission`
 --
 ALTER TABLE `tb_ourmission`
   ADD PRIMARY KEY (`ID_OURMISSION`);
 
 --
--- Indexes for table `tb_pesan`
+-- Indeks untuk tabel `tb_pesan`
 --
 ALTER TABLE `tb_pesan`
   ADD PRIMARY KEY (`ID_PESAN`);
 
 --
--- Indexes for table `tb_produk`
+-- Indeks untuk tabel `tb_produk`
 --
 ALTER TABLE `tb_produk`
   ADD PRIMARY KEY (`ID_PRODUK`);
 
 --
--- Indexes for table `tb_team`
+-- Indeks untuk tabel `tb_team`
 --
 ALTER TABLE `tb_team`
   ADD PRIMARY KEY (`ID_MEMBER`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `tb_auth`
+-- AUTO_INCREMENT untuk tabel `tb_auth`
 --
 ALTER TABLE `tb_auth`
   MODIFY `ID_USER` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `tb_bisnis`
+-- AUTO_INCREMENT untuk tabel `tb_bisnis`
 --
 ALTER TABLE `tb_bisnis`
   MODIFY `ID_BISNIS` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `tb_counter`
+-- AUTO_INCREMENT untuk tabel `tb_counter`
 --
 ALTER TABLE `tb_counter`
   MODIFY `ID_COUNTER` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `tb_jabatan`
+-- AUTO_INCREMENT untuk tabel `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
   MODIFY `ID_JABATAN` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tb_ourmission`
+-- AUTO_INCREMENT untuk tabel `tb_ourmission`
 --
 ALTER TABLE `tb_ourmission`
   MODIFY `ID_OURMISSION` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `tb_pesan`
+-- AUTO_INCREMENT untuk tabel `tb_pesan`
 --
 ALTER TABLE `tb_pesan`
   MODIFY `ID_PESAN` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tb_produk`
+-- AUTO_INCREMENT untuk tabel `tb_produk`
 --
 ALTER TABLE `tb_produk`
   MODIFY `ID_PRODUK` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `tb_team`
+-- AUTO_INCREMENT untuk tabel `tb_team`
 --
 ALTER TABLE `tb_team`
   MODIFY `ID_MEMBER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
