@@ -6,9 +6,9 @@
               <div class="site-info float-left">
                 <p>Copyright &copy; <?= SITE_NAME . ' ' . date('Y') ?> | Crafted by <a href="http://uideck.com" rel="nofollow">UIdeck</a>. All Rights Reserved. </p>
               </div>
-              <div class="site-info float-right">
+              <!-- <div class="site-info float-right">
                 <p>Develop by Caleam Dev</p>
-              </div>
+              </div> -->
               <div class="float-right">
                 <ul class="nav nav-inline">
                 </ul>
