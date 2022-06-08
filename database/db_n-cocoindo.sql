@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jun 2022 pada 18.01
--- Versi server: 10.4.14-MariaDB
--- Versi PHP: 7.4.10
+-- Generation Time: Jun 08, 2022 at 06:28 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_auth`
+-- Table structure for table `tb_auth`
 --
 
 CREATE TABLE `tb_auth` (
@@ -37,7 +37,7 @@ CREATE TABLE `tb_auth` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_auth`
+-- Dumping data for table `tb_auth`
 --
 
 INSERT INTO `tb_auth` (`ID_USER`, `NAMA`, `EMAIL`, `PASSWORD`, `CREATED_AT`, `UPDATED_AT`) VALUES
@@ -46,7 +46,7 @@ INSERT INTO `tb_auth` (`ID_USER`, `NAMA`, `EMAIL`, `PASSWORD`, `CREATED_AT`, `UP
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_bisnis`
+-- Table structure for table `tb_bisnis`
 --
 
 CREATE TABLE `tb_bisnis` (
@@ -65,7 +65,7 @@ CREATE TABLE `tb_bisnis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_bisnis`
+-- Dumping data for table `tb_bisnis`
 --
 
 INSERT INTO `tb_bisnis` (`ID_BISNIS`, `NAMA_BISNIS`, `SLOGAN`, `CONTACT_PERSON`, `IG`, `FB`, `EMAIL`, `ABOUT_US`, `ALAMAT`, `FOTO`, `CREATED_AT`, `UPDATED_AT`) VALUES
@@ -74,7 +74,7 @@ INSERT INTO `tb_bisnis` (`ID_BISNIS`, `NAMA_BISNIS`, `SLOGAN`, `CONTACT_PERSON`,
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_counter`
+-- Table structure for table `tb_counter`
 --
 
 CREATE TABLE `tb_counter` (
@@ -86,7 +86,7 @@ CREATE TABLE `tb_counter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_counter`
+-- Dumping data for table `tb_counter`
 --
 
 INSERT INTO `tb_counter` (`ID_COUNTER`, `NAMA`, `JUMLAH`, `CREATED_AT`, `UPDATED_AT`) VALUES
@@ -98,7 +98,7 @@ INSERT INTO `tb_counter` (`ID_COUNTER`, `NAMA`, `JUMLAH`, `CREATED_AT`, `UPDATED
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_jabatan`
+-- Table structure for table `tb_jabatan`
 --
 
 CREATE TABLE `tb_jabatan` (
@@ -109,18 +109,19 @@ CREATE TABLE `tb_jabatan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_jabatan`
+-- Dumping data for table `tb_jabatan`
 --
 
 INSERT INTO `tb_jabatan` (`ID_JABATAN`, `JABATAN`, `CREATED_AT`, `UPDATED_AT`) VALUES
 (5, 'Founder', '2021-11-18 03:21:55', '0000-00-00 00:00:00'),
 (6, 'Co-Founder', '2021-11-18 03:21:55', '0000-00-00 00:00:00'),
-(7, 'Business Development', '2021-11-18 03:21:55', '0000-00-00 00:00:00');
+(7, 'Business Development', '2021-11-18 03:21:55', '0000-00-00 00:00:00'),
+(8, 'Mahasiswa', '2022-06-08 16:19:36', '2022-06-08 16:22:20');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_ourmission`
+-- Table structure for table `tb_ourmission`
 --
 
 CREATE TABLE `tb_ourmission` (
@@ -132,7 +133,7 @@ CREATE TABLE `tb_ourmission` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_ourmission`
+-- Dumping data for table `tb_ourmission`
 --
 
 INSERT INTO `tb_ourmission` (`ID_OURMISSION`, `FOTO`, `DESCRIPTION`, `CREATED_AT`, `UPDATED_AT`) VALUES
@@ -146,7 +147,7 @@ INSERT INTO `tb_ourmission` (`ID_OURMISSION`, `FOTO`, `DESCRIPTION`, `CREATED_AT
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_pesan`
+-- Table structure for table `tb_pesan`
 --
 
 CREATE TABLE `tb_pesan` (
@@ -162,7 +163,7 @@ CREATE TABLE `tb_pesan` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_produk`
+-- Table structure for table `tb_produk`
 --
 
 CREATE TABLE `tb_produk` (
@@ -177,7 +178,7 @@ CREATE TABLE `tb_produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `tb_produk`
+-- Dumping data for table `tb_produk`
 --
 
 INSERT INTO `tb_produk` (`ID_PRODUK`, `NAMA_PRODUK`, `FOTO`, `RINCIAN`, `DESKRIPSI`, `link`, `CREATED_AT`, `UPDATED_AT`) VALUES
@@ -188,7 +189,7 @@ INSERT INTO `tb_produk` (`ID_PRODUK`, `NAMA_PRODUK`, `FOTO`, `RINCIAN`, `DESKRIP
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `tb_team`
+-- Table structure for table `tb_team`
 --
 
 CREATE TABLE `tb_team` (
@@ -206,117 +207,119 @@ CREATE TABLE `tb_team` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `tb_team`
+-- Dumping data for table `tb_team`
 --
 
 INSERT INTO `tb_team` (`ID_MEMBER`, `ID_JABATAN`, `NAMA_MEMBER`, `FOTO`, `MOTTO`, `FACEBOOK`, `IG`, `LINKEDIN`, `EMAIL`, `CREATED_AT`, `UPDATED_AT`) VALUES
-(1, 5, 'asdasd', 'foto_kavin-min1.jpg', 'Whatever you are, be a good one', 'tes', 'Rachmankavin', 'halo', 'kavin@gmail.com', '2021-11-21 04:42:37', '2021-11-21 16:04:14'),
-(2, 6, 'M. Ulul Fauzi, S.Pd.', 'foto_ulul-min1.jpg', 'World is a while, but afterlife is forever', '', '', '', 'tulityosih@gmail.com', '2021-11-21 04:42:37', '2021-11-21 16:03:16'),
-(6, 3, 'asdasd', 'asd.jpg', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd@gmail.com', '2022-06-05 13:33:21', '2022-06-05 13:33:21');
+(1, 8, 'Moh Saidul Musthofa', 'sayyid.jpg', '\"Dalam batas kemampuanmu, membantu seseorang adalah sebuah tanggung jawab\"', '', '', 'https://www.linkedin.com/in/moh-saidul-musthofa-7608801a7', 'mohsaidulmusthofa@gmail.com', '2021-11-21 04:42:37', '2022-06-08 16:26:33'),
+(2, 8, 'Andrea Santana Adzani', 'andre.jpg', '\"Setiap perjuang akan berujung kemenangan yang gemilang\"', '', '', 'https://www.linkedin.com/mwlite/in/andrea-santana-adzani-7577691a6', 'andrea.santana986@gmail.com', '2021-11-21 04:42:37', '2022-06-08 16:22:34'),
+(6, 3, 'asdasd', 'asd.jpg', 'asdasd', 'asdasd', 'asdasd', 'asdasd', 'asdasd@gmail.com', '2022-06-05 13:33:21', '2022-06-05 13:33:21'),
+(7, 8, 'Ratna Dwi Kristina Sari', '1654705425.jpg', '\"Hidup harus penuh tantangan untuk menuju hari yang gemilang\"', '', '', 'www.linkedin.com/in/ratna-dwi-3b80961a9/', 'ratnadwikristinasari27@gmail.com', '2022-06-08 16:23:44', '2022-06-08 16:23:44'),
+(8, 8, 'M Al-Ghazali', '1654705543.jpg', '\"Berhentilan malas karena waktu tidak menunggumu untuk malas-malasan\"', '', '', 'https://www.linkedin.com/in/m-al-ghazali-si-17b7a721b/', 'unyinga@gmail.com', '2022-06-08 16:25:43', '2022-06-08 16:25:43');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `tb_auth`
+-- Indexes for table `tb_auth`
 --
 ALTER TABLE `tb_auth`
   ADD PRIMARY KEY (`ID_USER`);
 
 --
--- Indeks untuk tabel `tb_bisnis`
+-- Indexes for table `tb_bisnis`
 --
 ALTER TABLE `tb_bisnis`
   ADD PRIMARY KEY (`ID_BISNIS`);
 
 --
--- Indeks untuk tabel `tb_counter`
+-- Indexes for table `tb_counter`
 --
 ALTER TABLE `tb_counter`
   ADD PRIMARY KEY (`ID_COUNTER`);
 
 --
--- Indeks untuk tabel `tb_jabatan`
+-- Indexes for table `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
   ADD PRIMARY KEY (`ID_JABATAN`);
 
 --
--- Indeks untuk tabel `tb_ourmission`
+-- Indexes for table `tb_ourmission`
 --
 ALTER TABLE `tb_ourmission`
   ADD PRIMARY KEY (`ID_OURMISSION`);
 
 --
--- Indeks untuk tabel `tb_pesan`
+-- Indexes for table `tb_pesan`
 --
 ALTER TABLE `tb_pesan`
   ADD PRIMARY KEY (`ID_PESAN`);
 
 --
--- Indeks untuk tabel `tb_produk`
+-- Indexes for table `tb_produk`
 --
 ALTER TABLE `tb_produk`
   ADD PRIMARY KEY (`ID_PRODUK`);
 
 --
--- Indeks untuk tabel `tb_team`
+-- Indexes for table `tb_team`
 --
 ALTER TABLE `tb_team`
   ADD PRIMARY KEY (`ID_MEMBER`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `tb_auth`
+-- AUTO_INCREMENT for table `tb_auth`
 --
 ALTER TABLE `tb_auth`
   MODIFY `ID_USER` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_bisnis`
+-- AUTO_INCREMENT for table `tb_bisnis`
 --
 ALTER TABLE `tb_bisnis`
   MODIFY `ID_BISNIS` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_counter`
+-- AUTO_INCREMENT for table `tb_counter`
 --
 ALTER TABLE `tb_counter`
   MODIFY `ID_COUNTER` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_jabatan`
+-- AUTO_INCREMENT for table `tb_jabatan`
 --
 ALTER TABLE `tb_jabatan`
-  MODIFY `ID_JABATAN` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID_JABATAN` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_ourmission`
+-- AUTO_INCREMENT for table `tb_ourmission`
 --
 ALTER TABLE `tb_ourmission`
   MODIFY `ID_OURMISSION` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_pesan`
+-- AUTO_INCREMENT for table `tb_pesan`
 --
 ALTER TABLE `tb_pesan`
   MODIFY `ID_PESAN` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_produk`
+-- AUTO_INCREMENT for table `tb_produk`
 --
 ALTER TABLE `tb_produk`
   MODIFY `ID_PRODUK` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT untuk tabel `tb_team`
+-- AUTO_INCREMENT for table `tb_team`
 --
 ALTER TABLE `tb_team`
-  MODIFY `ID_MEMBER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID_MEMBER` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
