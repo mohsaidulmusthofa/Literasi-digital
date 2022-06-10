@@ -37,22 +37,22 @@
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto w-100 justify-content-end">
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#slider-area">Home</a>
+                <a class="nav-link page-scroll" href="<?= base_url('') ?>#slider-area">Home</a>
               <!-- </li>
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="#services">Services</a>
               </li>   -->
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#services">Tentang kami</a>
+                <a class="nav-link page-scroll" href="<?= base_url('') ?>#services">Tentang kami</a>
               </li>                            
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#portfolios">Produk</a>
+                <a class="nav-link page-scroll" href="<?= base_url('') ?>#portfolios">Produk</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#team">Tim</a>
+                <a class="nav-link page-scroll" href="<?= base_url('') ?>#team">Tim</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#contact">Kontak</a>
+                <a class="nav-link page-scroll" href="<?= base_url('') ?>#contact">Kontak</a>
               </li> 
             </ul>              
           </div>
